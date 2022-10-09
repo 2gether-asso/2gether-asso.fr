@@ -3,6 +3,14 @@ import { Icon } from 'astro-icon'
 import ThemeSwitcher from '~/components/theme-switcher.astro'
 import type { NavItem } from '~/types'
 
+interface Props {
+  fixedHeader?: boolean
+}
+
+const {
+  fixedHeader = true
+} = Astro.props
+
 const navItems: Array<NavItem> = [
   { title: 'Features', url: '#features' },
   { title: 'Compatibility', url: '#compatibility' },
@@ -12,7 +20,8 @@ const navItems: Array<NavItem> = [
 
 <header
   id="page-header"
-  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
+  class={'absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white' + (fixedHeader ? ' fixed-header' : '')}
+  data-fixed-header={fixedHeader}
 >
   <a class="flex items-center gap-3 hover:!text-default" href="#">
     <h1 class="sr-only">Astro</h1>
@@ -108,6 +117,7 @@ const navItems: Array<NavItem> = [
   closeNavButton.addEventListener('click', closeMenu)
 
   document.addEventListener('scroll', () => {
+    if (header.hasAttribute('data-fixed-header')) return
     const d = page.clientHeight - page.scrollTop - header.offsetHeight
     header.classList.toggle('fixed-header', d < 0)
   })
