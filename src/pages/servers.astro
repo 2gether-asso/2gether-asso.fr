@@ -1,0 +1,24 @@
+---
+import MCServerStatus from '~/components/MCServerStatus.vue'
+import Footer from '~/components/footer.astro'
+import Header from '~/components/header.astro'
+import Layout from '~/layouts/Layout.astro'
+import '~/styles/index.css'
+---
+
+<Layout
+	title="2GETHER Servers"
+	lang="fr"
+	htmlClass="h-full motion-safe:scroll-smooth"
+	htmlAttributes={{ "data-theme": "dark" }}
+	bodyClass="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+	socialUrl={Astro.site}
+>
+  <Header />
+  <div class="px-8 py-32 space-y-24">
+    <MCServerStatus name="vanilla" client:visible />
+    <MCServerStatus name="modded" client:visible />
+    <MCServerStatus name="a" client:visible />
+  </div>
+  <Footer />
+</Layout>
