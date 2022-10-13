@@ -27,13 +27,13 @@ export default {
     <div v-if="data === null">
       <p>Chargement...</p>
     </div>
-    <div v-else-if="data.status">
+    <div v-else-if="data.online">
       <img v-if="data.favicon" :src="data.favicon" />
       <ul>
-        <li>Status : {{ data.status }}</li>
+        <li>Status : {{ data.online ? '🟢 Online' : '🔴 Offline' }}</li>
         <li>IP : {{ data.address }}</li>
-        <li v-if="data.players">Players : {{ data.players.online }}/{{ data.players.max }}</li>
-        <li v-if="data.version">Version : {{ data.version.name }}</li>
+        <li v-if="data.players">Players : {{ data.players.online }} / {{ data.players.max }}</li>
+        <li v-if="data.version">Version : {{ data.version }}</li>
       </ul>
     </div>
     <div v-else>
