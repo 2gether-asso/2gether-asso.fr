@@ -27,6 +27,24 @@ const links: Array<FooterLink> = [
 ---
 
 <footer class="relative flex h-64 items-center justify-center">
+  <div class="z-40">
+    <div class="grid grid-cols-2">
+      <p>
+        <Icon pack="mdi" name="copyright" class="h-5 inline mb-1" />2020-2022 –
+        2GETHER
+      </p>
+      <a
+        href="https://github.com/2gether-asso/2gether-asso.fr#license"
+        class="mt-2 mx-auto"
+      >
+        <img
+          alt="CC BY-NC 4.0"
+          src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-nc-sa.svg"
+        />
+      </a>
+    </div>
+    <u><a href="/legal" class="text-primary">Mentions Légales</a></u>
+  </div>
   <ul class="relative grid grid-cols-2 gap-4 sm:grid-cols-4">
     {
       links.map((link) => (
