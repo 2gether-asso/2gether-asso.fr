@@ -1,29 +1,6 @@
 ---
 import { Icon } from 'astro-icon'
-import type { FooterLink } from '~/types'
-
-const links: Array<FooterLink> = [
-  {
-    url: 'https://discord.2gether-asso.fr',
-    description: 'Discord officiel de 2GETHER',
-    icon: 'fa-brands:discord',
-  },
-  {
-    url: 'https://youtube.2gether-asso.fr',
-    description: 'YouTube officiel de 2GETHER',
-    icon: 'fa-brands:youtube',
-  },
-  {
-    url: 'https://twitch.2gether-asso.fr',
-    description: 'Twitch officiel de 2GETHER',
-    icon: 'fa-brands:twitch',
-  },
-  {
-    url: 'https://twitter.2gether-asso.fr',
-    description: 'Twitter officiel de 2GETHER',
-    icon: 'fa-brands:twitter',
-  },
-]
+import social from "~/data/social.json"
 ---
 
 <footer class="relative flex h-64 items-center justify-center p-4">
@@ -34,7 +11,7 @@ const links: Array<FooterLink> = [
         2020-2022 – 2GETHER
         <a href="https://github.com/2gether-asso/2gether-asso.fr#licence" class="ml-2">
           <img src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-nc-sa.svg"
-               alt="CC BY-NC 4.0" class="inline mb-0.5" />
+               alt="CC BY-NC 4.0" class="inline mb-1" />
         </a>
       </p>
     </div>
@@ -42,17 +19,15 @@ const links: Array<FooterLink> = [
   </div>
   <ul class="relative grid grid-cols-2 gap-4 sm:grid-cols-4">
     {
-      links.map((link) => (
-        <li>
-          <a
-            class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-current p-4"
-            href={link.url}
-          >
-            <span class="sr-only">{link.description}</span>
-            <Icon class="h-full" name={link.icon} />
-          </a>
-        </li>
-      ))
+      Object.values(social).map(data =>
+        (
+          <li>
+            <a href={data.url} class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-current p-4">
+              <span class="sr-only">{data.description}</span>
+              <Icon class="h-full" name={data.icon} />
+            </a>
+          </li>
+        ))
     }
   </ul>
 </footer>
