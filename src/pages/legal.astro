@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/Layout.astro'
 import Header from '~/components/header.astro'
-import ContentSection from '~/components/ContentSection.astro'
+import PageTitle from '~/components/PageTitle.astro'
 import Footer from '~/components/footer.astro'
 import '~/styles/index.css'
 ---
@@ -15,7 +15,7 @@ import '~/styles/index.css'
     <Header />
     <div class="grid place-items-center">
         <div class="row pt-32">
-            <ContentSection title="Mentions légales" id="legal" />
+            <PageTitle id="legal" class="mb-4">Mentions légales</PageTitle>
             <p class="text-center mb-2">
                 <i
                     >Les présentes mentions légales concernent le site
