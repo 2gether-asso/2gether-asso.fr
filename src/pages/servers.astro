@@ -22,7 +22,7 @@ import '~/styles/index.css'
     <div class="py-32 space-y-3">
       <ContentSection title="Nos Serveurs" id="servers" />
       <Carousel />
-      <ul class="grid grid-cols-3">
+      <ul class="grid grid-cols-2">
         <li class="flex flex-col gap-4 p-6 border border-default bg-offset">
           <MCServerStatus name="vanilla" client:visible />
           <a href="https://mc.2gether-asso.fr" class="center">
@@ -46,9 +46,6 @@ import '~/styles/index.css'
         </li>
         <li class="flex flex-col gap-4 p-6 border border-default bg-offset">
           <MCServerStatus name="modded" client:visible />
-        </li>
-        <li class="flex flex-col gap-4 p-6 border border-default bg-offset">
-          <MCServerStatus name="a" client:visible />
         </li>
       </ul>
     </div>
