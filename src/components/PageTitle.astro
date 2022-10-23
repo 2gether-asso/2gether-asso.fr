@@ -1,0 +1,24 @@
+---
+interface Props
+{
+	id?: string;
+	class?: string;
+	style?: string | undefined;
+}
+
+const {
+	id = undefined,
+	class: titleClass = undefined,
+	style = undefined,
+} = Astro.props;
+---
+
+<h2 id={id} class={"gradient-text " + titleClass} style={style}>
+	<slot />
+</h2>
+
+<style lang="scss">
+	h2 {
+		@apply text-6xl font-extrabold tracking-tight text-center;
+	}
+</style>
