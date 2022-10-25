@@ -52,29 +52,29 @@ const headerClass = 'header' + (fixedHeader ? ' fixed-header' : '')
 			<ThemeSwitcher />
 		</div>
 		<div class="hidden menu-modal modal" aria-hidden="true">
-			<div class="fixed inset-0 bg-default px-8 py-4 text-default">
-				<div class="space-y-4" role="dialog" aria-modal="true">
-					<header class="text-right">
+			<div class="fixed inset-0 bg-default text-default">
+				<div class="flex flex-col h-full" role="dialog" aria-modal="true">
+					<header class="flex justify-between h-16 px-8 pt-4 pb-2">
+						<img src={logo2gt} id="logo2gt" class="h-full" />
 						<button type="button" class="btn" aria-label="Close navigation" data-close-nav>
-							<Icon pack="mdi" name="close" class="h-8" />
+							<Icon pack="mdi" name="close" class="h-full" />
 						</button>
 					</header>
-					<div class="flex justify-center">
-						<img src={logo2gt} id="logo2gt" class="h-16" />
+					<div class="overflow-y-auto px-8 pt-2 pb-4">
+						<nav>
+							<ul class="flex flex-col">
+								{
+									navItems.map(({ title, url }) => (
+										<li>
+											<a class="block py-4 text-xl text-center" href={url}>
+												{title}
+											</a>
+										</li>
+									))
+								}
+							</ul>
+						</nav>
 					</div>
-					<nav>
-						<ul class="flex flex-col">
-							{
-								navItems.map(({ title, url }) => (
-									<li>
-										<a class="block py-4 text-center text-xl" href={url}>
-											{title}
-										</a>
-									</li>
-								))
-							}
-					</ul>
-					</nav>
 				</div>
 			</div>
 		</div>
@@ -82,8 +82,9 @@ const headerClass = 'header' + (fixedHeader ? ' fixed-header' : '')
 </header>
 
 <script>
-	const headers: NodeListOf<HTMLElement> = document.querySelectorAll('.header')
 	const root = document.documentElement
+	const body = document.body
+	const headers: NodeListOf<HTMLElement> = document.querySelectorAll('.header')
 
 	headers.forEach(header =>
 		{
@@ -107,11 +108,13 @@ const headerClass = 'header' + (fixedHeader ? ' fixed-header' : '')
 			const openMenu = () =>
 				{
 					menuModal.classList.remove('hidden')
+					body.classList.add('overflow-y-hidden')
 				}
 
 			const closeMenu = () =>
 				{
 					menuModal.classList.add('hidden')
+					body.classList.remove('overflow-y-hidden')
 				}
 
 			openNavButtons.forEach(btn => btn.addEventListener('click', openMenu))
