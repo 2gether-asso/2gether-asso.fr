@@ -6,10 +6,12 @@ import logo2gt from '~/icons/logo2gt.png'
 
 interface Props
 {
+	id?: string | undefined;
 	fixedHeader?: boolean
 }
 
 const {
+	id = undefined,
 	fixedHeader = true,
 } = Astro.props
 
@@ -23,7 +25,7 @@ const navItems: Array<NavItem> = [
 const headerClass = 'header' + (fixedHeader ? ' fixed-header' : '')
 ---
 
-<header id="page-header" class={headerClass} data-fixed-header={fixedHeader}>
+<header id={id} class={headerClass} data-fixed-header={fixedHeader}>
 	<a class="flex items-center gap-3 hover:!text-default" href="/">
 		<h1 class="sr-only">2GETHER</h1>
 		<img src={logo2gt} id="logo2gt" class="h-10" />
@@ -130,7 +132,7 @@ const headerClass = 'header' + (fixedHeader ? ' fixed-header' : '')
 </script>
 
 <noscript>
-	<style>
+	<style lang="scss">
 		#open-nav-button {
 			display: none;
 		}
@@ -138,7 +140,7 @@ const headerClass = 'header' + (fixedHeader ? ' fixed-header' : '')
 </noscript>
 
 <style lang="scss">
-	#page-header {
+	.header {
 		@apply absolute bottom-0 z-50;
 		@apply flex items-center justify-between;
 		@apply w-full px-8 py-4;
