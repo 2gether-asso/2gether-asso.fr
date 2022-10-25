@@ -13,7 +13,7 @@ const {
 } = Astro.props;
 ---
 
-<h2 id={id} class={"gradient-text " + titleClass} style={style}>
+<h2 id={id} class:list={['gradient-text', titleClass]} style={style}>
 	<slot />
 </h2>
 
