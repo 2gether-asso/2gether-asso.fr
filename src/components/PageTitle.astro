@@ -13,12 +13,14 @@ const {
 } = Astro.props;
 ---
 
-<h2 id={id} class:list={['gradient-text', titleClass]} style={style}>
+<h2 id={id} class={titleClass} style={style}>
 	<slot />
 </h2>
 
 <style lang="scss">
 	h2 {
 		@apply text-6xl font-extrabold tracking-tight text-center;
+		@apply text-transparent bg-clip-text;
+		@apply bg-gradient-to-b from-[#9600ff] to-pink-500;
 	}
 </style>
