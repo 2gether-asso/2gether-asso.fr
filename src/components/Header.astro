@@ -148,13 +148,22 @@ const navItems: Array<NavItem> = [
 		@apply border-b border-transparent;
 		height: 72px;
 
+		.header-brand {
+			@apply flex items-center gap-3 hover:text-default;
+			filter: grayscale(1);
+			opacity: 0.45;
+			transition-property: filter, opacity;
+			@apply ease-in duration-150;
+		}
+
 		&.fixed-header {
 			@apply fixed top-0 bottom-auto;
 			@apply border-default bg-default text-default;
-		}
 
-		.header-brand {
-			@apply flex items-center gap-3 hover:text-default;
+			.header-brand {
+				filter: none;
+				opacity: 1;
+			}
 		}
 	}
 
