@@ -79,6 +79,8 @@ const navItems: Array<NavItem> = [
 	</div>
 </header>
 
+<div class:list={['header-shadow', {'hidden': !fixedHeader}]}></div>
+
 <script>
 	const root = document.documentElement
 	const body = document.body
@@ -154,5 +156,10 @@ const navItems: Array<NavItem> = [
 		.header-brand {
 			@apply flex items-center gap-3 hover:text-default;
 		}
+	}
+
+	.header-shadow {
+		@apply bg-transparent w-full pointer-events-none;
+		height: 72px;
 	}
 </style>
