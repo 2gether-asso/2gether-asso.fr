@@ -24,14 +24,16 @@ export default {
   <div>
     <!-- Data fetched at build can be rendered in HTML -->
     <div v-if="data === null">
-      <ul>
-        <li class="flex flex-col items-center gap-4 p-6 border border-default bg-offset">
-          <h1 class="text-primary font-bold">
-            {{ name }}
-          </h1>
-          <p>Chargement...</p>
-        </li>
-      </ul>
+      <div class="flex justify-center items-center bg-gray-200 w-16 h-16 border-2 border-secondary rounded-2xl overflow-hidden mx-auto mb-2">
+				<svg class="w-4 fill-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <!-- Copyright 2022 Fonticons, Inc. -->
+          <path d="M120 256c0 30.9-25.1 56-56 56s-56-25.1-56-56s25.1-56 56-56s56 25.1 56 56zm160 0c0 30.9-25.1 56-56 56s-56-25.1-56-56s25.1-56 56-56s56 25.1 56 56zm104 56c-30.9 0-56-25.1-56-56s25.1-56 56-56s56 25.1 56 56s-25.1 56-56 56z" />
+        </svg>
+      </div>
+      <h1 class="text-primary font-bold text-center">
+        {{ name }}
+      </h1>
+      <p class="text-center">Chargement...</p>
     </div>
     <div v-else-if="data.online">
       <div v-if="data.icon" class="w-16 h-16 border-2 border-secondary rounded-2xl overflow-hidden mx-auto mb-2">
