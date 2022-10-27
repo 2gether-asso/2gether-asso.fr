@@ -4,13 +4,18 @@ import PageTitle from '~/components/PageTitle.astro'
 interface Props
 {
 	id: string;
+	class?: string;
 	title: string;
 }
 
-const { id, title } = Astro.props;
+const {
+	id,
+	class: contentClass = undefined,
+	title,
+} = Astro.props;
 ---
 
-<section id={id} class="flex scroll-mt-24 flex-col items-center gap-4 space-y-8">
+<section id={id} class:list={["flex scroll-mt-24 flex-col items-center gap-4 space-y-8", contentClass]}>
 	<div class="flex flex-col items-center gap-4">
 		<slot name="eyebrow" />
 
