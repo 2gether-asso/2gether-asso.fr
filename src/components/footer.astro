@@ -1,9 +1,18 @@
 ---
 import { Icon } from 'astro-icon'
-import social from "~/data/social.json"
+import social from '~/data/social.json'
+
+interface Props
+{
+	class?: string;
+}
+
+const {
+	class: footerClass = undefined,
+} = Astro.props;
 ---
 
-<footer class="relative flex h-64 items-center justify-center p-4">
+<footer class:list={["relative flex h-64 items-center justify-center p-4", footerClass]}>
   <div class="z-40">
     <div class="grid">
       <p>
