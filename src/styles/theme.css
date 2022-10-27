@@ -9,7 +9,7 @@
 }
 
 [data-theme="dark"] {
-  --color-primary: theme("colors.pink.400");
+  --color-primary: theme("colors.pink.500");
   --color-secondary: theme("colors.indigo.400");
   --color-text: theme("colors.gray.50");
   --color-text-offset: theme("colors.gray.400");
