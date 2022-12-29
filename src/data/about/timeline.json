@@ -1,5 +1,25 @@
 [
   {
+    "date": "28/01/2022 & 29/01/2022",
+    "title": "Meet Up Paris 2023",
+    "description": "Comment mieux démarrer l'année que par se retrouver ! Une dizaine de membres été présent lors du week end du 28 au 29 Janvier, Karaoké, Restos, Laser Game, Bowling et pleins d'autres activités ont été organisées"
+  },
+  {
+    "date": "23/12/2022",
+    "title": "2 ans de 2GETHER",
+    "description": "Une nouvelle année riche en rebondissement, et qui annonce beaucoup de belles choses pour l'année à venir !"
+  },
+  {
+    "date": "20/11/2022",
+    "title": "Break Hivernal",
+    "description": "Première vacances du staff ralentissant la cadence pour les fêtes de fin d'années."
+  },
+  {
+    "date": "26/10/2022",
+    "title": "Rotation Mensuelle Communautaire",
+    "description": "Mise en place d'un système participatifs pour les évènements hebdo du discord."
+  },
+  {
     "date": "04/10/2022",
     "title": "Ouverture des serveurs de jeux officiel 2GETHER",
     "description": "Ouverture de 2 serveurs Minecraft hébergé par nos soins exclusifs à nos membres."
@@ -34,13 +54,11 @@
     "title": "Planning Hebdomadaire d'évènements en ligne",
     "description": "Mise en place du planning hebdo permettant aux membres de se retrouver chaques semaines le mercredi, vendredi et samedi (voir dimanche)."
   },
-
   {
     "date": "18/10/2021",
     "title": "Première Rencontre 2GETHER",
     "description": "Meet up sur Paris le temps d'un week end."
   },
-
   {
     "date": "26/02/2021",
     "title": "Premiers évènements en ligne",
