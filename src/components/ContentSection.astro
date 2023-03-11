@@ -10,21 +10,35 @@ interface Props
 
 const {
 	id,
-	class: contentClass = undefined,
+	class: sectionClass = undefined,
 	title,
 } = Astro.props;
 ---
 
-<section id={id} class:list={["flex scroll-mt-24 flex-col items-center gap-8", contentClass]}>
-	<div class="flex flex-col items-center gap-4">
+<section id={id} class={sectionClass}>
+	<div class="title">
 		<slot name="eyebrow" />
 
 		<PageTitle>{title}</PageTitle>
 	</div>
 
-	<p class="max-w-4xl text-center font-extrabold text-2xl">
+	<p>
 		<slot name="lead" />
 	</p>
 
 	<slot />
 </section>
+
+<style lang="scss">
+	section {
+		@apply flex scroll-mt-24 flex-col items-center gap-8;
+
+		> .title {
+			@apply flex flex-col items-center gap-4;
+		}
+
+		> p {
+			@apply max-w-4xl text-center font-extrabold text-2xl;
+		}
+	}
+</style>
