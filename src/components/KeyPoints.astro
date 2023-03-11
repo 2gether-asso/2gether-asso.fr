@@ -29,7 +29,7 @@ const {
 			background-position: 0% 0%;
 		}
 		to {
-			background-position: 200% 200%;
+			background-position: 200vw 200vh;
 		}
 	}
 
@@ -37,7 +37,7 @@ const {
 		animation: hc-bg-pan-GY7YG 3s linear infinite;
 		@apply relative max-w-6xl;
 		background: radial-gradient(#4b0088, #762449);
-		background-size: 200% 200%;
+		background-size: 200vw 200vh;
 		@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
 		gap: 1px;
 		margin: 0;
@@ -53,7 +53,7 @@ const {
 
 			&:before {
 				@apply absolute w-full h-full bg-default;
-				transition: background-color .2s ease-out;
+				transition: background-color .5s ease-out;
 				content: "";
 			}
 
