@@ -18,7 +18,7 @@ const {
 const navItems: Array<NavItem> = [
 	{ title: 'Accueil', url: '/' },
 	{ title: 'L\'asso', url: '/#asso' },
-	{ title: 'La Communauté', url: '/#community' },
+	{ title: 'La communauté', url: '/#community' },
 	{ title: 'Nous', url: '/about' },
 ]
 ---
@@ -47,8 +47,10 @@ const navItems: Array<NavItem> = [
 			<button type="button" class="btn sm:hidden" aria-label="Navigation" data-open-nav>
 				<Icon pack="mdi" name="menu" class="h-8" />
 			</button>
+
 			<ThemeSwitcher />
 		</div>
+
 		<div class="hidden menu-modal modal" aria-hidden="true">
 			<div class="fixed inset-0 bg-default text-default">
 				<div class="flex flex-col h-full" role="dialog" aria-modal="true">
