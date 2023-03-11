@@ -21,7 +21,8 @@ import staff from '~/data/staff.json'
             <ContentSection title="Qui sommes nous ?" id="nous" />
             {
                 staff.map(({ name, role, website, picture }) => (
-                    <div class="column mb-5 card max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                    /* <div class="column mb-5 card max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"> */
+                    <div class="column mb-5 card max-w-sm bg-theme-50 rounded-lg border border-theme-200 shadow-md">
                         <a href={website}>
                             <img
                                 class="rounded-t-lg"
@@ -31,11 +32,13 @@ import staff from '~/data/staff.json'
                         </a>
                         <div class="p-5">
                             <a>
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                <!-- <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"> -->
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-theme-900">
                                     {name}
                                 </h5>
                             </a>
-                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                            <!-- <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> -->
+                            <p class="mb-3 font-normal text-theme-600">
                                 {role}
                             </p>
                             <Button href={website} arrow={true}>Voir le site</Button>
