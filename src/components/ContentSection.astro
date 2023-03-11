@@ -15,14 +15,14 @@ const {
 } = Astro.props;
 ---
 
-<section id={id} class:list={["flex scroll-mt-24 flex-col items-center gap-4 space-y-8", contentClass]}>
+<section id={id} class:list={["flex scroll-mt-24 flex-col items-center gap-8", contentClass]}>
 	<div class="flex flex-col items-center gap-4">
 		<slot name="eyebrow" />
 
 		<PageTitle>{title}</PageTitle>
 	</div>
 
-	<p class="max-w-xl text-center font-extrabold text-2xl">
+	<p class="max-w-4xl text-center font-extrabold text-2xl">
 		<slot name="lead" />
 	</p>
 
