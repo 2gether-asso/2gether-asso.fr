@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon'
-import ContentSection from '~/components/ContentSection.astro'
+import KeyPoints from '~/components/KeyPoints.astro'
 import type { FeatureItem } from '~/types'
 
 const asso: Array<FeatureItem> = [
@@ -22,29 +22,27 @@ const asso: Array<FeatureItem> = [
 ]
 ---
 
-<ContentSection id="asso" title="Actions physique">
+<KeyPoints id="asso" title="Actions physique">
 	<Fragment slot="lead">
 		Les membres auront accès à différents <span class="text-primary">outils</span>.
 		En plus d'une <span class="text-primary">ouverture à la communauté</span>.
 	</Fragment>
 
-	<ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-		{
-			asso.map(({ title, description, icon }) => (
-				<li class="flex flex-col gap-4 border border-default bg-slate-800 bg-opacity-70 relative">
-					<div class="p-6 backdrop-blur-sm">
-						<div class="h-16 w-16 rounded-full border-2 border-current p-3 mx-auto">
-							<Icon name={icon} />
-						</div>
-						<p class="text-center font-extrabold text-xl mb-3">
-							{title}
-						</p>
-						<p class="text-center text-offset text-sm">
-							{description}
-						</p>
+	{
+		asso.map(({ title, description, icon }) => (
+			<li>
+				<div>
+					<div class="icon">
+						<Icon name={icon} />
 					</div>
-				</li>
-			))
-		}
-	</ul>
-</ContentSection>
+					<p class="title">
+						{title}
+						</p>
+					<p class="description">
+						{description}
+					</p>
+				</div>
+			</li>
+		))
+	}
+</KeyPoints>
