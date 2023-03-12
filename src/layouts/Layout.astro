@@ -1,0 +1,47 @@
+---
+export interface Props {
+	// HTML attributes
+	title: string
+	htmlClass?: string | undefined
+	htmlAttributes?: { [key: string]: string }
+	// Meta tags
+	description?: string | undefined
+	lang?: string
+	// Body attributes
+	bodyClass?: string | undefined
+	bodyAttributes?: { [key: string]: string }
+}
+
+const {
+	// HTML attributes
+	lang = "en",
+	htmlClass = undefined,
+	htmlAttributes = {},
+	// Meta tags
+	title,
+	description = undefined,
+	// Body attributes
+	bodyClass = undefined,
+	bodyAttributes = {},
+} = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang={lang} class={htmlClass} {...htmlAttributes}>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+		<link rel="icon" href="/favicon.png" type="image/png" />
+
+		<title>{title}</title>
+		{description && <meta name="description" content={description} />}
+		<meta name="generator" content={Astro.generator} />
+
+		<slot name="head" />
+	</head>
+
+	<body class={bodyClass} {...bodyAttributes}>
+		<slot />
+	</body>
+</html>
