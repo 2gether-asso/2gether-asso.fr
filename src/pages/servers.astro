@@ -17,10 +17,20 @@ import '~/styles/index.css'
 >
   <Header />
   <Carousel />
-  <div class="px-8 py-32 space-y-24">
-    <MCServerStatus name="vanilla" client:visible />
-    <MCServerStatus name="modded" client:visible />
-    <MCServerStatus name="a" client:visible />
+  <div class="grid place-items-center">
+    <div class="px-8 py-32 space-y-24">
+      <ul class="grid grid-cols-3">
+        <li class="flex flex-col gap-4 p-6 border border-default bg-offset">
+          <MCServerStatus name="vanilla" client:visible />
+        </li>
+        <li class="flex flex-col gap-4 p-6 border border-default bg-offset">
+          <MCServerStatus name="modded" client:visible />
+        </li>
+        <li class="flex flex-col gap-4 p-6 border border-default bg-offset">
+          <MCServerStatus name="a" client:visible />
+        </li>
+      </ul>
+    </div>
   </div>
   <Footer />
 </Layout>

@@ -1,3 +1,4 @@
+
 <script>
 export default {
   props: ['name'],
@@ -22,24 +23,36 @@ export default {
 <template>
   <div>
     <!-- Data fetched at build can be rendered in HTML -->
-    <h1>MC STATUS: {{ name }}</h1>
-
     <div v-if="data === null">
-      <p>Chargement...</p>
-    </div>
-    <div v-else-if="data.online">
-      <img v-if="data.favicon" :src="data.favicon" />
       <ul>
-        <li>Status : {{ data.online ? '🟢 Online' : '🔴 Offline' }}</li>
-        <li>IP : {{ data.address }}</li>
-        <li v-if="data.players">Players : {{ data.players.online }} / {{ data.players.max }}</li>
-        <li v-if="data.version">Version : {{ data.version }}</li>
+        <li class="flex flex-col items-center gap-4 p-6 border border-default bg-offset">
+          <h1 class="text-primary font-bold">
+            {{ name }}
+          </h1>
+          <p>Chargement...</p>
+        </li>
       </ul>
     </div>
+    <div v-else-if="data.online">
+      <div v-if="data.icon" class="w-16 h-16 border-2 border-secondary rounded-2xl overflow-hidden mx-auto mb-2">
+        <img :src="data.icon" />
+      </div>
+      <h1 class="text-primary font-bold text-center">
+        {{ name }}
+      </h1>
+      <p>IP : {{ data.address }}</p>
+      <p>Status : {{ data.online ? '🟢 En ligne' : '🔴 Hors Ligne' }}</p>
+      <br />
+      <p v-if="data.players">Joueurs : {{ data.players.online }} / {{ data.players.max }}</p>
+      <p v-if="data.version">Version : {{ data.version }}</p>
+      <p v-if="data.seed">Seed : {{ data.seed }}</p>
+    </div>
     <div v-else>
+      <h1 class="text-primary font-bold text-center">
+        {{ name }}
+      </h1>
       <p v-if="data.error">Erreur : {{ data.error }}</p>
       <p v-else>Erreur inconnue.</p>
     </div>
-    <br>
   </div>
 </template>
