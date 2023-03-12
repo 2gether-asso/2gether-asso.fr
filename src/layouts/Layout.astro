@@ -7,6 +7,8 @@ export interface Props {
 	// Meta tags
 	description?: string | undefined
 	lang?: string
+	socialImage?: URL | undefined
+	socialUrl?: URL | undefined
 	// Body attributes
 	bodyClass?: string | undefined
 	bodyAttributes?: { [key: string]: string }
@@ -20,6 +22,8 @@ const {
 	// Meta tags
 	title,
 	description = undefined,
+	socialImage = undefined,
+	socialUrl = undefined,
 	// Body attributes
 	bodyClass = undefined,
 	bodyAttributes = {},
@@ -32,11 +36,43 @@ const {
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
 
-		<link rel="icon" href="/favicon.png" type="image/png" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
 		<title>{title}</title>
 		{description && <meta name="description" content={description} />}
 		<meta name="generator" content={Astro.generator} />
+
+		<!-- social media -->
+		<meta property="og:title" content={title} />
+		{description && (<meta property="og:description" content={description} />)}
+		{socialImage && (<meta property="og:image" content={socialImage} />)}
+		{socialUrl && (<meta property="og:url" content={socialUrl} />)}
+		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary_large_image" />
+
+		<!-- initialize theme -->
+		<script is:inline>
+			const themeSaved = localStorage.getItem('theme')
+
+			if (themeSaved) {
+				document.documentElement.dataset.theme = themeSaved
+			} else {
+				const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+				document.documentElement.dataset.theme = prefersDark ? 'dark' : 'light'
+			}
+
+			window
+				.matchMedia('(prefers-color-scheme: dark)')
+				.addEventListener('change', (event) =>
+					{
+						if (!localStorage.getItem('theme'))
+						{
+							document.documentElement.dataset.theme = event.matches
+								? 'dark'
+								: 'light'
+						}
+					});
+		</script>
 
 		<slot name="head" />
 	</head>

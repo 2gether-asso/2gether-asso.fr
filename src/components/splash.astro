@@ -1,0 +1,42 @@
+---
+import { Icon } from 'astro-icon'
+import Starfield from '~/components/starfield.astro'
+---
+
+<section class="relative h-full bg-black">
+  <Starfield />
+  <div class="relative grid h-full place-items-center sm:grid-cols-2">
+    <h2
+      class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
+    >
+      <Icon name="logomark" class="h-24 text-white md:h-32" />
+      <div
+        class="gradient-text text-center font-extrabold tracking-tighter text-8xl"
+      >
+        Build fast
+        <br /> websites,
+        <br /> faster.
+      </div>
+    </h2>
+  </div>
+</section>
+
+<noscript>
+  <style>
+    #splash-bg-fallback {
+      display: block;
+    }
+  </style>
+</noscript>
+
+<style>
+  @media (prefers-reduced-motion: reduce) {
+    :global(#starfield) {
+      @apply hidden;
+    }
+
+    #splash-bg-fallback {
+      @apply block;
+    }
+  }
+</style>
