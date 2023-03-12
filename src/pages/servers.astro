@@ -1,8 +1,9 @@
 ---
+import Layout from '~/layouts/Layout.astro'
+import Header from '~/components/header.astro'
+import Carousel from '~/components/carousel.astro'
 import MCServerStatus from '~/components/MCServerStatus.vue'
 import Footer from '~/components/footer.astro'
-import Header from '~/components/header.astro'
-import Layout from '~/layouts/Layout.astro'
 import '~/styles/index.css'
 ---
 
@@ -15,6 +16,7 @@ import '~/styles/index.css'
 	socialUrl={Astro.site}
 >
   <Header />
+  <Carousel />
   <div class="px-8 py-32 space-y-24">
     <MCServerStatus name="vanilla" client:visible />
     <MCServerStatus name="modded" client:visible />
