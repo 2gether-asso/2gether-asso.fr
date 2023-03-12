@@ -2,9 +2,13 @@
   "name": "2gether-asso.fr",
   "version": "0.0.0",
   "description": "Serving the 2GETHER website.",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/2gether-asso/2gether-asso.fr/issues"
   },
-  "homepage": "https://github.com/2gether-asso/2gether-asso.fr#readme"
+  "homepage": "https://github.com/2gether-asso/2gether-asso.fr#readme",
+  "dependencies": {
+    "astro": "^2.0.18"
+  }
 }
