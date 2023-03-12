@@ -1,0 +1,19 @@
+{
+  "name": "2gether-asso.fr",
+  "version": "0.0.0",
+  "description": "Serving the 2GETHER website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2gether-asso/2gether-asso.fr.git"
+  },
+  "author": "Matiboux",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/2gether-asso/2gether-asso.fr/issues"
+  },
+  "homepage": "https://github.com/2gether-asso/2gether-asso.fr#readme"
+}
