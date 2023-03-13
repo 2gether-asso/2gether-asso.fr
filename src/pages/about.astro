@@ -1,0 +1,308 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import Header from '~/components/header.astro'
+import ContentSection from '~/components/content-section.astro'
+import Footer from '~/components/footer.astro'
+import '~/styles/index.css'
+---
+
+<Layout
+	title="Les Fondateurs"
+	lang="fr"
+	htmlAttributes={{ "data-theme": "dark" }}
+	socialUrl={Astro.site}
+>
+	<Header />
+	<div class="grid place-items-center">
+		<div class="row pt-32">
+			<ContentSection title="Qui sommes nous ?" id="nous" />
+			<div
+				class="column mb-5 card max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+			>
+				<a href="#">
+					<img
+						class="rounded-t-lg"
+						src="/src/assets/HelldwinPP.png"
+						alt=""
+					/>
+				</a>
+				<div class="p-5">
+					<a href="#">
+						<h5
+							class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+						>
+							Helldwin
+						</h5>
+					</a>
+					<p
+						class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+					>
+						Fondateur, Président et Admin
+					</p>
+					<a
+						href="https://quentin-helayel.eu"
+						class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+					>
+						Voir son site
+						<svg
+							aria-hidden="true"
+							class="ml-2 -mr-1 w-4 h-4"
+							fill="currentColor"
+							viewBox="0 0 20 20"
+							xmlns="http://www.w3.org/2000/svg"
+							><path
+								fill-rule="evenodd"
+								d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+								clip-rule="evenodd"></path>
+						</svg>
+					</a>
+				</div>
+			</div>
+			<div
+				class="column card max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+			>
+				<a href="https://matiboux.me">
+					<img
+						class="rounded-t-lg"
+						src="/src/assets/MatibouxPP.png"
+						alt=""
+					/>
+				</a>
+				<div class="p-5">
+					<a href="https://matiboux.me">
+						<h5
+							class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+						>
+							Matiboux
+						</h5>
+					</a>
+					<p
+						class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+					>
+						Fondateur, Co-Président et Admin
+					</p>
+					<a
+						href="#"
+						class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+					>
+						Voir son site
+						<svg
+							aria-hidden="true"
+							class="ml-2 -mr-1 w-4 h-4"
+							fill="currentColor"
+							viewBox="0 0 20 20"
+							xmlns="http://www.w3.org/2000/svg"
+							><path
+								fill-rule="evenodd"
+								d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+								clip-rule="evenodd"></path>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div
+			class="block mb-5 text-center p-6 max-w-7xl bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+		>
+			<div class="grid-cols-3">
+				<a
+					href="https://files.2gether-asso.fr/asso/statuts.pdf"
+					class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+				>
+					Les Statuts
+				</a>
+				<a
+					href="https://files.2gether-asso.fr/asso/règlement_intérieur.pdf"
+					class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+				>
+					Règlement Intérieur
+				</a>
+				<a
+					href="https://files.2gether-asso.fr/asso/bureau.pdf"
+					class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+				>
+					Bureau
+				</a>
+			</div>
+			<img class="center" src="src/assets/ligneDeVie.png" />
+			<a>
+				<h5
+					class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+				>
+					18/11/2020 - Les Prémices
+				</h5>
+				<p class="font-normal text-gray-700 dark:text-gray-400">
+					En ce soir si spécial Helldwin et Matiboux eurent une
+					idée <b>ensemble</b>, pourquoi ne pas créer un lieu où
+					des personnes des quatres coins de la France pourraient
+					se retrouver et partager des moments convivaux, leurs
+					passions et faire de belles rencontres ! Les jeunes de
+					plus en plus touchés par l'isolement social auraient un
+					petit coup de pouce avec <b>2GETHER</b>.
+				</p>
+				<img class="center" src="src/assets/ligneDeVie.png" />
+				<h5
+					class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+				>
+					23/12/2020 - Ouverture au public
+				</h5>
+				<p class="font-normal text-gray-700 dark:text-gray-400">
+					Pour finir l'année en beauté, Helldwin lança une
+					première énigme sur la toile. Le but ultime arriver sur
+					le discord de 2GETHER ! La communauté est belle et bien
+					lancée !
+				</p>
+				<img class="center" src="src/assets/ligneDeVie.png" />
+				<h5
+					class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+				>
+					05/01/2021 - Création de l'association
+				</h5>
+				<p class="font-normal text-gray-700 dark:text-gray-400">
+					C'est la date de parution au journal officiel pour
+					2GETHER, désormais la communauté est aussi une
+					association à but non lucratif.
+				</p>
+				<img class="center" src="src/assets/ligneDeVie.png" />
+				<h5
+					class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+				>
+					26/02/2021 - Premiers évènements en ligne
+				</h5>
+				<p class="font-normal text-gray-700 dark:text-gray-400">
+					Première soirée jeux, suivie 2 jours plus tard par la
+					première projection du Ciné 2GETHER !
+				</p>
+				<img class="center" src="src/assets/ligneDeVie.png" />
+				<h5
+					class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+				>
+					18/10/2021 - Première Rencontre 2GETHER
+				</h5>
+				<p class="font-normal text-gray-700 dark:text-gray-400">
+					Meet up sur Paris le temps d'un week end.
+				</p>
+				<img class="center" src="src/assets/ligneDeVie.png" />
+				<h5
+					class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+				>
+					17/01/2022 - Planning Hebdomadaire d'évènements en ligne
+				</h5>
+				<p class="font-normal text-gray-700 dark:text-gray-400">
+					Mise en place du planning hebdo permettant aux membres
+					de se retrouver chaques semaines le mercredi, vendredi
+					et samedi (voir dimanche).
+				</p>
+				<img class="center" src="src/assets/ligneDeVie.png" />
+				<h5
+					class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+				>
+					29/01/2022 - Annonce du premier gros projet
+				</h5>
+				<p class="font-normal text-gray-700 dark:text-gray-400">
+					Annonce des soirées JDR, des jeux de rôles créé par la
+					communauté pour la communauté !
+				</p>
+				<img class="center" src="src/assets/ligneDeVie.png" />
+				<h5
+					class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+				>
+					08/05/2021 - Ouverture d'un serveur Minecraft
+				</h5>
+				<p class="font-normal text-gray-700 dark:text-gray-400">
+					Ouverture du premier serveur 2GETHER.
+				</p>
+				<img class="center" src="src/assets/ligneDeVie.png" />
+				<h5
+					class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+				>
+					08/04/2022 - Premiers Giveaways
+				</h5>
+				<p class="font-normal text-gray-700 dark:text-gray-400">
+					Première campagne de Giveaways, 2 jeux à gagner par
+					semaines pour les membres.
+				</p>
+				<img class="center" src="src/assets/ligneDeVie.png" />
+				<h5
+					class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+				>
+					28/05/2022 - Annonce des Tournois 2GETHER
+				</h5>
+				<p class="font-normal text-gray-700 dark:text-gray-400">
+					Le premier vendredi du mois rime avec tournois ! Chaque
+					mois un jeu sur lequel s'affrontrer pour gagner des
+					points dans un classement général, gain à la clé en fin
+					d'année.
+				</p>
+				<img class="center" src="src/assets/ligneDeVie.png" />
+				<h5
+					class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+				>
+					27/07/2022 - Ouverture de la Cagnotte Libre 2GETHER
+				</h5>
+				<p class="font-normal text-gray-700 dark:text-gray-400">
+					Mise en place d'une cagnotte participative permettant de
+					financer des jeux multijoueurs joués lors des soirées
+					2GETHER pour des membres les plus démunies.
+				</p>
+				<img class="center" src="src/assets/ligneDeVie.png" />
+				<h5
+					class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+				>
+					04/10/2022 - Ouverture des serveurs de jeux officiel
+					2GETHER
+				</h5>
+				<p class="font-normal text-gray-700 dark:text-gray-400">
+					Ouverture de 2 serveurs Minecraft hébergé par nos soins
+					exclusifs à nos membres.
+				</p>
+				<img class="center" src="src/assets/ligneDeVie.png" />
+			</a>
+		</div>
+	</div>
+
+	<Footer />
+	<style>
+		/* Float four columns side by side */
+		.column {
+			float: left;
+			width: 50%;
+		}
+
+		/* Remove extra left and right margins, due to padding in columns */
+		.row {
+			align-items: center;
+			margin: auto;
+			justify-items: center;
+		}
+
+		/* Clear floats after the columns */
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+		/* Responsive columns - one column layout (vertical) on small screens */
+		@media screen and (max-width: 600px) {
+			.column {
+				width: 100%;
+				display: block;
+				margin-bottom: 20px;
+			}
+		}
+
+		/* Style the counter cards */
+		.card {
+			text-align: center;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+			margin-right: 20px;
+		}
+
+		.center {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</Layout>
