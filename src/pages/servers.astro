@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon'
 import Layout from '~/layouts/Layout.astro'
 import Header from '~/components/header.astro'
 import ContentSection from '~/components/content-section.astro'
@@ -26,26 +27,19 @@ import '~/styles/index.css'
           <MCServerStatus name="vanilla" client:visible />
           <a href="https://mc.2gether-asso.fr" class="center">
             <button
-              class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-md font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+              class="inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-md font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
             >
               <span
-                class="center relative px-20 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
+                class="center relative py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="2em"
-                  class="inline-block pb-1"
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 36 36"
-                  ><path
-                    fill="currentColor"
-                    d="M33.31 7.35L25 9.94V14h-2v-3.71l-9-4.61V9h-2V5.27l-9.67 4a.53.53 0 0 0-.33.48v20.7a.53.53 0 0 0 .74.49L12 27.12V23h2v4.53l9 4.61V28h2v3.79l8.63-2.7a.53.53 0 0 0 .37-.51V7.86a.53.53 0 0 0-.69-.51ZM14 21h-2v-4h2Zm0-6h-2v-4h2Zm11 11h-2v-4h2Zm0-6h-2v-4h2Z"
-                    class="clr-i-solid clr-i-solid-path-1"></path><path
-                    fill="none"
-                    d="M0 0h36v36H0z"></path>
-                </svg>
-                Voir la map
+                <div class="row">
+                  <Icon
+                    name="clarity:map-line"
+                    style="width: 8%; max-block-size: 200px"
+                    class="center inline-block"
+                  />
+                  Voir la map
+                </div>
               </span>
             </button>
           </a>
