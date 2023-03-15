@@ -1,25 +1,85 @@
 ---
 import { Icon } from 'astro-icon'
 import Starfield from '~/components/starfield.astro'
+import imgLogo from '~/icons/logoSite.png'
+import moon from '~/icons/moon.png'
+import mountains_behind from '~/icons/mountains_behind.png'
+import mountains_front from '~/icons/mountains_front.png'
 ---
 
 <section class="relative h-full bg-black">
   <Starfield />
-  <div class="relative grid h-full place-items-center sm:grid-cols-2">
-    <h2
-      class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
-    >
-      <Icon name="logomark" class="h-24 text-white md:h-32" />
-      <div
-        class="gradient-text text-center font-extrabold tracking-tighter text-8xl"
-      >
-        Build fast
-        <br /> websites,
-        <br /> faster.
+  <img src={moon} id="moon" class="bgSite" />
+  <img src={mountains_behind} id="mountains_behind" class="bgSite" />
+  <img src={mountains_front} id="mountains_front" class="bgSite" />
+  <div class="relative grid h-full place-items-center">
+    <h2 class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto">
+      <div class="gradient-text text-center font-extrabold tracking-tighter text-4xl">
+        Partageons un moment
+      </div>
+      <img class="logotitre h-16 text-white md:h-24" src={imgLogo} />
+      <div class="relative grid h-full place-items-center">
+        <a href="https://youtube.com/shrts/sGlh0ptJ4fc"
+          class="btn flex gap-3 px-6 py-4 border-2 border-current"
+        >
+          <Icon pack="mdi" name="lock" class="h-8" />
+          <span>Rejoindre une aventure</span>
+        </a>
       </div>
     </h2>
   </div>
 </section>
+
+<style>
+  section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+  }
+
+  section img {
+    pointer-events: none;
+  }
+
+  section img.bgSite {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  section img.logotitre {
+    z-index: 1000;
+  }
+
+  section a.btn {
+    pointer-events: none;
+    background: gray;
+    opacity: 50%;
+  }
+
+  section img#moon {
+    mix-blend-mode: screen;
+  }
+
+  section .bg {
+    background: linear-gradient(#2b1055, #7597de);
+  }
+</style>
+
+<script>
+  const moon = document.getElementById('moon')
+
+  if (moon) {
+    window.addEventListener('scroll', () => {
+      let value = window.scrollY
+      moon.style.top = value * 0.2 + 'px'
+    })
+  }
+</script>
 
 <noscript>
   <style>
