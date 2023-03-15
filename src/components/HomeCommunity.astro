@@ -1,0 +1,30 @@
+---
+import { Icon } from 'astro-icon'
+import KeyPoints from '~/components/KeyPoints.astro'
+import community from '~/data/community.json'
+---
+
+<KeyPoints id="community" title="Actions à distance">
+	<Fragment slot="lead">
+		Une communauté sur <span class="text-primary">Discord</span> ouverte sur parainage
+		et adhésions proposants des évènements réguliers.
+	</Fragment>
+
+	{
+		community.map(({ title, description, icon }) => (
+			<li>
+				<div>
+					<div class="icon">
+						<Icon name={icon} />
+					</div>
+					<p class="title">
+						{title}
+						</p>
+					<p class="description">
+						{description}
+					</p>
+				</div>
+			</li>
+		))
+	}
+</KeyPoints>

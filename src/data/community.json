@@ -1,0 +1,47 @@
+[
+	{
+		"title": "Cinéma 2GETHER",
+		"description": "Toutes les semaines, diffusion & groupwatch des films et séries proposés et votés par la communauté !",
+		"icon": "mdi:theater"
+	},
+	{
+		"title": "Jeux de rôles",
+		"description": "Une équipe de MJ vous proposeront des scénarios écrit pour l'occasion, permettant de partager un bon moment avec les membres présents.",
+		"icon": "mdi:dice-d20"
+	},
+	{
+		"title": "Groupe de Créateurs",
+		"description": "Une passion vous anime ? Venez donc partager vos créations avec nous, et participer a des projets communs pour commencer à vous créer un réseau.",
+		"icon": "mdi:pencil"
+	},
+	{
+		"title": "Soirée Jeux",
+		"description": "Toutes les semaines, des soirées sur des jeux multijoueurs avec les membres, du simple loup garou, gartic phone à des parties endiablées de Worms.",
+		"icon": "mdi:gamepad-variant"
+	},
+	{
+		"title": "Tournois",
+		"description": "Tout les 1er vendredi du mois, un tournoi est mis en place sur un jeu des soirées ou un jeu créé pour l'occasion. A la fin de l'année les scores des tournois sont aditionner pour offrir un lot au 1er !",
+		"icon": "mdi:trophy"
+	},
+	{
+		"title": "Serveurs dédiés",
+		"description": "Des serveurs de jeux privés sont disponible pour nos membres à la demande. Actuellement nous avons 2 serveurs Minecraft qui tourne h24 pour vivre de belles aventures avec vous !",
+		"icon": "mdi:server"
+	},
+	{
+		"title": "Jeux de pistes",
+		"description": "Des codes étrange apparaisse des fois sur le discord, serez vous capable de suivre l'énigme de bout en bout pour gagner un jeu ?",
+		"icon": "mdi:puzzle"
+	},
+	{
+		"title": "Émissions sur Twitch",
+		"description": "Certains de nos moments 2GETHER seront partagé et diffusé sur Twitch, cela sera aussi l'occasion de proposer des émissions plus aboutti.",
+		"icon": "mdi:twitch"
+	},
+	{
+		"title": "Giveaways",
+		"description": "Nous offrons régulièrement des jeux à nos membres avec un système de tirage au sort.",
+		"icon": "mdi:gift"
+	}
+]

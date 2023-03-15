@@ -1,0 +1,177 @@
+---
+import { Icon } from 'astro-icon'
+import ThemeSwitcher from '~/components/ThemeSwitcher.astro'
+import type { NavItem } from '~/types'
+import logo2gt from '~/icons/logo2gt.png'
+
+interface Props
+{
+	id?: string | undefined;
+	fixedHeader?: boolean
+}
+
+const {
+	id = undefined,
+	fixedHeader = true,
+} = Astro.props
+
+const navItems: Array<NavItem> = [
+	{ title: 'Accueil', url: '/' },
+	{ title: 'Nos Serveurs', url: '/servers' },
+	{ title: 'L\'asso', url: '/#asso' },
+	{ title: 'La communauté', url: '/#community' },
+	{ title: 'Nous', url: '/about' },
+]
+---
+
+<header id={id} class:list={['header', {'fixed-header': fixedHeader}]} data-fixed-header={fixedHeader}>
+	<a class="header-brand" href="/">
+		<h1 class="sr-only">2GETHER</h1>
+		<img src={logo2gt} id="logo2gt" class="h-10" />
+	</a>
+	<div>
+		<div class="flex items-center gap-6">
+			<nav class="hidden sm:block">
+				<ul class="flex items-center gap-6">
+					{
+						navItems.map(({ title, url }) => (
+							<li>
+								<a class="text-sm" href={url}>
+									{title}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+
+			<button type="button" class="btn sm:hidden" aria-label="Navigation" data-open-nav>
+				<Icon pack="mdi" name="menu" class="h-8" />
+			</button>
+
+			<ThemeSwitcher />
+		</div>
+
+		<div class="hidden menu-modal modal" aria-hidden="true">
+			<div class="fixed inset-0 bg-default text-default">
+				<div class="flex flex-col h-full" role="dialog" aria-modal="true">
+					<header class="flex justify-between h-16 px-8 pt-4 pb-2">
+						<img src={logo2gt} id="logo2gt" class="h-full" />
+						<button type="button" class="btn" aria-label="Close navigation" data-close-nav>
+							<Icon pack="mdi" name="close" class="h-full" />
+						</button>
+					</header>
+					<div class="overflow-y-auto px-8 pt-2 pb-4">
+						<nav>
+							<ul class="flex flex-col">
+								{
+									navItems.map(({ title, url }) => (
+										<li>
+											<a class="block py-4 text-xl text-center" href={url}>
+												{title}
+											</a>
+										</li>
+									))
+								}
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<div class:list={['header-shadow', {'hidden': !fixedHeader}]}></div>
+
+<script>
+	const root = document.documentElement
+	const body = document.body
+	const headers: NodeListOf<HTMLElement> = document.querySelectorAll('.header')
+
+	headers.forEach(header =>
+		{
+			// Fix header on scroll
+			document.addEventListener('scroll', () =>
+				{
+					if (header.hasAttribute('data-fixed-header'))
+					{
+						return
+					}
+
+					const d = root.clientHeight - root.scrollTop - header.offsetHeight
+					header.classList.toggle('fixed-header', d < 0)
+				})
+
+			const menuModal = header.querySelector('.menu-modal')
+			const menuModalNav = menuModal.querySelectorAll('nav')
+			const openNavButtons = header.querySelectorAll('[data-open-nav]')
+			const closeNavButtons = header.querySelectorAll('[data-close-nav]')
+
+			const openMenu = () =>
+				{
+					menuModal.classList.remove('hidden')
+					body.classList.add('overflow-y-hidden')
+				}
+
+			const closeMenu = () =>
+				{
+					menuModal.classList.add('hidden')
+					body.classList.remove('overflow-y-hidden')
+				}
+
+			openNavButtons.forEach(btn => btn.addEventListener('click', openMenu))
+			closeNavButtons.forEach(btn => btn.addEventListener('click', closeMenu))
+
+			menuModalNav.forEach(nav =>
+				nav.addEventListener('click', event =>
+				{
+					if ((event.target as HTMLElement).tagName === 'A')
+					{
+						closeMenu()
+					}
+				}))
+		})
+</script>
+
+<noscript>
+	<style lang="scss">
+		#open-nav-button {
+			display: none;
+		}
+	</style>
+</noscript>
+
+<style lang="scss">
+	.header {
+		@apply absolute bottom-0 z-50;
+		@apply flex items-center justify-between;
+		@apply w-full px-8;
+		@apply text-white;
+		@apply border-b border-transparent;
+		height: 72px;
+
+		.header-brand {
+			@apply flex items-center gap-3 hover:text-default;
+			filter: grayscale(1);
+			opacity: 0.45;
+			transition-property: filter, opacity;
+			@apply ease-in duration-150;
+		}
+
+		&.fixed-header {
+			@apply fixed top-0 bottom-auto;
+			@apply border-default bg-default text-default;
+
+			.header-brand {
+				filter: none;
+				opacity: 1;
+			}
+		}
+	}
+
+	.header-shadow {
+		@apply bg-transparent w-full pointer-events-none;
+		height: 72px;
+	}
+</style>

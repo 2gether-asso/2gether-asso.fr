@@ -1,0 +1,85 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import Header from '~/components/Header.astro'
+import PageTitle from '~/components/PageTitle.astro'
+import Footer from '~/components/Footer.astro'
+import '~/styles/index.css'
+---
+
+<Layout
+	title="Mentions légales"
+	lang="fr"
+	htmlAttributes={{ "data-theme": "dark" }}
+	socialUrl={Astro.site}
+>
+    <Header />
+    <div class="grid place-items-center">
+        <div class="row pt-12">
+            <PageTitle id="legal" class="mb-4">Mentions légales</PageTitle>
+            <p class="text-center mb-4 italic">
+                Les présentes mentions légales concernent le site internet 2gether-asso.fr (le « Site »).
+            </p>
+            <div class="grid grid-cols-2">
+                <div class="block mb-5 ml-5 mr-5 p-6 max-w-7xl bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                    <h3 class="text-lg font-extrabold mb-2">
+                        Éditeur du Site
+                    </h3>
+                    <p>
+                        La fonction de <u>Directeur de la publication</u> du
+                        Site est assumée par une personne physique de nationalité
+                        française : <b>Quentin Helayel</b> (Helldwin).
+                    </p>
+                    <br />
+                    <p>
+                        Des informations pour contacter cette personne sont
+                        disponibles sur son site Internet :
+                        <a href="https://quentin-helayel.eu" class="text-primary underline">
+                            quentin-helayel.eu
+                        </a>
+                    </p>
+                    <img class="center" src="src/assets/ligneDeVie.png" />
+                    <p>
+                        La fonction de <u>Développeur en chef</u> du Site est
+                        assumée par une personne physique de nationalité française
+                        : <b>Mathieu Guérin</b> (Matiboux).
+                    </p>
+                    <br />
+                    <p>
+                        Des informations pour contacter cette personne sont
+                        disponibles sur son site Internet :
+                        <a href="https://matiboux.me" class="text-primary underline">
+                            matiboux.me
+                        </a>
+                    </p>
+                </div>
+                <div
+                    class="block ml-5 mr-5 mb-5 p-6 max-w-7xl bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+                >
+                    <h3 class="text-lg font-extrabold mb-2">
+                        Hébergeur du Site
+                    </h3>
+                    <p>
+                        Le Site est hébergé par <b>Github</b>, via son
+                        service Github Pages.
+                    </p>
+                    <br />
+                    <p>
+                        88 Colin P Kelly Jr St, San Francisco, CA 94107,
+                        United States <br />
+                        <a href="https://pages.github.com" class="text-primary underline">
+                            pages.github.com
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <Footer />
+</Layout>
