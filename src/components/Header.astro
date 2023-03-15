@@ -45,26 +45,17 @@ const headerClass = 'header' + (fixedHeader ? ' fixed-header' : '')
 					}
 				</ul>
 			</nav>
-			<button
-				id="open-nav-button"
-				type="button"
-				class="btn sm:hidden"
-				aria-label="Navigation"
-			>
+
+			<button type="button" class="btn sm:hidden" aria-label="Navigation" data-open-nav>
 				<Icon pack="mdi" name="menu" class="h-8" />
 			</button>
 			<ThemeSwitcher />
 		</div>
-		<div id="menu-modal" class="modal hidden" aria-hidden="true">
+		<div class="hidden menu-modal modal" aria-hidden="true">
 			<div class="fixed inset-0 bg-default px-8 py-4 text-default">
 				<div class="space-y-4" role="dialog" aria-modal="true">
 					<header class="text-right">
-						<button
-							id="close-nav-button"
-							type="button"
-							class="btn"
-							aria-label="Close navigation"
-						>
+						<button type="button" class="btn" aria-label="Close navigation" data-close-nav>
 							<Icon pack="mdi" name="close" class="h-8" />
 						</button>
 					</header>
@@ -91,44 +82,50 @@ const headerClass = 'header' + (fixedHeader ? ' fixed-header' : '')
 </header>
 
 <script>
-	import MicroModal from 'micromodal'
-	import invariant from 'tiny-invariant'
+	const headers: NodeListOf<HTMLElement> = document.querySelectorAll('.header')
+	const root = document.documentElement
 
-	const menuModalId = 'menu-modal'
+	headers.forEach(header =>
+		{
+			// Fix header on scroll
+			document.addEventListener('scroll', () =>
+				{
+					if (header.hasAttribute('data-fixed-header'))
+					{
+						return
+					}
 
-	const header = document.querySelector('#page-header') as HTMLElement
-	const page = document.documentElement
-	const menu = document.querySelector(`#${menuModalId} ul`)
-	const openNavButton = document.querySelector('#open-nav-button')
-	const closeNavButton = document.querySelector('#close-nav-button')
+					const d = root.clientHeight - root.scrollTop - header.offsetHeight
+					header.classList.toggle('fixed-header', d < 0)
+				})
 
-	invariant(header, 'header should not be null')
-	invariant(menu, 'menu should not be null')
-	invariant(openNavButton, 'openNavButton should not be null')
-	invariant(closeNavButton, 'closeNavButton should not be null')
+			const menuModal = header.querySelector('.menu-modal')
+			const menuModalNav = menuModal.querySelectorAll('nav')
+			const openNavButtons = header.querySelectorAll('[data-open-nav]')
+			const closeNavButtons = header.querySelectorAll('[data-close-nav]')
 
-	const openMenu = () => {
-		MicroModal.show(menuModalId, { disableScroll: true })
-	}
+			const openMenu = () =>
+				{
+					menuModal.classList.remove('hidden')
+				}
 
-	const closeMenu = () => {
-		MicroModal.close(menuModalId)
-	}
+			const closeMenu = () =>
+				{
+					menuModal.classList.add('hidden')
+				}
 
-	openNavButton.addEventListener('click', openMenu)
-	closeNavButton.addEventListener('click', closeMenu)
+			openNavButtons.forEach(btn => btn.addEventListener('click', openMenu))
+			closeNavButtons.forEach(btn => btn.addEventListener('click', closeMenu))
 
-	document.addEventListener('scroll', () => {
-		if (header.hasAttribute('data-fixed-header')) return
-		const d = page.clientHeight - page.scrollTop - header.offsetHeight
-		header.classList.toggle('fixed-header', d < 0)
-	})
-
-	menu.addEventListener('click', (event) => {
-		if ((event.target as HTMLElement).tagName === 'A') {
-			closeMenu()
-		}
-	})
+			menuModalNav.forEach(nav =>
+				nav.addEventListener('click', event =>
+				{
+					if ((event.target as HTMLElement).tagName === 'A')
+					{
+						closeMenu()
+					}
+				}))
+		})
 </script>
 
 <noscript>
