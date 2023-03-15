@@ -2,23 +2,34 @@
 import { Icon } from 'astro-icon'
 import ThemeSwitcher from '~/components/theme-switcher.astro'
 import type { NavItem } from '~/types'
+import logo2gt from '~/icons/logo2gt.png'
+
+interface Props {
+  fixedHeader?: boolean
+}
+
+const {
+  fixedHeader = true
+} = Astro.props
 
 const navItems: Array<NavItem> = [
+  { title: 'Accueil', url: '/' },
   { title: "Nos Serveurs", url: "/servers" },
-  { title: 'Features', url: '#features' },
-  { title: 'Compatibility', url: '#compatibility' },
-  { title: 'Showcase', url: '#showcase' },
+  { title: 'L\'asso', url: '/#asso' },
+  { title: 'La Communauté', url: '/#community' },
+  { title: 'Nous', url: '/about' },
 ]
 ---
 
 <header
   id="page-header"
-  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
+  class={'absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white' +
+    (fixedHeader ? ' fixed-header' : '')}
+  data-fixed-header={fixedHeader}
 >
   <a class="flex items-center gap-3 hover:!text-default" href="#">
     <h1 class="sr-only">Astro</h1>
-    <Icon name="logomark" class="h-10" />
-    <Icon name="wordmark" class="hidden h-4 sm:block" />
+    <img src={logo2gt} id="logo2gt" class="h-10" />
   </a>
   <div>
     <div class="flex items-center gap-6">
@@ -59,7 +70,7 @@ const navItems: Array<NavItem> = [
             </button>
           </header>
           <div class="flex justify-center">
-            <Icon name="logomark" class="h-16" />
+            <img src={logo2gt} id="logo2gt" class="h-16" />
           </div>
           <nav>
             <ul class="flex flex-col">
@@ -109,6 +120,7 @@ const navItems: Array<NavItem> = [
   closeNavButton.addEventListener('click', closeMenu)
 
   document.addEventListener('scroll', () => {
+    if (header.hasAttribute('data-fixed-header')) return
     const d = page.clientHeight - page.scrollTop - header.offsetHeight
     header.classList.toggle('fixed-header', d < 0)
   })
