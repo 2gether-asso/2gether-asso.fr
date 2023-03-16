@@ -103,6 +103,11 @@ const navItems: Array<NavItem> = [
 				})
 
 			const menuModal = header.querySelector('.menu-modal')
+			if (!menuModal)
+			{
+				return
+			}
+
 			const menuModalNav = menuModal.querySelectorAll('nav')
 			const openNavButtons = header.querySelectorAll('[data-open-nav]')
 			const closeNavButtons = header.querySelectorAll('[data-close-nav]')
