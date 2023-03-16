@@ -3,12 +3,12 @@
     "name": "Helldwin",
     "role": "Fondateur et Président",
     "website": "https://quentin-helayel.eu",
-    "picture": "/src/assets/Helldwin.jpg"
+    "picture": "/assets/Helldwin.jpg"
   },
   {
     "name": "Matiboux",
     "role": "Fondateur et Co-Président",
     "website": "https://matiboux.me",
-    "picture": "/src/assets/Matiboux.jpg"
+    "picture": "/assets/Matiboux.jpg"
   }
 ]
