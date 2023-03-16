@@ -156,6 +156,11 @@ const navItems: Array<NavItem> = [
 			opacity: 0.45;
 			transition-property: filter, opacity;
 			@apply ease-in duration-150;
+
+			&:hover {
+				filter: none;
+				opacity: 1;
+			}
 		}
 
 		&.fixed-header {
