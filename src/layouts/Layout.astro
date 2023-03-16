@@ -1,4 +1,6 @@
 ---
+import '@fontsource/inter/variable.css'
+
 export interface Props {
 	// HTML attributes
 	title: string
@@ -36,7 +38,7 @@ const {
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
 
-		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="icon" href="/favicon.png" type="image/png+xml" />
 
 		<title>{title}</title>
 		{description && <meta name="description" content={description} />}
@@ -81,3 +83,13 @@ const {
 		<slot />
 	</body>
 </html>
+
+<style>
+	html {
+		@apply h-full motion-safe:scroll-smooth;
+	}
+
+	body {
+		@apply h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white;
+	}
+</style>

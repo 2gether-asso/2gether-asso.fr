@@ -1,30 +1,26 @@
 ---
-import "@fontsource/inter/variable.css"
-import Layout from "~/layouts/Layout.astro"
-import Compatibility from "~/components/compatibility.astro"
-import Features from "~/components/features.astro"
-import Footer from "~/components/footer.astro"
-import Header from "~/components/header.astro"
-import Intro from "~/components/intro.astro"
-import Splash from "~/components/splash.astro"
-import "~/styles/index.css"
+import Layout from '~/layouts/Layout.astro'
+import Header from '~/components/Header.astro'
+import Splash from '~/components/splash.astro'
+import HomeIntro from '~/components/HomeIntro.astro'
+import HomeAsso from '~/components/HomeAsso.astro'
+import HomeCommunity from '~/components/HomeCommunity.astro'
+import Footer from '~/components/Footer.astro'
+import '~/styles/index.css'
 ---
 
 <Layout
-	title="Astro Landing Page"
-  description="Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience."
+	title="Bienvenue sur 2GETHER"
 	lang="en"
-	htmlClass="h-full motion-safe:scroll-smooth"
 	htmlAttributes={{ "data-theme": "dark" }}
-	bodyClass="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
 	socialUrl={Astro.site}
 >
-  <Header />
+  <Header fixedHeader={false} />
   <Splash />
   <div class="space-y-24 px-8 py-32">
-    <Intro />
-    <Features />
-    <Compatibility />
+    <HomeIntro />
+    <HomeAsso />
+    <HomeCommunity />
   </div>
   <Footer />
 </Layout>
