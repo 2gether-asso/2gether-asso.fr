@@ -1,0 +1,60 @@
+---
+import { Icon } from 'astro-icon'
+import Layout from '~/layouts/Layout.astro'
+import Header from '~/components/Header.astro'
+import ContentSection from '~/components/ContentSection.astro'
+import MCServerStatus from '~/components/MCServerStatus.vue'
+import Footer from '~/components/Footer.astro'
+import '~/styles/index.css'
+---
+
+<Layout
+	title="Nos Serveurs"
+	lang="fr"
+	htmlClass="h-full motion-safe:scroll-smooth"
+	htmlAttributes={{ "data-theme": "dark" }}
+	bodyClass="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+	socialUrl={Astro.site}
+>
+  <Header />
+  <div class="grid place-items-center">
+    <div class="py-32 space-y-3">
+      <ContentSection title="Nos Serveurs" id="servers" />
+      <!-- <Carousel /> -->
+      <img class="center" src="src/assets/ligneDeVie.png" />
+      <ul class="grid grid-cols-2">
+        <li class="flex flex-col gap-4 p-6 border border-default bg-offset">
+          <MCServerStatus name="vanilla" client:visible />
+          <a href="https://mc.2gether-asso.fr" class="center">
+            <button
+              class="inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-md font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+            >
+              <span
+                class="center relative py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
+              >
+                <div class="row">
+                  <Icon
+                    name="clarity:map-line"
+                    style="width: 8%; max-block-size: 200px"
+                    class="center inline-block"
+                  />
+                  Voir la map
+                </div>
+              </span>
+            </button>
+          </a>
+        </li>
+        <li class="flex flex-col gap-4 p-6 border border-default bg-offset">
+          <MCServerStatus name="modded" client:visible />
+        </li>
+      </ul>
+    </div>
+  </div>
+  <Footer />
+  <style>
+    .center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</Layout>
