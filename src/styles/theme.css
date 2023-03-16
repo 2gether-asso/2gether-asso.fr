@@ -7,6 +7,9 @@
 	--color-background-offset: theme("colors.gray.100");
 	--color-border: theme("colors.gray.900" / 10%);
 
+	--color-background-gradient-top: #cf8ffc;
+    --color-background-gradient-bottom: #fe94c9;
+
 	--color-theme-0: theme("colors.white");
 	--color-theme-50: theme("colors.gray.50");
 	--color-theme-100: theme("colors.gray.100");
@@ -29,6 +32,9 @@
 	--color-background: theme("colors.gray.900");
 	--color-background-offset: theme("colors.gray.800");
 	--color-border: theme("colors.gray.50" / 10%);
+
+	--color-background-gradient-top: #4b0088;
+	--color-background-gradient-bottom: #762449;
 
 	--color-theme-0: theme("colors.white");
 	--color-theme-50: theme("colors.gray.900");

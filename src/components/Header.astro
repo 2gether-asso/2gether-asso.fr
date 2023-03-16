@@ -104,6 +104,11 @@ const navItems: Array<NavItem> = [
 				})
 
 			const menuModal = header.querySelector('.menu-modal')
+			if (!menuModal)
+			{
+				return
+			}
+
 			const menuModalNav = menuModal.querySelectorAll('nav')
 			const openNavButtons = header.querySelectorAll('[data-open-nav]')
 			const closeNavButtons = header.querySelectorAll('[data-close-nav]')
@@ -157,6 +162,11 @@ const navItems: Array<NavItem> = [
 			opacity: 0.45;
 			transition-property: filter, opacity;
 			@apply ease-in duration-150;
+
+			&:hover {
+				filter: none;
+				opacity: 1;
+			}
 		}
 
 		&.fixed-header {

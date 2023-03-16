@@ -34,6 +34,8 @@ module.exports = {
 			backgroundColor: {
 				default: 'var(--color-background)',
 				offset: 'var(--color-background-offset)',
+				"gradiant-top": "var(--color-background-gradient-top)",
+				"gradiant-bottom": "var(--color-background-gradient-bottom)",
 			},
 			borderColor: {
 				default: 'var(--color-border)',
