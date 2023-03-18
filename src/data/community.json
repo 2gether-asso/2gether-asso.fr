@@ -21,22 +21,22 @@
 	},
 	{
 		"title": "Tournois",
-		"description": "Tout les 1er vendredi du mois, un tournoi est mis en place sur un jeu des soirées ou un jeu créé pour l'occasion. A la fin de l'année les scores des tournois sont aditionner pour offrir un lot au 1er !",
+		"description": "Tout les 1er vendredis du mois, un tournoi est mis en place sur un jeu des soirées ou un jeu créé pour l'occasion. A la fin de l'année les scores des tournois sont additionnés pour offrir un lot au 1er !",
 		"icon": "mdi:trophy"
 	},
 	{
 		"title": "Serveurs dédiés",
-		"description": "Des serveurs de jeux privés sont disponible pour nos membres à la demande. Actuellement nous avons 2 serveurs Minecraft qui tourne h24 pour vivre de belles aventures avec vous !",
+		"description": "Des serveurs de jeux privés sont disponibles pour nos membres à la demande. Actuellement nous avons 2 serveurs Minecraft qui tournent h24 pour vivre de belles aventures avec vous !",
 		"icon": "mdi:server"
 	},
 	{
 		"title": "Jeux de pistes",
-		"description": "Des codes étrange apparaisse des fois sur le discord, serez vous capable de suivre l'énigme de bout en bout pour gagner un jeu ?",
+		"description": "Des codes étranges apparaissent des fois sur le discord, serez vous capables de suivre l'énigme de bout en bout pour gagner un jeu ?",
 		"icon": "mdi:puzzle"
 	},
 	{
 		"title": "Émissions sur Twitch",
-		"description": "Certains de nos moments 2GETHER seront partagé et diffusé sur Twitch, cela sera aussi l'occasion de proposer des émissions plus aboutti.",
+		"description": "Certains de nos moments 2GETHER seront partagés et diffusés sur Twitch, cela sera aussi l'occasion de proposer des émissions plus aboutis.",
 		"icon": "mdi:twitch"
 	},
 	{
