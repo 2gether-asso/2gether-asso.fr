@@ -4,6 +4,7 @@ import Layout from '~/layouts/Layout.astro'
 import Header from '~/components/Header.astro'
 import ContentSection from '~/components/ContentSection.astro'
 import MCServerStatus from '~/components/MCServerStatus.vue'
+import Button from '~/components/Button.astro'
 import Footer from '~/components/Footer.astro'
 import '~/styles/index.css'
 ---
@@ -27,37 +28,19 @@ import '~/styles/index.css'
       <ul class="servers">
         <li>
           <MCServerStatus name="vanilla" client:visible>
-            <a href="https://mc.2gether-asso.fr" class="map-link">
-              <div>
-                <div class="row">
-                  <Icon
-                    name="clarity:map-line"
-                    style=""
-                    class="inline-block"
-                  />
-                  Voir la map
-                </div>
-              </div>
-            </a>
-
+            <div class="status-ok">
+              <Button href="https://mc.2gether-asso.fr" class="btn">
+                <Icon name="clarity:map-line" class="icon" />
+                Voir la map
+              </Button>
+            </div>
             <style lang="scss">
-              .map-link {
-                @apply block;
-                @apply bg-gradient-to-br from-purple-600 to-blue-500;
-                @apply mx-auto mb-2 p-0.5;
-                @apply flex items-center justify-center overflow-hidden font-medium rounded-lg;
-                @apply text-theme-900 hover:text-white;
+              .status-ok {
+                .btn {
+                  @apply mx-auto;
 
-                > div {
-                  @apply bg-theme-0 hover:bg-transparent;
-                  @apply w-full;
-                  @apply px-3.5 py-1.5;
-                  @apply text-center;
-                  @apply rounded-md;
-
-                  > .row > svg {
-                    @apply w-full;
-                    max-width: 30px;
+                  .icon {
+                    @apply mr-3 w-6 h-6;
                   }
                 }
               }
