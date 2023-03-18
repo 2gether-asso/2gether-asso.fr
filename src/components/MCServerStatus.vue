@@ -60,20 +60,40 @@ export default {
       <div class="mb-2">
         <p>IP : <code>{{ data.address || '[?]' }}</code></p>
 
-        <p v-if="data.online !== undefined">Status : {{ data.online ? '🟢 En ligne' : '🔴 Hors Ligne' }}</p>
-        <p v-else>Status : ❌ Erreur</p>
+        <p>
+          Status :
+          <span v-if="data.online === undefined" class="text-red-500">❌ Erreur</span>
+          <span v-else-if="data.online" class="text-green-500">🟢 En Ligne</span>
+          <span v-else class="text-red-500">🔴 Hors Ligne</span>
+        </p>
       </div>
 
       <p v-if="data.error" class="mb-2">Erreur : {{ data.error }}</p>
 
       <div v-if="data.motd" v-html="data.motd.html[0]" class="mb-2"></div>
 
-      <div v-if="data.online">
+      <div v-if="data.online" class="mb-2">
         <p v-if="data.players">Joueurs : {{ data.players.online }} / {{ data.players.max }}</p>
         <p v-if="data.version">Version : {{ data.version }}</p>
         <p v-if="data.seed">Seed : {{ data.seed }}</p>
       </div>
 
+      <div v-if="$slots.default" class="mt-4">
+        <slot></slot>
+      </div>
+
+      <div v-if="$slots.up || $slots.down || $slots.error" class="mt-4">
+        <slot name="error" v-if="data.online === undefined"></slot>
+        <slot name="up" v-else-if="data.online"></slot>
+        <slot name="down" v-else></slot>
+      </div>
+
     </div>
   </div>
 </template>
+
+<style lang="scss">
+  *:last-child {
+    @apply mb-0;
+  }
+</style>
