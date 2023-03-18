@@ -18,43 +18,43 @@ import staff from '~/data/staff.json'
 	<Header />
 	<div class="grid place-items-center">
 		<div class="row pt-12">
-            <ContentSection title="Qui sommes nous ?" id="nous" />
-            {
-                staff.map(({ name, role, website, picture }) => (
-                    /* <div class="column mb-5 card max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"> */
-                    <div class="column mb-5 card max-w-sm bg-theme-50 rounded-lg border border-theme-200 shadow-md">
-                        <a href={website}>
-                            <img
-                                class="rounded-t-lg"
-                                src={picture}
-                                alt=""
-                            />
-                        </a>
-                        <div class="p-5">
-                            <a>
-                                <!-- <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"> -->
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-theme-900">
-                                    {name}
-                                </h5>
-                            </a>
-                            <!-- <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> -->
-                            <p class="mb-3 font-normal text-theme-600">
-                                {role}
-                            </p>
-                            <Button href={website} arrow={true}>Voir le site</Button>
-                        </div>
-                    </div>
-                ))
-            }
-        </div>
-        <div class="grid-cols-3 text-center">
-            <Button href="https://files.2gether-asso.fr/asso/statuts.pdf">Les Statuts</Button>
-            <Button href="https://files.2gether-asso.fr/asso/règlement_intérieur.pdf">Règlement Intérieur</Button>
+			<ContentSection title="Qui sommes nous ?" id="nous" />
+			{
+				staff.map(({ name, role, website, picture }) => (
+					/* <div class="column mb-5 card max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"> */
+					<div class="column mb-5 card max-w-sm bg-theme-50 rounded-lg border border-theme-200 shadow-md">
+						<a href={website}>
+							<img
+								class="rounded-t-lg"
+								src={picture}
+								alt=""
+							/>
+						</a>
+						<div class="p-5">
+							<a>
+								<!-- <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"> -->
+								<h5 class="mb-2 text-2xl font-bold tracking-tight text-theme-900">
+									{name}
+								</h5>
+							</a>
+							<!-- <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> -->
+							<p class="mb-3 font-normal text-theme-600">
+								{role}
+							</p>
+							<Button href={website} arrow={true}>Voir le site</Button>
+						</div>
+					</div>
+				))
+			}
+		</div>
+		<div class="grid-cols-3 text-center">
+			<Button href="https://files.2gether-asso.fr/asso/statuts.pdf">Les Statuts</Button>
+			<Button href="https://files.2gether-asso.fr/asso/règlement_intérieur.pdf">Règlement Intérieur</Button>
 			<Button href="/legal">Mentions légales</Button>
-            <Button href="https://files.2gether-asso.fr/asso/bureau.pdf">Le Bureau</Button>
-        </div>
-        <img class="center" src="/assets/LigneDeVie.png" />
-        <AboutTimeline />
+			<Button href="https://files.2gether-asso.fr/asso/bureau.pdf">Le Bureau</Button>
+		</div>
+		<img class="center" src="/assets/LigneDeVie.png" />
+		<AboutTimeline />
 	</div>
 	<Footer />
 	<style>
