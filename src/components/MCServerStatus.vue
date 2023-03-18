@@ -74,6 +74,8 @@ export default {
         <p v-if="data.seed">Seed : {{ data.seed }}</p>
       </div>
 
+      <slot></slot>
+
     </div>
   </div>
 </template>
