@@ -78,8 +78,14 @@ export default {
         <p v-if="data.seed">Seed : {{ data.seed }}</p>
       </div>
 
-      <div class="mt-4">
+      <div v-if="$slots.default" class="mt-4">
         <slot></slot>
+      </div>
+
+      <div v-if="$slots.up || $slots.down || $slots.error" class="mt-4">
+        <slot name="error" v-if="data.online === undefined"></slot>
+        <slot name="up" v-else-if="data.online"></slot>
+        <slot name="down" v-else></slot>
       </div>
 
     </div>
