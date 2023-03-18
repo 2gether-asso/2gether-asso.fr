@@ -1,22 +1,22 @@
 {
-  "discord": {
-    "url": "https://discord.2gether-asso.fr",
-    "description": "Discord officiel de 2GETHER",
-    "icon": "fa-brands:discord"
-  },
-  "youtube": {
-    "url": "https://youtube.2gether-asso.fr",
-    "description": "YouTube officiel de 2GETHER",
-    "icon": "fa-brands:youtube"
-  },
-  "twitch": {
-    "url": "https://twitch.2gether-asso.fr",
-    "description": "Twitch officiel de 2GETHER",
-    "icon": "fa-brands:twitch"
-  },
-  "twitter": {
-    "url": "https://twitter.2gether-asso.fr",
-    "description": "Twitter officiel de 2GETHER",
-    "icon": "fa-brands:twitter"
-  }
+	"discord": {
+		"url": "https://discord.2gether-asso.fr",
+		"description": "Discord officiel de 2GETHER",
+		"icon": "fa-brands:discord"
+	},
+	"youtube": {
+		"url": "https://youtube.2gether-asso.fr",
+		"description": "YouTube officiel de 2GETHER",
+		"icon": "fa-brands:youtube"
+	},
+	"twitch": {
+		"url": "https://twitch.2gether-asso.fr",
+		"description": "Twitch officiel de 2GETHER",
+		"icon": "fa-brands:twitch"
+	},
+	"twitter": {
+		"url": "https://twitter.2gether-asso.fr",
+		"description": "Twitter officiel de 2GETHER",
+		"icon": "fa-brands:twitter"
+	}
 }

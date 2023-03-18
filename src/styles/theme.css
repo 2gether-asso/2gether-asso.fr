@@ -8,7 +8,7 @@
 	--color-border: theme("colors.gray.900" / 10%);
 
 	--color-background-gradient-top: #cf8ffc;
-    --color-background-gradient-bottom: #fe94c9;
+	--color-background-gradient-bottom: #fe94c9;
 
 	--color-theme-0: theme("colors.white");
 	--color-theme-50: theme("colors.gray.50");
