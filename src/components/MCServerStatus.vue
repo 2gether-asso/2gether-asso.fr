@@ -60,8 +60,12 @@ export default {
       <div class="mb-2">
         <p>IP : <code>{{ data.address || '[?]' }}</code></p>
 
-        <p v-if="data.online !== undefined">Status : {{ data.online ? '🟢 En ligne' : '🔴 Hors Ligne' }}</p>
-        <p v-else>Status : ❌ Erreur</p>
+        <p>
+          Status :
+          <span v-if="data.online === undefined" class="text-red-500">❌ Erreur</span>
+          <span v-else-if="data.online" class="text-green-500">🟢 En Ligne</span>
+          <span v-else class="text-red-500">🔴 Hors Ligne</span>
+        </p>
       </div>
 
       <p v-if="data.error" class="mb-2">Erreur : {{ data.error }}</p>
