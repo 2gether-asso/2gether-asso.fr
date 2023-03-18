@@ -68,7 +68,7 @@ export default {
 
       <div v-if="data.motd" v-html="data.motd.html[0]" class="mb-2"></div>
 
-      <div v-if="data.online">
+      <div v-if="data.online" class="mb-2">
         <p v-if="data.players">Joueurs : {{ data.players.online }} / {{ data.players.max }}</p>
         <p v-if="data.version">Version : {{ data.version }}</p>
         <p v-if="data.seed">Seed : {{ data.seed }}</p>
@@ -79,3 +79,9 @@ export default {
     </div>
   </div>
 </template>
+
+<style lang="scss">
+  *:last-child {
+    @apply mb-0;
+  }
+</style>
