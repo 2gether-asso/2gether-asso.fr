@@ -47,6 +47,25 @@ const {
 		> :global(li) {
 			@apply relative cursor-pointer;
 
+			@media (min-width: theme("screens.md")) {
+				&:nth-child(2n-1):nth-last-of-type(1) {
+					grid-column: span 2;
+				}
+			}
+
+			@media (min-width: theme("screens.lg")) {
+				&:nth-child(2n-1):nth-last-of-type(1) {
+					grid-column: inherit;
+				}
+
+				&:nth-child(3n-2):nth-last-of-type(1) {
+					grid-column: span 3;
+				}
+				&:nth-child(3n-1):nth-last-of-type(1) {
+					grid-column: span 2;
+				}
+			}
+
 			&:hover:before {
 				@apply bg-transparent;
 			}
