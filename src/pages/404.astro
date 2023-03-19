@@ -1,0 +1,28 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import Header from '~/components/Header.astro'
+import Footer from '~/components/Footer.astro'
+import '~/styles/index.css'
+---
+
+<Layout
+	title="404 Page introuvable"
+	lang="fr"
+	htmlAttributes={{ "data-theme": "dark" }}
+>
+	<Header />
+	<main>
+		<div>
+			<h1>Page introuvable !</h1>
+			<p>La page n'existe pas ou a été déplacée.</p>
+		</div>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	main {
+		@apply bg-red-500 bg-opacity-20;
+		@apply flex justify-center;
+	}
+</style>
