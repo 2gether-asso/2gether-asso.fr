@@ -4,12 +4,17 @@ import imgLogo from '~/icons/logoSite.png'
 ---
 
 <ContentSection id="intro" title="Une association à but non lucratif">
-  <Fragment slot="eyebrow">
-    <img class="logotitre" src={imgLogo} class="h-1" />
-  </Fragment>
+	<Fragment slot="eyebrow">
+		<img class="logo" src={imgLogo} />
+		<style lang="scss">
+			.logo {
+				@apply max-w-xl w-full;
+			}
+		</style>
+	</Fragment>
 
-  <Fragment slot="lead">
-    Régie par la loi 1901, notre but est de <span class="text-primary">rassembler</span>
-    et <span class="text-primary">d'aider</span> les jeunes à sortir de l'isolement social.
-  </Fragment>
+	<Fragment slot="lead">
+		Régie par la loi 1901, notre but est de <span class="text-primary">rassembler</span>
+		et <span class="text-primary">d'aider</span> les jeunes à sortir de l'isolement social.
+	</Fragment>
 </ContentSection>

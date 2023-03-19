@@ -1,31 +1,45 @@
 ---
 interface Props {
-  href?: string;
-  text?: string | undefined;
-  arrow?: boolean;
+	href?: string;
+	class?: string;
+	text?: string | undefined;
+	arrow?: boolean;
 }
 
 const {
-    href = '#',
-    text = undefined,
-    arrow = false,
+	href = '#',
+	class: buttonClass = undefined,
+	text = undefined,
+	arrow = false,
 } = Astro.props;
 ---
 
-<a href={href}>
-    <!-- <button class="relative justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 group group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"> -->
-    <button class="relative justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-theme-900 rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 group group-hover:from-purple-600 group-hover:to-blue-500 hover:text-gray-50 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-        <!-- <span class="inline-flex items-center py-2 px-3 text-sm font-medium text-center transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"> -->
-        <span class="inline-flex items-center py-2 px-3 text-sm font-medium text-center transition-all ease-in duration-75 bg-theme-50 rounded-md group-hover:bg-transparent">
-            <slot />
+<a href={href} class={buttonClass}>
+	<button class="group group-hover:from-purple-600 group-hover:to-blue-500">
+		<span class="group-hover:bg-transparent">
+			<slot />
 
-            {text}
-            {arrow &&
-                (
-                    <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                    </svg>
-                )}
-        </span>
-    </button>
+			{text}
+			{arrow &&
+				(
+					<svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+						<path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+					</svg>
+				)}
+		</span>
+	</button>
 </a>
+
+<style lang="scss">
+	button {
+		@apply relative justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-theme-900 rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 hover:text-gray-50 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800;
+
+		> span {
+			@apply inline-flex items-center py-2 px-3 text-sm font-medium text-center transition-all ease-in duration-75 bg-theme-50 rounded-md;
+		}
+
+		svg {
+			@apply ml-2 -mr-1 w-4 h-4;
+		}
+	}
+</style>

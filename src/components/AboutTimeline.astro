@@ -3,102 +3,102 @@ import timeline from '~/data/about/timeline.json'
 ---
 
 <div class="about-timeline">
-    <ol class="timeline-list">
-        {
-            timeline.map(({ date, title, description }) =>
-                (
-                    <li>
-                        <div class="bullet" />
-                        <time class="date">{date}</time>
-                        <h3 class="title">{title}</h3>
-                        <p class="description">{description}</p>
-                    </li>
-                ))
-        }
-    </ol>
+	<ol class="timeline-list">
+		{
+			timeline.map(({ date, title, description }) =>
+				(
+					<li>
+						<div class="bullet" />
+						<time class="date">{date}</time>
+						<h3 class="title">{title}</h3>
+						<p class="description">{description}</p>
+					</li>
+				))
+		}
+	</ol>
 
-    <a href="#" class="timeline-scroll-top">
-        <button class="group group-hover:from-purple-600 group-hover:to-blue-500">
-            <span class="group-hover:bg-opacity-0">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     preserveAspectRatio="xMidYMid meet"
-                     viewBox="0 0 24 24">
-                    <path fill="none"
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="m4 15l8-8l8 8"></path>
-                </svg>
-            </span>
-        </button>
-    </a>
+	<a href="#" class="timeline-scroll-top">
+		<button class="group group-hover:from-purple-600 group-hover:to-blue-500">
+			<span class="group-hover:bg-opacity-0">
+				<svg xmlns="http://www.w3.org/2000/svg"
+					 preserveAspectRatio="xMidYMid meet"
+					 viewBox="0 0 24 24">
+					<path fill="none"
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="m4 15l8-8l8 8"></path>
+				</svg>
+			</span>
+		</button>
+	</a>
 </div>
 
 <style lang="scss">
 .about-timeline {
-    // @apply block mb-5 p-6 max-w-7xl bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700;
-    // @apply block mb-5 p-6 max-w-7xl bg-card rounded-lg border border-card shadow-md; // ok
-    @apply block mb-5 p-6 max-w-7xl bg-theme-100 rounded-lg border border-theme-200 shadow-md; // ok
+	// @apply block mb-5 p-6 max-w-7xl bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700;
+	// @apply block mb-5 p-6 max-w-7xl bg-card rounded-lg border border-card shadow-md; // ok
+	@apply block mb-5 p-6 max-w-7xl bg-theme-100 rounded-lg border border-theme-200 shadow-md; // ok
 
-    .timeline-list {
-        // @apply relative border-l border-gray-200 dark:border-gray-700;
-        // @apply relative border-l border-card; // ok
-        @apply relative border-l border-theme-300; // ok
+	.timeline-list {
+		// @apply relative border-l border-gray-200 dark:border-gray-700;
+		// @apply relative border-l border-card; // ok
+		@apply relative border-l border-theme-300; // ok
 
-        > * {
-            @apply mb-10 ml-4;
+		> * {
+			@apply mb-10 ml-4;
 
-            .bullet {
-                // @apply absolute w-3 h-3 bg-gray-200 rounded-full mt-[0.7rem] -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700;
-                // @apply absolute w-3 h-3 bg-offset rounded-full mt-[0.7rem] -left-1.5 border border-white dark:border-gray-900; // ko
-                @apply absolute w-3 h-3 bg-theme-300 rounded-full mt-[0.7rem] -left-1.5 border border-theme-50; // ko
-            }
+			.bullet {
+				// @apply absolute w-3 h-3 bg-gray-200 rounded-full mt-[0.7rem] -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700;
+				// @apply absolute w-3 h-3 bg-offset rounded-full mt-[0.7rem] -left-1.5 border border-white dark:border-gray-900; // ko
+				@apply absolute w-3 h-3 bg-theme-300 rounded-full mt-[0.7rem] -left-1.5 border border-theme-50; // ko
+			}
 
-            .date {
-                // @apply mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500;
-                // @apply mb-1 text-sm font-normal leading-none text-offset;
-                @apply mb-1 text-sm font-normal leading-none text-theme-400;
-            }
+			.date {
+				// @apply mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500;
+				// @apply mb-1 text-sm font-normal leading-none text-offset;
+				@apply mb-1 text-sm font-normal leading-none text-theme-400;
+			}
 
-            .title {
-                // @apply text-lg font-semibold text-gray-900 dark:text-white;
-                // @apply text-lg font-semibold text-default;
-                @apply text-lg font-semibold text-theme-900;
-            }
+			.title {
+				// @apply text-lg font-semibold text-gray-900 dark:text-white;
+				// @apply text-lg font-semibold text-default;
+				@apply text-lg font-semibold text-theme-900;
+			}
 
-            .description {
-                // @apply text-base font-normal text-gray-500 dark:text-gray-400;
-                // @apply text-base font-normal text-offset;
-                @apply text-base font-normal text-theme-500;
-            }
-        }
-    }
+			.description {
+				// @apply text-base font-normal text-gray-500 dark:text-gray-400;
+				// @apply text-base font-normal text-offset;
+				@apply text-base font-normal text-theme-500;
+			}
+		}
+	}
 }
 
 .timeline-scroll-top {
-    > button {
-        @apply relative justify-center;
-        @apply bg-gradient-to-br from-purple-600 to-blue-500 rounded-lg;
-        @apply p-0.5 mb-2 mr-2;
-        // @apply text-sm font-medium text-gray-900 overflow-hidden;
-        // @apply hover:text-white dark:text-white;
-        @apply text-sm font-medium text-theme-900 hover:text-theme-0 overflow-hidden;
-        @apply focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800;
+	> button {
+		@apply relative justify-center;
+		@apply bg-gradient-to-br from-purple-600 to-blue-500 rounded-lg;
+		@apply p-0.5 mb-2 mr-2;
+		// @apply text-sm font-medium text-gray-900 overflow-hidden;
+		// @apply hover:text-white dark:text-white;
+		@apply text-sm font-medium text-theme-900 hover:text-theme-0 overflow-hidden;
+		@apply focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800;
 
-        > * {
-            @apply inline-flex items-center;
-            // @apply bg-white dark:bg-gray-900 rounded-md;
-            @apply bg-theme-50 rounded-md;
-            @apply py-2 px-3;
-            @apply text-sm font-medium text-center;
-            @apply transition-all ease-in duration-75;
-        }
-    }
+		> * {
+			@apply inline-flex items-center;
+			// @apply bg-white dark:bg-gray-900 rounded-md;
+			@apply bg-theme-50 rounded-md;
+			@apply py-2 px-3;
+			@apply text-sm font-medium text-center;
+			@apply transition-all ease-in duration-75;
+		}
+	}
 
-    svg {
-        width: 1em;
-        height: 1em;
-    }
+	svg {
+		width: 1em;
+		height: 1em;
+	}
 }
 </style>

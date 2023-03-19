@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon'
 import Starfield from '~/components/starfield.astro'
+import social from '~/data/social.json'
 import imgLogo from '~/icons/logoSite.png'
 import moon from '~/icons/moon.png'
 import mountains_behind from '~/icons/mountains_behind.png'
@@ -8,115 +9,97 @@ import mountains_front from '~/icons/mountains_front.png'
 ---
 
 <section class="relative h-full bg-black">
-  <Starfield />
-  <img src={moon} id="moon" class="bgSite" />
-  <img src={mountains_behind} id="mountains_behind" class="bgSite" />
-  <img src={mountains_front} id="mountains_front" class="bgSite" />
-  <div class="relative grid h-full place-items-center">
-    <h2 class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto">
-      <div class="gradient-text text-center font-extrabold tracking-tighter text-4xl">
-        Partageons un moment
-      </div>
-      <img class="logotitre h-16 text-white md:h-24" src={imgLogo} />
-      <div class="relative grid h-full place-items-center">
-        <!--ENABLED-->
-        <!-- <a>
-          <button
-            class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
-          >
-            <span
-              class="relative inline-flex items-center justify-center px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
-            >
-              <Icon pack="mdi" name="location" class="h-5" />
-              Rejoindre une aventure
-            </span>
-          </button>
-        </a> -->
-        <!--DISABLED-->
-        <a class="opacity-30">
-          <button
-            class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-600 to-black hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
-          >
-            <span
-              class="relative inline-flex items-center justify-center px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md"
-            >
-              <Icon pack="mdi" name="lock" class="h-5" />
-              Bientôt disponible
-            </span>
-          </button>
-        </a>
-      </div>
-    </h2>
-  </div>
+	<Starfield />
+	<img src={moon} id="moon" class="bgSite" />
+	<img src={mountains_behind} id="mountains_behind" class="bgSite" />
+	<img src={mountains_front} id="mountains_front" class="bgSite" />
+	<div class="relative grid h-full place-items-center">
+		<h2 class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto">
+			<div class="gradient-text text-center font-extrabold tracking-tighter text-4xl">
+				Partageons un moment
+			</div>
+			<img class="logotitre h-16 text-white md:h-24" src={imgLogo} />
+			<div class="relative grid h-full place-items-center mt-4">
+				<a href={social.discord.url}>
+					<button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+						<span class="relative inline-flex items-center justify-center px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+							<Icon class="h-5 mr-2" name={social.discord.icon} />
+							Rejoins-nous sur Discord !
+						</span>
+					</button>
+				</a>
+			</div>
+		</h2>
+	</div>
 </section>
 
 <style>
-  section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    padding: 100px;
-  }
+	section {
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		padding: 100px;
+	}
 
-  section img {
-    pointer-events: none;
-  }
+	section img {
+		pointer-events: none;
+	}
 
-  section img.bgSite {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+	section img.bgSite {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 
-  section img.logotitre {
-    z-index: 49;
-  }
+	section img.logotitre {
+		z-index: 49;
+	}
 
-  section a.btn {
-    pointer-events: none;
-    background: gray;
-    opacity: 50%;
-  }
+	section a.btn {
+		pointer-events: none;
+		background: gray;
+		opacity: 50%;
+	}
 
-  section img#moon {
-    mix-blend-mode: screen;
-  }
+	section img#moon {
+		mix-blend-mode: screen;
+	}
 
-  section .bg {
-    background: linear-gradient(#2b1055, #7597de);
-  }
+	section .bg {
+		background: linear-gradient(#2b1055, #7597de);
+	}
 </style>
 
 <script>
-  const moon = document.getElementById('moon')
+	const moon = document.getElementById('moon')
 
-  if (moon) {
-    window.addEventListener('scroll', () => {
-      let value = window.scrollY
-      moon.style.top = value * 0.2 + 'px'
-    })
-  }
+	if (moon) {
+		window.addEventListener('scroll', () => {
+			let value = window.scrollY
+			moon.style.top = value * 0.2 + 'px'
+		})
+	}
 </script>
 
 <noscript>
-  <style>
-    #splash-bg-fallback {
-      display: block;
-    }
-  </style>
+	<style>
+		#splash-bg-fallback {
+			display: block;
+		}
+	</style>
 </noscript>
 
 <style>
-  @media (prefers-reduced-motion: reduce) {
-    :global(#starfield) {
-      @apply hidden;
-    }
+	@media (prefers-reduced-motion: reduce) {
+		:global(#starfield) {
+			@apply hidden;
+		}
 
-    #splash-bg-fallback {
-      @apply block;
-    }
-  }
+		#splash-bg-fallback {
+			@apply block;
+		}
+	}
 </style>
