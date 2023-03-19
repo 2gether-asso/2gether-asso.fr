@@ -20,9 +20,23 @@ import '~/styles/index.css'
 	<Footer />
 </Layout>
 
-<style>
+<style lang="scss">
 	main {
 		@apply bg-red-500 bg-opacity-20;
-		@apply flex justify-center;
+		@apply flex justify-center items-center;
+		@apply grow;
+
+		div {
+			@apply my-4;
+		}
+
+		h1 {
+			@apply text-4xl font-bold mb-2;
+		}
+
+		p {
+			// @apply text-base;
+			@apply text-theme-600;
+		}
 	}
 </style>
