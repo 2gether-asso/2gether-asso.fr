@@ -13,6 +13,8 @@ import '~/styles/index.css'
 	<Header />
 	<main>
 		<div>
+			<img src="/assets/LigneDeVie.png" class="eyebrow" />
+
 			<h1>Page introuvable !</h1>
 			<p>La page n'existe pas ou a été déplacée.</p>
 		</div>
@@ -28,6 +30,11 @@ import '~/styles/index.css'
 
 		div {
 			@apply my-4;
+			@apply text-center;
+		}
+
+		.eyebrow {
+			@apply mx-auto;
 		}
 
 		h1 {
