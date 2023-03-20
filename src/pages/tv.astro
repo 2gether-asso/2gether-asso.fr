@@ -15,6 +15,12 @@ import '~/styles/index.css'
 	<Footer />
 </Layout>
 
+<style lang="scss">
+	#alivestream {
+		aspect-ratio: calc(1920 + 340) / 1080;
+	}
+</style>
+
 <script src="https://embed.twitch.tv/embed/v1.js" defer id="twitch-embed"></script>
 <script>
 	const twitchEmbed = document.getElementById('twitch-embed')
@@ -29,20 +35,6 @@ import '~/styles/index.css'
 					height: '100%',
 					channel: 'helldwin',
 				})
-
-			const embed = document.querySelector('#alivestream iframe')
-
-			const resizeTwitchEmbed = () =>
-			{
-				if (!embed) return
-				if (embed.offsetWidth > 680)
-					embed.height = ((embed.offsetWidth - 340) / 16) * 9
-				else
-					embed.height = (embed.offsetWidth / 16) * 18
-				console.log("owo", embed.height)
-			}
-			window.addEventListener('resize', resizeTwitchEmbed)
-			embed.addEventListener('load', resizeTwitchEmbed)
 		})
 	}
 </script>
