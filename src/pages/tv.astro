@@ -1,0 +1,48 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import Header from '~/components/Header.astro'
+import Footer from '~/components/Footer.astro'
+import '~/styles/index.css'
+---
+
+<Layout
+	title="Stream & Vidéos"
+	lang="fr"
+	htmlAttributes={{ "data-theme": "dark" }}
+>
+	<Header />
+	<div id="alivestream"></div>
+	<Footer />
+</Layout>
+
+<script src="https://embed.twitch.tv/embed/v1.js" defer id="twitch-embed"></script>
+<script>
+	const twitchEmbed = document.getElementById('twitch-embed')
+	if (twitchEmbed)
+	{
+		twitchEmbed.addEventListener('load', () => {
+			if (!Twitch) return
+
+			new Twitch.Embed('alivestream',
+				{
+					width: '100%',
+					height: '100%',
+					channel: 'helldwin',
+				})
+
+			const embed = document.querySelector('#alivestream iframe')
+
+			const resizeTwitchEmbed = () =>
+			{
+				if (!embed) return
+				if (embed.offsetWidth > 680)
+					embed.height = ((embed.offsetWidth - 340) / 16) * 9
+				else
+					embed.height = (embed.offsetWidth / 16) * 18
+				console.log("owo", embed.height)
+			}
+			window.addEventListener('resize', resizeTwitchEmbed)
+			embed.addEventListener('load', resizeTwitchEmbed)
+		})
+	}
+</script>
