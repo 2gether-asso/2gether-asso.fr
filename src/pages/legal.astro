@@ -4,6 +4,7 @@ import Header from '~/components/Header.astro'
 import PageTitle from '~/components/PageTitle.astro'
 import Footer from '~/components/Footer.astro'
 import '~/styles/index.css'
+import ligneDeVie from '~/assets/ligneDeVie.png'
 ---
 
 <Layout
@@ -19,7 +20,7 @@ import '~/styles/index.css'
 			<p class="text-center italic">
 				Les présentes mentions légales concernent le site internet 2gether-asso.fr (le « Site »).
 			</p>
-			<img class="center mb-4" src="/assets/LigneDeVie.png" />
+			<img src={ligneDeVie} class="center mb-4" />
 
 			<div class="grid grid-cols-2 max-w-7xl mx-auto">
 				<div class="block mb-5 ml-5 mr-5 p-6 max-w-7xl bg-theme-100 rounded-lg border border-theme-200 shadow-md">
@@ -39,7 +40,7 @@ import '~/styles/index.css'
 							quentin-helayel.eu
 						</a>
 					</p>
-					<img class="center" src="/assets/LigneDeVie.png" />
+					<img src={ligneDeVie} class="center" />
 					<p>
 						La fonction de <u>Développeur en chef</u> du Site est
 						assumée par une personne physique de nationalité française
