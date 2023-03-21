@@ -1,11 +1,12 @@
 ---
 import ContentSection from '~/components/ContentSection.astro'
-import imgLogo from '~/icons/logoSite.png'
+
+const logoSrc = '/assets/logo.png'
 ---
 
 <ContentSection id="intro" title="Une association à but non lucratif">
 	<Fragment slot="eyebrow">
-		<img class="logo" src={imgLogo} />
+		<img src={logoSrc} class="logo" />
 		<style lang="scss">
 			.logo {
 				@apply max-w-xl w-full;
