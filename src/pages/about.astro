@@ -5,9 +5,11 @@ import ContentSection from '~/components/ContentSection.astro'
 import Button from "~/components/Button.astro"
 import AboutTimeline from '~/components/AboutTimeline.astro'
 import Footer from '~/components/Footer.astro'
+import getStaff from '~/data/about/staff'
 import '~/styles/index.css'
-import staff from '~/data/staff.json'
 import ligneDeVie from '~/assets/ligneDeVie.png'
+
+const staff = await getStaff()
 ---
 
 <Layout
