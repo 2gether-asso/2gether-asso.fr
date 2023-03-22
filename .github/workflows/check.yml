@@ -8,6 +8,11 @@ on:
 permissions:
   contents: read
 
+# Allow one concurrent deployment
+concurrency:
+  group: ${{ github.event_name }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
 jobs:
   # Check job
   check:
