@@ -19,73 +19,84 @@ const
 			<p>
 				<Icon pack="mdi" name="copyright" class="icon" />
 				2020-2023 – 2GETHER
-				<a
-					href="https://github.com/2gether-asso/2gether-asso.fr#licence"
-					class="license"
-				>
+			</p>
+			<p>
+				<a href="https://github.com/2gether-asso/2gether-asso.fr#licence" class="license">
 					<img
 						src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-nc-sa.svg"
 						alt="CC BY-NC 4.0"
 					/>
 				</a>
 			</p>
+			<p>
+				<a href="/legal">Mentions Légales</a>
+			</p>
 		</div>
-		<p><a href="/legal">Mentions Légales</a></p>
+		<ul class="social-links">
+			{
+				Object.values(social).map(data => (
+					<li>
+						<a href={data.url}>
+							<span>{data.description}</span>
+							<Icon class="icon" name={data.icon} />
+						</a>
+					</li>
+				))
+			}
+		</ul>
 	</div>
-	<ul>
-		{
-			Object.values(social).map(data => (
-				<li>
-					<a href={data.url}>
-						<span>{data.description}</span>
-						<Icon class="icon" name={data.icon} />
-					</a>
-				</li>
-			))
-		}
-	</ul>
 </footer>
 
 <style lang="scss">
 	footer {
-		@apply relative flex items-center justify-around max-w-7xl h-64 mx-auto p-4;
+		@apply relative;
+		@apply bg-offset;
+		@apply flex items-center justify-center;
+		// @apply w-full max-w-7xl mx-auto p-4;
+		@apply h-64;
+		@apply p-8;
 
 		> div {
-			@apply px-2 z-40;
+			@apply grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center;
+			@apply w-full max-w-7xl mx-auto;
+
+			> * {
+				@apply text-center justify-center;
+			}
 
 			> div {
-				@apply grid;
+				> p {
+					> .icon {
+						@apply h-5 inline mb-0.5;
+					}
 
-				.icon {
-					@apply h-5 inline mb-0.5;
-				}
+					> a {
+						@apply text-primary;
+					}
 
-				.license {
-					@apply ml-2;
+					> .license {
+						@apply ml-2;
 
-					> img {
-						@apply inline mb-1;
+						> img {
+							@apply inline h-full;
+						}
 					}
 				}
 			}
 
-			> p > a {
-				@apply text-primary;
-			}
-		}
+			.social-links {
+				@apply relative flex gap-4 items-center justify-center;
 
-		> ul {
-			@apply relative grid grid-cols-2 gap-4 sm:grid-cols-4 px-2;
+				> li > a {
+					@apply flex h-16 w-16 items-center justify-center rounded-full border-2 border-current p-4;
 
-			> li > a {
-				@apply flex h-16 w-16 items-center justify-center rounded-full border-2 border-current p-4;
+					> span {
+						@apply sr-only;
+					}
 
-				> span {
-					@apply sr-only;
-				}
-
-				> .icon {
-					@apply h-full;
+					> .icon {
+						@apply h-full;
+					}
 				}
 			}
 		}
