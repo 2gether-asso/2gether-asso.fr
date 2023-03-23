@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon'
 import Layout from '~/layouts/Layout.astro'
 import Header from '~/components/Header.astro'
 import PageTitle from '~/components/PageTitle.astro'
@@ -74,6 +75,26 @@ import ligneDeVie from '~/assets/ligneDeVie.png'
 						</a>
 					</p>
 				</div>
+				<div class="license-card block ml-5 mr-5 mb-5 p-6 max-w-7xl bg-theme-100 rounded-lg border border-theme-200 shadow-md">
+					<h3 class="text-lg font-extrabold mb-2">
+						Licence
+						<img
+							src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-nc-sa.svg"
+							alt="CC BY-NC-SA 4.0"
+							class="inline ml-2 mb-1 h-5"
+						/>
+					</h3>
+					<p>
+						Le contenu de ce site est distribué sous licence Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International.
+					</p>
+					<p>
+						<Icon pack="mdi" name="copyright" class="icon" title="Copyright" />
+						2020-2023 – 2GETHER
+					</p>
+					<p>
+						<a href="https://github.com/2gether-asso/2gether-asso.fr" class="text-primary underline">Voir le code source sur Github</a>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -86,3 +107,13 @@ import ligneDeVie from '~/assets/ligneDeVie.png'
 	</style>
 	<Footer />
 </Layout>
+
+<style lang="scss">
+	.license-card {
+		@apply col-span-2;
+
+		.icon {
+			@apply h-5 inline mb-0.5;
+		}
+	}
+</style>
