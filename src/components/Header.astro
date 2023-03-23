@@ -17,9 +17,9 @@ const {
 
 const navItems: Array<NavItem> = [
 	{ title: 'Accueil', url: '/' },
-	{ title: 'Nos serveurs', url: '/servers' },
 	{ title: 'L\'asso', url: '/#asso' },
 	{ title: 'La communauté', url: '/#community' },
+	{ title: 'Nos serveurs', url: '/servers' },
 	{ title: 'Nous', url: '/about' },
 ]
 ---
@@ -151,10 +151,9 @@ const navItems: Array<NavItem> = [
 	.header {
 		@apply absolute bottom-0 z-50;
 		@apply flex items-center justify-between;
-		@apply w-full px-8;
+		@apply w-full h-16 px-8;
 		@apply text-white;
 		@apply border-b border-transparent;
-		height: 72px;
 
 		.header-brand {
 			@apply flex items-center gap-3 hover:text-default;

@@ -2,10 +2,11 @@
 import { Icon } from 'astro-icon'
 import Starfield from '~/components/starfield.astro'
 import social from '~/data/social.json'
-import imgLogo from '~/icons/logoSite.png'
 import moon from '~/icons/moon.png'
 import mountains_behind from '~/icons/mountains_behind.png'
 import mountains_front from '~/icons/mountains_front.png'
+
+const logoSrc = '/assets/logo.png'
 ---
 
 <section class="relative h-full bg-black shrink-0">
@@ -14,11 +15,11 @@ import mountains_front from '~/icons/mountains_front.png'
 	<img src={mountains_behind} id="mountains_behind" class="bgSite" />
 	<img src={mountains_front} id="mountains_front" class="bgSite" />
 	<div class="relative grid h-full place-items-center">
-		<h2 class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto">
-			<div class="gradient-text text-center font-extrabold tracking-tighter text-4xl">
-				Partageons un moment
-			</div>
-			<img class="logotitre h-16 text-white md:h-24" src={imgLogo} />
+		<div class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto">
+			<h2 class="gradient-text text-center font-extrabold tracking-tighter text-4xl">
+				Partageons un moment <span class="sr-only">2GETHER</span>
+			</h2>
+			<img src={logoSrc} class="logotitre h-full max-h-16 text-white md:max-h-24" />
 			<div class="relative grid h-full place-items-center mt-4">
 				<a href={social.discord.url}>
 					<button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
@@ -29,47 +30,42 @@ import mountains_front from '~/icons/mountains_front.png'
 					</button>
 				</a>
 			</div>
-		</h2>
+		</div>
 	</div>
 </section>
 
-<style>
+<style lang="scss">
 	section {
-		position: relative;
-		width: 100%;
-		height: 100vh;
-		padding: 100px;
-	}
+		@apply relative w-full h-screen pb-16;
 
-	section img {
-		pointer-events: none;
-	}
+		img {
+			@apply pointer-events-none;
+		}
 
-	section img.bgSite {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
+		img.bgSite {
+			@apply absolute top-0 left-0 w-full h-full object-cover;
+		}
 
-	section img.logotitre {
-		z-index: 49;
-	}
+		img.logotitre {
+			z-index: 49;
+		}
 
-	section a.btn {
-		pointer-events: none;
-		background: gray;
-		opacity: 50%;
-	}
+		a.btn {
+			@apply pointer-events-none opacity-50;
+			background: gray;
+		}
 
-	section img#moon {
-		mix-blend-mode: screen;
-	}
+		img#moon {
+			@apply mix-blend-screen;
+		}
 
-	section .bg {
-		background: linear-gradient(#2b1055, #7597de);
+		.bg {
+			background: linear-gradient(#2b1055, #7597de);
+		}
+
+		.grid {
+			@apply p-8;
+		}
 	}
 </style>
 
