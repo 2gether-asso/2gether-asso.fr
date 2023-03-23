@@ -89,7 +89,7 @@ import '~/styles/index.css'
 
 				embed.addEventListener(Twitch.Embed.VIDEO_READY, () =>
 					{
-						livesteamElement.parentElement?.querySelectorAll('*').forEach(elt => elt.classList.remove('active'))
+						Array.from(livesteamElement.parentElement?.children || []).forEach(elt => elt.classList.remove('active'))
 						livesteamElement.classList.add('active')
 
 						const player = embed.getPlayer()
