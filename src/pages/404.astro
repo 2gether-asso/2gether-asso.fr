@@ -3,6 +3,7 @@ import Layout from '~/layouts/Layout.astro'
 import Header from '~/components/Header.astro'
 import Footer from '~/components/Footer.astro'
 import '~/styles/index.css'
+import ligneDeVie from '~/assets/ligneDeVie.png'
 ---
 
 <Layout
@@ -13,7 +14,7 @@ import '~/styles/index.css'
 	<Header />
 	<main>
 		<div>
-			<img src="/assets/LigneDeVie.png" class="eyebrow" />
+			<img src={ligneDeVie} class="eyebrow" />
 
 			<h1>Page introuvable !</h1>
 			<p>La page n'existe pas ou a été déplacée.</p>
