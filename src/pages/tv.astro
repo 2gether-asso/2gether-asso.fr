@@ -63,31 +63,38 @@ import '~/styles/index.css'
 
 <script src="https://embed.twitch.tv/embed/v1.js" defer id="twitch-embed"></script>
 <script>
+	interface Twitch
+	{
+		Embed: any
+		Player: any
+	}
+
 	const twitchEmbed = document.getElementById('twitch-embed')
 	if (twitchEmbed)
 	{
-		twitchEmbed.addEventListener('load', () => {
-			const Twitch = (window as any).Twitch || undefined
-			if (!Twitch) return
+		twitchEmbed.addEventListener('load', () =>
+			{
+				const Twitch: Twitch | undefined = (window as any).Twitch || undefined
+				if (!Twitch) return
 
-			const livesteamElement = document.getElementById('livestream')
-			if (!livesteamElement) return
+				const livesteamElement = document.getElementById('livestream')
+				if (!livesteamElement) return
 
-			const embed = new Twitch.Embed('livestream',
-				{
-					width: '100%',
-					height: '100%',
-					channel: 'helldwin',
-				})
+				const embed = new Twitch.Embed('livestream',
+					{
+						width: '100%',
+						height: '100%',
+						channel: 'helldwin',
+					})
 
-			embed.addEventListener(Twitch.Embed.VIDEO_READY, () =>
-				{
-					livesteamElement.parentElement?.querySelectorAll('*').forEach(elt => elt.classList.remove('active'))
-					livesteamElement.classList.add('active')
+				embed.addEventListener(Twitch.Embed.VIDEO_READY, () =>
+					{
+						livesteamElement.parentElement?.querySelectorAll('*').forEach(elt => elt.classList.remove('active'))
+						livesteamElement.classList.add('active')
 
-					const player = embed.getPlayer()
-					player.play()
-				})
-		})
+						const player = embed.getPlayer()
+						player.play()
+					})
+			})
 	}
 </script>
