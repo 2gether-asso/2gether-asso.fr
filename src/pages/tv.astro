@@ -1,0 +1,100 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import Header from '~/components/Header.astro'
+import Footer from '~/components/Footer.astro'
+import '~/styles/index.css'
+---
+
+<Layout
+	title="Stream & Vidéos"
+	lang="fr"
+	htmlAttributes={{ "data-theme": "dark" }}
+>
+	<Header />
+	<main>
+		<div class="card loading active">
+			<div>
+				<h1>⚡ Stream loading...</h1>
+			</div>
+		</div>
+		<div class="card offline">
+			<div>
+				<h1>⏸ Stream Offline</h1>
+				<p>Le stream est actuellement offline, mais retrouve nous sur les réseaux !</p>
+			</div>
+		</div>
+		<div id="livestream"></div>
+	</main>
+	<Footer />
+</Layout>
+
+<style lang="scss">
+	main {
+		aspect-ratio: calc(1920 + 340) / 1080;
+
+		> .card {
+			@apply bg-gray-500 bg-opacity-20;
+			@apply flex justify-center items-center;
+			@apply grow;
+
+			div {
+				@apply my-4;
+			}
+
+			h1 {
+				@apply text-4xl font-bold mb-2;
+			}
+
+			p {
+				// @apply text-base;
+				@apply text-theme-600;
+			}
+		}
+
+		> * {
+			@apply w-full h-full;
+
+			&:not(.active) {
+				@apply hidden;
+			}
+		}
+	}
+</style>
+
+<script src="https://embed.twitch.tv/embed/v1.js" defer id="twitch-embed"></script>
+<script>
+	interface Twitch
+	{
+		Embed: any
+		Player: any
+	}
+
+	const twitchEmbed = document.getElementById('twitch-embed')
+	if (twitchEmbed)
+	{
+		twitchEmbed.addEventListener('load', () =>
+			{
+				const Twitch: Twitch | undefined = (window as any).Twitch || undefined
+				if (!Twitch) return
+
+				const livesteamElement = document.getElementById('livestream')
+				if (!livesteamElement) return
+
+				const embed = new Twitch.Embed('livestream',
+					{
+						width: '100%',
+						height: '100%',
+						channel: '2gether_asso',
+					})
+
+				embed.addEventListener(Twitch.Embed.VIDEO_READY, () =>
+					{
+						Array.from(livesteamElement.parentElement?.children || []).forEach(elt => elt.classList.remove('active'))
+						livesteamElement.classList.add('active')
+
+						const player = embed.getPlayer()
+						player.play()
+					})
+			})
+	}
+</script>
