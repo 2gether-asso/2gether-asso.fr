@@ -1,0 +1,49 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import Header from '~/components/Header.astro'
+import Footer from '~/components/Footer.astro'
+import '~/styles/index.css'
+---
+
+<Layout
+	title="404 Page introuvable"
+	lang="fr"
+	htmlAttributes={{ "data-theme": "dark" }}
+>
+	<Header />
+	<main>
+		<div>
+			<img src="/assets/LigneDeVie.png" class="eyebrow" />
+
+			<h1>Page introuvable !</h1>
+			<p>La page n'existe pas ou a été déplacée.</p>
+		</div>
+	</main>
+	<Footer />
+</Layout>
+
+<style lang="scss">
+	main {
+		@apply bg-red-500 bg-opacity-20;
+		@apply flex justify-center items-center;
+		@apply grow;
+
+		div {
+			@apply my-4;
+			@apply text-center;
+		}
+
+		.eyebrow {
+			@apply mx-auto;
+		}
+
+		h1 {
+			@apply text-4xl font-bold mb-2;
+		}
+
+		p {
+			// @apply text-base;
+			@apply text-theme-600;
+		}
+	}
+</style>
