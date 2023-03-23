@@ -67,6 +67,7 @@ import '~/styles/index.css'
 	if (twitchEmbed)
 	{
 		twitchEmbed.addEventListener('load', () => {
+			const Twitch = (window as any).Twitch || undefined
 			if (!Twitch) return
 
 			const livesteamElement = document.getElementById('livestream')
