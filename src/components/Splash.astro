@@ -9,7 +9,7 @@ import mountains_front from '~/icons/mountains_front.png'
 const logoSrc = '/assets/logo.png'
 ---
 
-<section class="relative h-full bg-black shrink-0">
+<section class="relative h-full bg-black shrink-0 overflow-hidden">
 	<Starfield />
 	<img src={moon} id="moon" class="bgSite" />
 	<img src={mountains_behind} id="mountains_behind" class="bgSite" />
@@ -71,11 +71,19 @@ const logoSrc = '/assets/logo.png'
 
 <script>
 	const moon = document.getElementById('moon')
+	const mountains_behind = document.getElementById('mountains_behind')
 
 	if (moon) {
 		window.addEventListener('scroll', () => {
 			let value = window.scrollY
-			moon.style.top = value * 0.2 + 'px'
+			moon.style.top = value * 0.1 + 'px'
+		})
+	}
+
+	if (mountains_behind) {
+		window.addEventListener('scroll', () => {
+			let value = window.scrollY
+			mountains_behind.style.top = value * 0.2 + 'px'
 		})
 	}
 </script>
