@@ -1,7 +1,7 @@
 ---
 ---
 
-<gg-starfield data-starfield="1000">
+<gg-starfield data-density="0.002" data-starfield="1000">
 	<canvas></canvas>
 </gg-starfield>
 
@@ -73,7 +73,7 @@
 	{
 		readonly canvasElement: HTMLCanvasElement
 		readonly canvas: CanvasRenderingContext2D
-		readonly quantity: number
+		readonly density: number
 
 		readonly stars: Star[] = []
 
@@ -90,9 +90,9 @@
 			if (!canvas) throw new Error('No canvas context found')
 			this.canvas = canvas
 
-			const quantity = parseInt(this.dataset.starfield || 'NaN')
-			if (isNaN(quantity)) throw new Error('No quantity found')
-			this.quantity = quantity
+			const density = parseFloat(this.dataset.density || 'NaN')
+			if (isNaN(density)) throw new Error('No quantity found')
+			this.density = density
 
 			// Set canvas size
 			canvasElement.width = window.innerWidth
@@ -110,9 +110,10 @@
 
 		protected spawnStars(minX: number = 0, minY: number = 0)
 		{
+			const quantity = Math.floor(window.innerWidth * window.innerHeight * this.density)
 			const width = window.innerWidth - minX
 			const height = window.innerHeight - minY
-			for (let i = 0; i < this.quantity; ++i)
+			for (let i = 0; i < quantity; ++i)
 			{
 				var positionX = minX + width * Math.random()
 				var positionY = minY + height * Math.random()
@@ -130,10 +131,7 @@
 			this.canvas.clearRect(0, 0, this.canvasElement.width, this.canvasElement.height)
 
 			// Call all stars to update their animation
-			for (let i = 0; i < this.quantity; ++i)
-			{
-				this.stars[i]?.draw(this.canvas)
-			}
+			this.stars.forEach(star => star.draw(this.canvas))
 
 			// Loop function
 			setTimeout(this.renderFrame.bind(this), 100)
