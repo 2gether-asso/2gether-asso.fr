@@ -106,8 +106,12 @@ const density = 0.002
 			// Spawn stars
 			this.spawnStars()
 
-			// Start animation
-			this.renderFrame()
+			// Start animation depending on user preferences
+			const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+			if (mediaQuery && !mediaQuery.matches)
+			{
+				this.renderFrame()
+			}
 
 			// Add event listeners
 			window.addEventListener('resize', this.onResize.bind(this))
