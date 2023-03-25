@@ -1,0 +1,57 @@
+---
+import moon from '~/icons/moon.png'
+import mountains_behind from '~/icons/mountains_behind.png'
+import mountains_front from '~/icons/mountains_front.png'
+---
+
+<gg-splash-parallax>
+	<img src={mountains_behind} class="mountains_behind" />
+	<img src={moon} class="moon" />
+	<img src={mountains_front} class="mountains_front" />
+</gg-splash-parallax>
+
+<style lang="scss">
+	img {
+		@apply pointer-events-none;
+		@apply absolute top-0 left-0 w-full h-full object-cover;
+
+		&.moon {
+			@apply mix-blend-screen;
+		}
+	}
+</style>
+
+<script>
+	class SplashParallax extends HTMLElement
+	{
+		constructor()
+		{
+			super()
+
+			const mountains_behind = this.querySelector('img.mountains_behind') as HTMLImageElement
+			const moon = this.querySelector('img.moon') as HTMLImageElement
+
+			const parallaxConfig = [
+				{
+					element: mountains_behind,
+					depth: 0.2,
+				},
+				{
+					element: moon,
+					depth: 0.1,
+				},
+			]
+
+			parallaxConfig.forEach((config) =>
+				{
+					window.addEventListener('scroll', () =>
+						{
+							let value = window.scrollY
+							config.element.style.top = value * config.depth + 'px'
+						})
+				})
+		}
+	}
+
+	customElements.define('gg-splash-parallax', SplashParallax)
+</script>

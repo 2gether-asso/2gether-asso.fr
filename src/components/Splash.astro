@@ -1,19 +1,15 @@
 ---
 import { Icon } from 'astro-icon'
+import Parallax from '~/components/Parallax.astro'
 import Starfield from '~/components/Starfield.astro'
 import social from '~/data/social.json'
-import moon from '~/icons/moon.png'
-import mountains_behind from '~/icons/mountains_behind.png'
-import mountains_front from '~/icons/mountains_front.png'
 
 const logoSrc = '/assets/logo.png'
 ---
 
 <section class="relative h-full bg-black shrink-0 overflow-hidden">
 	<Starfield />
-	<img src={moon} id="moon" class="bgSite" />
-	<img src={mountains_behind} id="mountains_behind" class="bgSite" />
-	<img src={mountains_front} id="mountains_front" class="bgSite" />
+	<Parallax />
 	<div class="relative grid h-full place-items-center">
 		<div class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto">
 			<h2 class="gradient-text text-center font-extrabold tracking-tighter text-4xl">
@@ -42,10 +38,6 @@ const logoSrc = '/assets/logo.png'
 			@apply pointer-events-none;
 		}
 
-		img.bgSite {
-			@apply absolute top-0 left-0 w-full h-full object-cover;
-		}
-
 		img.logotitre {
 			z-index: 49;
 		}
@@ -53,10 +45,6 @@ const logoSrc = '/assets/logo.png'
 		a.btn {
 			@apply pointer-events-none opacity-50;
 			background: gray;
-		}
-
-		img#moon {
-			@apply mix-blend-screen;
 		}
 
 		.bg {
@@ -68,25 +56,6 @@ const logoSrc = '/assets/logo.png'
 		}
 	}
 </style>
-
-<script>
-	const moon = document.getElementById('moon')
-	const mountains_behind = document.getElementById('mountains_behind')
-
-	if (moon) {
-		window.addEventListener('scroll', () => {
-			let value = window.scrollY
-			moon.style.top = value * 0.1 + 'px'
-		})
-	}
-
-	if (mountains_behind) {
-		window.addEventListener('scroll', () => {
-			let value = window.scrollY
-			mountains_behind.style.top = value * 0.2 + 'px'
-		})
-	}
-</script>
 
 <noscript>
 	<style>
