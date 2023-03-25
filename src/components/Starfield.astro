@@ -1,0 +1,168 @@
+---
+/**
+ * The quatity of stars per pixel.
+ * It is a floating point number between 0 and 1.
+ */
+const density = 0.002
+---
+
+<gg-starfield data-density={density}>
+	<canvas></canvas>
+</gg-starfield>
+
+<style lang="scss">
+	gg-starfield {
+		@apply absolute inset-0;
+		@apply flex justify-center items-start;
+
+		canvas {
+			position: relative;
+			display:block;
+		}
+	}
+</style>
+
+<script>
+	class Star
+	{
+		x: number
+		y: number
+		offset: number
+		duration: number
+		size: number
+		timer: number
+
+		constructor(x: number, y: number, offset: number, duration: number = 100, size: number = 2)
+		{
+			// Constructor
+			this.x            = x
+			this.y            = y
+			this.duration     = duration
+			this.offset       = offset
+			this.size         = size
+			this.timer        = offset % duration
+		}
+
+		public draw(canvas: CanvasRenderingContext2D)
+		{
+			// Calculate animations
+			if (this.timer > this.duration)
+			{
+				this.timer = 0
+			}
+			this.timer += 1
+
+			// Calculate
+			var framesize = Math.abs((this.timer / this.duration) - 0.5) * this.size + this.size/10
+
+			// Update element
+			canvas.beginPath()
+			canvas.arc(this.x, this.y, framesize, 0, Math.PI * 2, false)
+			canvas.fillStyle = 'white'
+			canvas.fill()
+		}
+	}
+
+	// class ShootingStar
+	// {
+	// 	constructor(offset, duration = 100, size = 2)
+	// 	{
+	// 		// Constructor
+	// 		this.offset   = offset
+	// 		this.duration = duration
+	// 		this.size     = size
+	// 	}
+	// }
+
+	class Starfield extends HTMLElement
+	{
+		readonly canvasElement: HTMLCanvasElement
+		readonly canvas: CanvasRenderingContext2D
+		readonly density: number
+
+		readonly stars: Star[] = []
+
+		constructor()
+		{
+			super()
+
+			// HTML related
+			const canvasElement = this.querySelector('canvas')
+			if (!canvasElement) throw new Error('No canvas element found')
+			this.canvasElement = canvasElement
+
+			const canvas = canvasElement.getContext('2d')
+			if (!canvas) throw new Error('No canvas context found')
+			this.canvas = canvas
+
+			const density = parseFloat(this.dataset.density || 'NaN')
+			if (isNaN(density)) throw new Error('No quantity found')
+			this.density = Math.max(0, Math.min(1, density))
+
+			// Set canvas size
+			canvasElement.width = window.innerWidth
+			canvasElement.height = window.innerHeight
+
+			// Spawn stars
+			this.spawnStars()
+
+			// Start animation depending on user preferences
+			const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+			if (mediaQuery && !mediaQuery.matches)
+			{
+				this.renderFrame()
+			}
+
+			// Add event listeners
+			window.addEventListener('resize', this.onResize.bind(this))
+		}
+
+		protected spawnStars(minX: number = 0, minY: number = 0)
+		{
+			const quantity = Math.floor(window.innerWidth * window.innerHeight * this.density)
+			const width = window.innerWidth - minX
+			const height = window.innerHeight - minY
+			for (let i = 0; i < quantity; ++i)
+			{
+				var positionX = minX + width * Math.random()
+				var positionY = minY + height * Math.random()
+				var offset    = Math.random() * 100
+				var duration  = Math.random() * 50 + 50
+				var size      = Math.random() * 2
+
+				this.stars.push(new Star(positionX, positionY, offset, duration, size))
+			}
+		}
+
+		protected renderFrame()
+		{
+			// Clear canvas
+			this.canvas.clearRect(0, 0, this.canvasElement.width, this.canvasElement.height)
+
+			// Call all stars to update their animation
+			this.stars.forEach(star => star.draw(this.canvas))
+
+			// Loop function
+			setTimeout(this.renderFrame.bind(this), 100)
+		}
+
+		protected onResize()
+		{
+			if (this.canvasElement.width >= window.innerWidth && this.canvasElement.height >= window.innerHeight)
+			{
+				return
+			}
+
+			// Set canvas size
+			this.canvasElement.width = window.innerWidth
+			this.canvasElement.height = window.innerHeight
+
+			this.stars.length = 0
+
+			// Spawn stars
+			this.spawnStars()
+		}
+	}
+
+	customElements.define('gg-starfield', Starfield)
+</script>
