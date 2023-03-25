@@ -1,9 +1,12 @@
-<div id="starfield">
-	<canvas data-starfield="1000"></canvas>
-</div>
+---
+---
+
+<gg-starfield data-starfield="1000">
+	<canvas></canvas>
+</gg-starfield>
 
 <style lang="scss">
-	#starfield {
+	gg-starfield {
 		@apply absolute inset-0;
 
 		canvas {
@@ -14,110 +17,122 @@
 </style>
 
 <script>
-	////////////////////////////////////////////////
-	////////////////////////////////////////////////
-	///                                          ///
-	///               Properties                 ///
-	///                                          ///
-	////////////////////////////////////////////////
-	////////////////////////////////////////////////
+	class Star
+	{
+		x: number
+		y: number
+		offset: number
+		duration: number
+		size: number
+		timer: number
 
-	//HTML related
-	var canvasElement = document.querySelector("canvas");
-	var canvas        = canvasElement.getContext("2d");
-	var quantity      = canvasElement.getAttribute("data-starfield");
-
-	//Javascript related
-	var stars = [];
-
-	////////////////////////////////////////////////
-	////////////////////////////////////////////////
-	///                                          ///
-	///               Properties                 ///
-	///                                          ///
-	////////////////////////////////////////////////
-	////////////////////////////////////////////////
-
-	function Star (x, y, offset, duration = 100, size = 2) {
-	//constructor
-	this.x            = x;
-	this.y            = y;
-	this.duration     = duration;
-	this.offset       = offset;
-	this.size         = size;
-	this.timer        = offset % duration;
-
-	//functions
-	this.draw = function () {
-		//Calculate animations
-		if (this.timer > this.duration) {
-		this.timer = 0;
+		constructor(x: number, y: number, offset: number, duration: number = 100, size: number = 2)
+		{
+			// Constructor
+			this.x            = x
+			this.y            = y
+			this.duration     = duration
+			this.offset       = offset
+			this.size         = size
+			this.timer        = offset % duration
 		}
-		this.timer += 1;
 
-		//Calculate
-		var framesize = Math.abs((this.timer / this.duration) - 0.5) * this.size + this.size/10;
+		public draw(canvas: CanvasRenderingContext2D)
+		{
+			// Calculate animations
+			if (this.timer > this.duration)
+			{
+				this.timer = 0
+			}
+			this.timer += 1
 
-		//Update element
-		canvas.beginPath();
-		canvas.arc(this.x, this.y, framesize, 0, Math.PI * 2, false);
-		canvas.fillStyle = "white";
-		canvas.fill();
-	}
-	}
+			// Calculate
+			var framesize = Math.abs((this.timer / this.duration) - 0.5) * this.size + this.size/10
 
-	function ShootingStar (offset, duration = 100, size = 2) {
-	//Constructor
-	this.offset   = offset;
-	this.duration = duration;
-	this.size     = size;
-	}
-
-	////////////////////////////////////////////////
-	////////////////////////////////////////////////
-	///                                          ///
-	///                 "Methods"                ///
-	///                                          ///
-	////////////////////////////////////////////////
-	////////////////////////////////////////////////
-
-	//Spawn stars
-	for (let i = 0; i < quantity; i++) {
-	var positionX = window.innerWidth * Math.random();
-	var positionY = window.innerHeight * Math.random();
-	var offset    = Math.random() * 100;
-	var duration  = Math.random() * 50 + 50;
-	var size      = Math.random() * 2;
-
-	stars.push(new Star(positionX, positionY, offset, duration, size));
+			// Update element
+			canvas.beginPath()
+			canvas.arc(this.x, this.y, framesize, 0, Math.PI * 2, false)
+			canvas.fillStyle = 'white'
+			canvas.fill()
+		}
 	}
 
-	//Animate stars
-	function renderFrame () {
-	//Clear canvas
-	canvas.clearRect(0, 0, canvasElement.width, canvasElement.height);
-
-	//Call all stars to update their animation
-	for (let i = 0; i < quantity; i++) {
-		stars[i].draw();
+	class ShootingStar
+	{
+		constructor(offset, duration = 100, size = 2)
+		{
+			// Constructor
+			this.offset   = offset
+			this.duration = duration
+			this.size     = size
+		}
 	}
 
-	//Loop function
-	setTimeout(renderFrame, 100);
+	class Starfield extends HTMLElement
+	{
+		readonly canvasElement: HTMLCanvasElement
+		readonly canvas: CanvasRenderingContext2D
+		readonly quantity: number
+
+		readonly stars: Star[] = []
+
+		constructor()
+		{
+			super()
+
+			// HTML related
+			const canvasElement = this.querySelector('canvas')
+			if (!canvasElement) throw new Error('No canvas element found')
+			this.canvasElement = canvasElement
+
+			const canvas = canvasElement.getContext('2d')
+			if (!canvas) throw new Error('No canvas context found')
+			this.canvas = canvas
+
+			const quantity = parseInt(this.dataset.starfield || 'NaN')
+			if (isNaN(quantity)) throw new Error('No quantity found')
+			this.quantity = quantity
+
+			// Set canvas size
+			canvasElement.width = window.innerWidth
+			canvasElement.height = window.innerHeight
+
+			// Spawn stars
+			this.spawnStars()
+
+			// Start animation
+			this.renderFrame()
+		}
+
+		protected spawnStars()
+		{
+			for (let i = 0; i < this.quantity; ++i)
+			{
+				var positionX = window.innerWidth * Math.random()
+				var positionY = window.innerHeight * Math.random()
+				var offset    = Math.random() * 100
+				var duration  = Math.random() * 50 + 50
+				var size      = Math.random() * 2
+
+				this.stars.push(new Star(positionX, positionY, offset, duration, size))
+			}
+		}
+
+		protected renderFrame()
+		{
+			// Clear canvas
+			this.canvas.clearRect(0, 0, this.canvasElement.width, this.canvasElement.height)
+
+			// Call all stars to update their animation
+			for (let i = 0; i < this.quantity; ++i)
+			{
+				this.stars[i]?.draw(this.canvas)
+			}
+
+			// Loop function
+			setTimeout(this.renderFrame.bind(this), 100)
+		}
 	}
 
-	////////////////////////////////////////////////
-	////////////////////////////////////////////////
-	///                                          ///
-	///               Initialize                 ///
-	///                                          ///
-	////////////////////////////////////////////////
-	////////////////////////////////////////////////
-
-	//Set canvas size
-	canvasElement.width = window.innerWidth;
-	canvasElement.height = window.innerHeight;
-
-	//Start animation
-	renderFrame();
+	customElements.define('gg-starfield', Starfield)
 </script>
