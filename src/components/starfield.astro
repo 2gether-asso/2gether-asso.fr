@@ -102,14 +102,19 @@
 
 			// Start animation
 			this.renderFrame()
+
+			// Add event listeners
+			window.addEventListener('resize', this.onResize.bind(this))
 		}
 
-		protected spawnStars()
+		protected spawnStars(minX: number = 0, minY: number = 0)
 		{
+			const width = window.innerWidth - minX
+			const height = window.innerHeight - minY
 			for (let i = 0; i < this.quantity; ++i)
 			{
-				var positionX = window.innerWidth * Math.random()
-				var positionY = window.innerHeight * Math.random()
+				var positionX = minX + width * Math.random()
+				var positionY = minY + height * Math.random()
 				var offset    = Math.random() * 100
 				var duration  = Math.random() * 50 + 50
 				var size      = Math.random() * 2
@@ -131,6 +136,23 @@
 
 			// Loop function
 			setTimeout(this.renderFrame.bind(this), 100)
+		}
+
+		protected onResize()
+		{
+			if (this.canvasElement.width >= window.innerWidth && this.canvasElement.height >= window.innerHeight)
+			{
+				return
+			}
+
+			// Set canvas size
+			this.canvasElement.width = window.innerWidth
+			this.canvasElement.height = window.innerHeight
+
+			this.stars.length = 0
+
+			// Spawn stars
+			this.spawnStars()
 		}
 	}
 
