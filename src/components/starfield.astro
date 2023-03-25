@@ -97,7 +97,7 @@ const density = 0.002
 
 			const density = parseFloat(this.dataset.density || 'NaN')
 			if (isNaN(density)) throw new Error('No quantity found')
-			this.density = density
+			this.density = Math.max(0, Math.min(1, density))
 
 			// Set canvas size
 			canvasElement.width = window.innerWidth
