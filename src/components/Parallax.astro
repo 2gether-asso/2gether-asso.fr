@@ -16,6 +16,10 @@ import plain from '~/assets/plain.png'
 	img {
 		@apply pointer-events-none;
 		@apply absolute top-0 left-0 w-full h-full object-cover;
+
+		&.plain {
+			object-position: 50% calc(2060 / 2260 * 100%);
+		}
 	}
 </style>
 
