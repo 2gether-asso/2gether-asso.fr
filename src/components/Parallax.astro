@@ -32,10 +32,15 @@ import plain from '~/assets/plain.png'
 
 			const mountain = this.querySelector('img.mountain') as HTMLImageElement
 			const moon = this.querySelector('img.moon') as HTMLImageElement
+			const sea = this.querySelector('img.sea') as HTMLImageElement
 
 			const parallaxConfig = [
 				{
 					element: mountain,
+					depth: 0.1,
+				},
+				{
+					element: sea,
 					depth: 0.1,
 				},
 				{
