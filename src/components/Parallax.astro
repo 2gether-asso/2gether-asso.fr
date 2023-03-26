@@ -1,13 +1,15 @@
 ---
-import moon from '~/icons/moon.png'
-import mountains_behind from '~/icons/mountains_behind.png'
-import mountains_front from '~/icons/mountains_front.png'
+import moon from '~/assets/moon.png'
+import mountain from '~/assets/mountain.png'
+import sea from '~/assets/sea.png'
+import plain from '~/assets/plain.png'
 ---
 
 <gg-splash-parallax>
-	<img src={mountains_behind} class="mountains_behind" />
 	<img src={moon} class="moon" />
-	<img src={mountains_front} class="mountains_front" />
+	<img src={sea} class="sea"/>
+	<img src={mountain} class="mountain" />
+	<img src={plain} class="plain" />
 </gg-splash-parallax>
 
 <style lang="scss">
@@ -28,17 +30,17 @@ import mountains_front from '~/icons/mountains_front.png'
 		{
 			super()
 
-			const mountains_behind = this.querySelector('img.mountains_behind') as HTMLImageElement
+			const mountain = this.querySelector('img.mountain') as HTMLImageElement
 			const moon = this.querySelector('img.moon') as HTMLImageElement
 
 			const parallaxConfig = [
 				{
-					element: mountains_behind,
-					depth: 0.2,
+					element: mountain,
+					depth: 0.1,
 				},
 				{
 					element: moon,
-					depth: 0.1,
+					depth: 0.2,
 				},
 			]
 

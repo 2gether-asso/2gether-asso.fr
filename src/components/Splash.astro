@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon'
+import sky from '~/assets/sky.png'
 import Parallax from '~/components/Parallax.astro'
 import Starfield from '~/components/Starfield.astro'
 import social from '~/data/social.json'
@@ -8,9 +9,10 @@ const logoSrc = '/assets/logo.png'
 ---
 
 <section class="relative h-full bg-black shrink-0 overflow-hidden">
+	<img src={sky} class="sky" />
 	<Starfield />
 	<Parallax />
-	<div class="relative grid h-full place-items-center">
+	<div class="relative grid h-full place-items-center z-10">
 		<div class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto">
 			<h2 class="gradient-text text-center font-extrabold tracking-tighter text-4xl">
 				Partageons un moment <span class="sr-only">2GETHER</span>
@@ -36,6 +38,9 @@ const logoSrc = '/assets/logo.png'
 
 		img {
 			@apply pointer-events-none;
+			&.sky {
+				@apply absolute top-0 left-0 w-full h-full object-cover;
+			}
 		}
 
 		img.logotitre {
