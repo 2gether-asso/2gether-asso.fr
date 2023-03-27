@@ -1,8 +1,5 @@
 {
 	"[astro]": {
-		"editor.defaultFormatter": "null"
-	},
-	"[json]": {
-		"editor.defaultFormatter": "null"
+		"editor.defaultFormatter": "astro-build.astro-vscode"
 	}
 }
