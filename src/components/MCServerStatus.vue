@@ -70,7 +70,7 @@ export default {
 
 			<p v-if="data.error" class="mb-2">Erreur : {{ data.error }}</p>
 
-			<div v-if="data.motd" v-html="data.motd.html[0]" class="mb-2"></div>
+			<div v-if="data.motd" v-html="data.motd.html[0]" class="motd mb-2"></div>
 
 			<div v-if="data.online" class="mb-2">
 				<p v-if="data.players">Joueurs : {{ data.players.online }} / {{ data.players.max }}</p>
@@ -93,6 +93,10 @@ export default {
 </template>
 
 <style lang="scss">
+	.motd {
+		@apply bg-gray-800 px-1 font-mono;
+	}
+
 	*:last-child {
 		@apply mb-0;
 	}
