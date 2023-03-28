@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon'
 import sky from '~/assets/sky.png'
 import Parallax from '~/components/Parallax.astro'
 import Starfield from '~/components/Starfield.astro'
+import Button from './Button.astro'
 import social from '~/data/social.json'
 
 const logoSrc = '/assets/logo.png'
@@ -20,14 +21,10 @@ const logoSrc = '/assets/logo.png'
 			</h2>
 			<img src={logoSrc} class="logotitre h-full max-h-16 text-white md:max-h-24" />
 			<div class="relative grid h-full place-items-center mt-4">
-				<a href={social.discord.url}>
-					<button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-						<span class="relative inline-flex items-center justify-center px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-							<Icon class="h-5 mr-2" name={social.discord.icon} />
-							Rejoins-nous sur Discord&nbsp;!
-						</span>
-					</button>
-				</a>
+				<Button href={social.discord.url}>
+					<Icon class="h-5 mr-2" name={social.discord.icon} />
+					Rejoins-nous sur Discord&nbsp;!
+				</Button>
 			</div>
 		</div>
 	</div>
