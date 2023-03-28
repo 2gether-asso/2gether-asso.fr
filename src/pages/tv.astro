@@ -12,54 +12,60 @@ import '~/styles/index.css'
 >
 	<Header />
 	<main>
-		<div class="card loading active">
-			<div>
-				<h1>⚡ Stream loading...</h1>
+		<div class="tv">
+			<div class="card loading active">
+				<div>
+					<h1>⚡ Chargement du stream...</h1>
+				</div>
 			</div>
-		</div>
-		<div class="card offline">
-			<div>
-				<h1>⏸ Stream Offline</h1>
-				<p>Le stream est actuellement offline, mais retrouve nous sur les réseaux !</p>
+			<div class="card offline">
+				<div>
+					<h1>⏸ Stream Offline</h1>
+					<p>Le stream est actuellement offline, mais retrouve nous sur les réseaux !</p>
+				</div>
 			</div>
+			<div id="livestream"></div>
 		</div>
-		<div id="livestream"></div>
 	</main>
 	<Footer />
 </Layout>
 
 <style lang="scss">
 	main {
-		aspect-ratio: calc(1920 + 340) / 1080;
+		@apply grow;
 
-		@media only screen and (max-width: 680px) {
-			aspect-ratio: 1920 / calc(1080 * 2);
-		}
+		.tv {
+			aspect-ratio: calc(1920 + 340) / 1080;
 
-		> .card {
-			@apply bg-gray-500 bg-opacity-20;
-			@apply flex justify-center items-center;
-			@apply grow;
-
-			div {
-				@apply my-4;
+			@media only screen and (max-width: 680px) {
+				aspect-ratio: 1920 / calc(1080 * 2);
 			}
 
-			h1 {
-				@apply text-4xl font-bold mb-2;
+			> .card {
+				@apply bg-gray-500 bg-opacity-20;
+				@apply flex justify-center items-center;
+				@apply grow;
+
+				div {
+					@apply my-4;
+				}
+
+				h1 {
+					@apply text-4xl font-bold mb-2;
+				}
+
+				p {
+					// @apply text-base;
+					@apply text-theme-600;
+				}
 			}
 
-			p {
-				// @apply text-base;
-				@apply text-theme-600;
-			}
-		}
+			> * {
+				@apply w-full h-full;
 
-		> * {
-			@apply w-full h-full;
-
-			&:not(.active) {
-				@apply hidden;
+				&:not(.active) {
+					@apply hidden;
+				}
 			}
 		}
 	}
