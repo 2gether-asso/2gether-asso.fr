@@ -20,53 +20,48 @@ const staff = await getStaff()
 >
 	<Header />
 	<div class="grid place-items-center">
-		<div class="row pt-12">
-			<ContentSection title="Qui sommes nous ?" id="nous" />
-			{
-				staff.map(({ name, role, website, picture }) => (
-					/* <div class="column mb-5 card max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"> */
-					<div class="column mb-5 card max-w-sm bg-theme-50 rounded-lg border border-theme-200 shadow-md">
-						<a href={website}>
-							<img
-								class="rounded-t-lg"
-								src={picture}
-								alt=""
-							/>
-						</a>
-						<div class="p-5">
-							<a>
-								<!-- <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"> -->
-								<h5 class="mb-2 text-2xl font-bold tracking-tight text-theme-900">
-									{name}
-								</h5>
+		<ContentSection title="Qui sommes nous ?" id="nous" class="row pt-12">
+			<div class="flex flex-col sm:flex-row items-center justify-center mx-5 gap-5">
+				{
+					staff.map(({ name, role, website, picture }) => (
+						/* <div class="column mb-5 card max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"> */
+						<div class="column card max-w-sm bg-theme-50 rounded-lg border border-theme-200 shadow-md">
+							<a href={website}>
+								<img
+									class="rounded-t-lg"
+									src={picture}
+									alt=""
+								/>
 							</a>
-							<!-- <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> -->
-							<p class="mb-3 font-normal text-theme-600">
-								{role}
-							</p>
-							<Button href={website} arrow={true}>Voir le site</Button>
+							<div class="p-5">
+								<a>
+									<!-- <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"> -->
+									<h5 class="mb-2 text-2xl font-bold tracking-tight text-theme-900">
+										{name}
+									</h5>
+								</a>
+								<!-- <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> -->
+								<p class="mb-3 font-normal text-theme-600">
+									{role}
+								</p>
+								<Button href={website} arrow={true}>Voir le site</Button>
+							</div>
 						</div>
-					</div>
-				))
-			}
-		</div>
-		<div class="grid-cols-3 text-center">
-			<Button href="https://files.2gether-asso.fr/asso/statuts.pdf">Les Statuts</Button>
-			<Button href="https://files.2gether-asso.fr/asso/règlement_intérieur.pdf">Règlement Intérieur</Button>
-			<Button href="/legal">Mentions légales</Button>
-			<Button href="https://files.2gether-asso.fr/asso/bureau.pdf">Le Bureau</Button>
-		</div>
+					))
+				}
+			</div>
+			<div class="grid-cols-3 text-center">
+				<Button href="https://files.2gether-asso.fr/asso/statuts.pdf">Les Statuts</Button>
+				<Button href="https://files.2gether-asso.fr/asso/règlement_intérieur.pdf">Règlement Intérieur</Button>
+				<Button href="/legal">Mentions légales</Button>
+				<Button href="https://files.2gether-asso.fr/asso/bureau.pdf">Le Bureau</Button>
+			</div>
+		</ContentSection>
 		<img src={ligneDeVie} class="center" />
 		<AboutTimeline />
 	</div>
 	<Footer />
 	<style>
-		/* Float four columns side by side */
-		.column {
-			float: left;
-			width: 50%;
-		}
-
 		/* Remove extra left and right margins, due to padding in columns */
 		.row {
 			align-items: center;
@@ -81,20 +76,10 @@ const staff = await getStaff()
 			clear: both;
 		}
 
-		/* Responsive columns - one column layout (vertical) on small screens */
-		@media screen and (max-width: 600px) {
-			.column {
-				width: 100%;
-				display: block;
-				margin-bottom: 20px;
-			}
-		}
-
 		/* Style the counter cards */
 		.card {
 			text-align: center;
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-			margin-right: 20px;
 		}
 
 		.center {
