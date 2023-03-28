@@ -1,0 +1,65 @@
+---
+import { Icon } from 'astro-icon'
+import KeyPoints from '~/components/KeyPoints.astro'
+import physical from '~/data/activities_physical.json'
+import remote from '~/data/activities_remote.json'
+
+interface Props
+{
+	class?: string
+}
+
+const {
+	class: className = '',
+} = Astro.props
+---
+
+<KeyPoints id="asso" class={className} title="Activités en physique">
+	<Fragment slot="lead">
+		Les membres auront accès à différents <span class="text-primary">outils</span>.
+		En plus d'une <span class="text-primary">ouverture à la communauté</span>.
+	</Fragment>
+
+	{
+		physical.map(({ title, description, icon }) => (
+			<li>
+				<div>
+					<div class="icon">
+						<Icon name={icon} />
+					</div>
+					<p class="title">
+						{title}
+					</p>
+					<p class="description">
+						{description}
+					</p>
+				</div>
+			</li>
+		))
+	}
+</KeyPoints>
+
+<KeyPoints id="community" class={className} title="Activités à distance">
+	<Fragment slot="lead">
+		Une communauté sur <span class="text-primary">Discord</span> ouverte sur parainage
+		et adhésions proposants des évènements réguliers.
+	</Fragment>
+
+	{
+		remote.map(({ title, description, icon }) => (
+			<li>
+				<div>
+					<div class="icon">
+						<Icon name={icon} />
+					</div>
+					<p class="title">
+						{title}
+					</p>
+					<p class="description">
+						{description}
+					</p>
+				</div>
+			</li>
+		))
+	}
+</KeyPoints>

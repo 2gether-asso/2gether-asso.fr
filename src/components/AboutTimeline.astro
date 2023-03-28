@@ -1,5 +1,6 @@
 ---
 import timeline from '~/data/about/timeline.json'
+import Button from './Button.astro';
 ---
 
 <div class="about-timeline">
@@ -17,29 +18,25 @@ import timeline from '~/data/about/timeline.json'
 		}
 	</ol>
 
-	<a href="#" class="timeline-scroll-top">
-		<button class="group group-hover:from-purple-600 group-hover:to-blue-500">
-			<span class="group-hover:bg-opacity-0">
-				<svg xmlns="http://www.w3.org/2000/svg"
-					 preserveAspectRatio="xMidYMid meet"
-					 viewBox="0 0 24 24">
-					<path fill="none"
-						stroke="currentColor"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width="2"
-						d="m4 15l8-8l8 8"></path>
-				</svg>
-			</span>
-		</button>
-	</a>
+	<Button href="#" class="timeline-scroll-top">
+		<svg xmlns="http://www.w3.org/2000/svg"
+				preserveAspectRatio="xMidYMid meet"
+				viewBox="0 0 24 24">
+			<path fill="none"
+				stroke="currentColor"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				stroke-width="2"
+				d="m4 15l8-8l8 8"></path>
+		</svg>
+	</Button>
 </div>
 
 <style lang="scss">
 .about-timeline {
 	// @apply block mb-5 p-6 max-w-7xl bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700;
 	// @apply block mb-5 p-6 max-w-7xl bg-card rounded-lg border border-card shadow-md; // ok
-	@apply block mb-5 p-6 max-w-7xl bg-theme-100 rounded-lg border border-theme-200 shadow-md; // ok
+	@apply block mx-5 mb-5 p-6 max-w-7xl bg-theme-100 rounded-lg border border-theme-200 shadow-md; // ok
 
 	.timeline-list {
 		// @apply relative border-l border-gray-200 dark:border-gray-700;
@@ -77,25 +74,6 @@ import timeline from '~/data/about/timeline.json'
 }
 
 .timeline-scroll-top {
-	> button {
-		@apply relative justify-center;
-		@apply bg-gradient-to-br from-purple-600 to-blue-500 rounded-lg;
-		@apply p-0.5 mb-2 mr-2;
-		// @apply text-sm font-medium text-gray-900 overflow-hidden;
-		// @apply hover:text-white dark:text-white;
-		@apply text-sm font-medium text-theme-900 hover:text-theme-0 overflow-hidden;
-		@apply focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800;
-
-		> * {
-			@apply inline-flex items-center;
-			// @apply bg-white dark:bg-gray-900 rounded-md;
-			@apply bg-theme-50 rounded-md;
-			@apply py-2 px-3;
-			@apply text-sm font-medium text-center;
-			@apply transition-all ease-in duration-75;
-		}
-	}
-
 	svg {
 		width: 1em;
 		height: 1em;

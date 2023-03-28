@@ -3,28 +3,32 @@ import PageTitle from '~/components/PageTitle.astro'
 
 interface Props
 {
-	id: string;
-	class?: string;
-	title: string;
+	id: string
+	class?: string
+	title: string
 }
 
 const {
 	id,
-	class: sectionClass = undefined,
+	class: className = '',
 	title,
-} = Astro.props;
+} = Astro.props
 ---
 
-<section id={id} class={sectionClass}>
+<section id={id} class={className}>
 	<div class="title">
 		<slot name="eyebrow" />
 
 		<PageTitle>{title}</PageTitle>
 	</div>
 
-	<p>
-		<slot name="lead" />
-	</p>
+	{
+		Astro.slots.lead && (
+			<p>
+				<slot name="lead" />
+			</p>
+		)
+	}
 
 	<slot />
 </section>

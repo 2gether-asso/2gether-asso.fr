@@ -4,16 +4,18 @@ import ContentSection from '~/components/ContentSection.astro'
 interface Props
 {
 	id: string
+	class?: string
 	title: string
 }
 
 const {
 	id,
+	class: className = '',
 	title,
 } = Astro.props
 ---
 
-<ContentSection id={id} title={title}>
+<ContentSection id={id} class={className} title={title}>
 	<Fragment slot="lead">
 		<slot name="lead" />
 	</Fragment>

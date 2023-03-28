@@ -21,39 +21,37 @@ import ligneDeVie from '~/assets/ligneDeVie.png'
 	<Header />
 
 	<main>
-		<div>
-			<ContentSection title="Nos Serveurs" id="servers" />
+		<ContentSection title="Nos Serveurs" id="servers" />
 
-			<img src={ligneDeVie} class="separator" />
+		<img src={ligneDeVie} class="separator" />
 
-			<ul class="servers">
-				<li>
-					<MCServerStatus name="vanilla" client:visible>
-						<div class="status-ok" slot="up">
-							<Button href="https://mc.2gether-asso.fr" class="btn">
-								<Icon name="clarity:map-line" class="icon" />
-								Voir la map
-							</Button>
-						</div>
-						<style lang="scss">
-							.status-ok {
-								.btn {
-									@apply mx-auto;
+		<ul class="servers">
+			<li>
+				<MCServerStatus name="vanilla" client:visible>
+					<div class="status-ok" slot="up">
+						<Button href="https://mc.2gether-asso.fr" class="btn">
+							<Icon name="clarity:map-line" class="icon" />
+							Voir la map
+						</Button>
+					</div>
+					<style lang="scss">
+						.status-ok {
+							.btn {
+								@apply mx-auto;
 
-									.icon {
-										@apply mr-3 w-6 h-6;
-									}
+								.icon {
+									@apply mr-3 w-6 h-6;
 								}
 							}
-						</style>
-					</MCServerStatus>
-				</li>
+						}
+					</style>
+				</MCServerStatus>
+			</li>
 
-				<li>
-					<MCServerStatus name="modded" client:visible />
-				</li>
-			</ul>
-		</div>
+			<li>
+				<MCServerStatus name="modded" client:visible />
+			</li>
+		</ul>
 	</main>
 
 	<Footer />
@@ -61,10 +59,10 @@ import ligneDeVie from '~/assets/ligneDeVie.png'
 
 <style lang="scss">
 	main {
-		@apply flex justify-center;
+		@apply flex flex-col align-middle max-w-4xl mx-auto grow px-5 py-16 space-y-3;
 
-		> div {
-			@apply py-32 space-y-3;
+		> * {
+			@apply grow-0;
 		}
 	}
 
@@ -73,10 +71,10 @@ import ligneDeVie from '~/assets/ligneDeVie.png'
 	}
 
 	.servers {
-		@apply grid grid-cols-2;
+		@apply grid grid-cols-1 sm:grid-cols-2 gap-5;
 
 		> li {
-			@apply flex flex-col gap-4 p-6 border border-default bg-offset;
+			@apply flex flex-col gap-4 p-6 border border-default bg-offset rounded-lg;
 		}
 	}
 </style>
