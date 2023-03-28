@@ -3,9 +3,18 @@ import { Icon } from 'astro-icon'
 import KeyPoints from '~/components/KeyPoints.astro'
 import physical from '~/data/activities_physical.json'
 import remote from '~/data/activities_remote.json'
+
+interface Props
+{
+	class?: string
+}
+
+const {
+	class: className = '',
+} = Astro.props
 ---
 
-<KeyPoints id="asso" title="Activités en physique">
+<KeyPoints id="asso" class={className} title="Activités en physique">
 	<Fragment slot="lead">
 		Les membres auront accès à différents <span class="text-primary">outils</span>.
 		En plus d'une <span class="text-primary">ouverture à la communauté</span>.
@@ -30,7 +39,7 @@ import remote from '~/data/activities_remote.json'
 	}
 </KeyPoints>
 
-<KeyPoints id="community" title="Activités à distance">
+<KeyPoints id="community" class={className} title="Activités à distance">
 	<Fragment slot="lead">
 		Une communauté sur <span class="text-primary">Discord</span> ouverte sur parainage
 		et adhésions proposants des évènements réguliers.

@@ -1,10 +1,19 @@
 ---
 import ContentSection from '~/components/ContentSection.astro'
 
+interface Props
+{
+	class?: string
+}
+
+const {
+	class: className = '',
+} = Astro.props
+
 const logoSrc = '/assets/logo.png'
 ---
 
-<ContentSection id="intro" title="Une association à but non lucratif">
+<ContentSection id="intro" class={className} title="Une association à but non lucratif">
 	<Fragment slot="eyebrow">
 		<img src={logoSrc} class="logo" />
 		<style lang="scss">
