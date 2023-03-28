@@ -19,8 +19,8 @@ const staff = await getStaff()
 	socialUrl={Astro.site}
 >
 	<Header />
-	<div class="grid place-items-center">
-		<ContentSection title="Qui sommes nous ?" id="nous" class="row pt-12">
+	<div class="grid place-items-center py-16">
+		<ContentSection title="Qui sommes nous ?" id="nous" class="row">
 			<div class="flex flex-col sm:flex-row items-center justify-center mx-5 gap-5">
 				{
 					staff.map(({ name, role, website, picture }) => (
