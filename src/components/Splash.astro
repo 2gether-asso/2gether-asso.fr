@@ -15,7 +15,8 @@ const logoSrc = '/assets/logo.png'
 	<div class="relative grid h-full place-items-center z-10">
 		<div class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto">
 			<h2 class="gradient-text text-center font-extrabold tracking-tighter text-4xl">
-				Partageons un moment <span class="sr-only">2GETHER</span>
+				Partageons un moment
+				<span class="sr-only">2GETHER</span>
 			</h2>
 			<img src={logoSrc} class="logotitre h-full max-h-16 text-white md:max-h-24" />
 			<div class="relative grid h-full place-items-center mt-4">
@@ -39,11 +40,13 @@ const logoSrc = '/assets/logo.png'
 		img {
 			@apply pointer-events-none;
 			&.sky {
+				@apply pointer-events-none select-none;
 				@apply absolute top-0 left-0 w-full h-full object-cover;
 			}
 		}
 
 		img.logotitre {
+			@apply pointer-events-none select-none;
 			z-index: 49;
 		}
 

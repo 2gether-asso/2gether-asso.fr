@@ -16,9 +16,12 @@ const logoSrc = '/assets/logo.png'
 <ContentSection id="intro" class={className} title="Une association à but non lucratif">
 	<Fragment slot="eyebrow">
 		<img src={logoSrc} class="logo" />
+		<span class="sr-only">2GETHER</span>
+
 		<style lang="scss">
 			.logo {
 				@apply max-w-xl w-full;
+				@apply pointer-events-none select-none;
 			}
 		</style>
 	</Fragment>
