@@ -22,9 +22,13 @@ const {
 		<PageTitle>{title}</PageTitle>
 	</div>
 
-	<p>
-		<slot name="lead" />
-	</p>
+	{
+		Astro.slots.lead && (
+			<p>
+				<slot name="lead" />
+			</p>
+		)
+	}
 
 	<slot />
 </section>
