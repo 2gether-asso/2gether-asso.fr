@@ -38,7 +38,8 @@ import '~/styles/index.css'
 			aspect-ratio: calc(1920 + 340) / 1080;
 
 			@media only screen and (max-width: 680px) {
-				aspect-ratio: 1920 / calc(1080 * 2);
+				aspect-ratio: unset;
+				@apply h-full;
 			}
 
 			> .card {
