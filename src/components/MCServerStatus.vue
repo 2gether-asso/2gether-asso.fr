@@ -54,7 +54,7 @@ export default {
 			</div>
 
 			<h1 class="text-primary font-bold text-center">
-				{{ name }}
+				{{ data.name || name }}
 			</h1>
 
 			<div class="mb-2">
