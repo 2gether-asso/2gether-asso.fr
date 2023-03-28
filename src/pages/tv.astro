@@ -32,6 +32,10 @@ import '~/styles/index.css'
 	main {
 		aspect-ratio: calc(1920 + 340) / 1080;
 
+		@media only screen and (max-width: 680px) {
+			aspect-ratio: 1920 / calc(1080 * 2);
+		}
+
 		> .card {
 			@apply bg-gray-500 bg-opacity-20;
 			@apply flex justify-center items-center;
