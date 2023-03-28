@@ -1,0 +1,17 @@
+[
+	{
+		"title": "Créations d'activités",
+		"description": "2GETHER permet à des personnes de la France entière de se rencontrer et d'échanger pendant une activité, d'une simple balade à une sortie au cinéma, votre imagination sera la seule barrière.",
+		"icon": "mdi:plus-thick"
+	},
+	{
+		"title": "Sanctuaires",
+		"description": "Une liste précieuse validée par 2GETHER de lieux dit \"safe\", autant par la connaissance de son personnel que la fréquentation régulière par des membres.",
+		"icon": "mdi:storefront"
+	},
+	{
+		"title": "Communauté liée",
+		"description": "Outre les actions physiques, être membre vous lie aussi à une communauté en ligne, active, à l'écoute, permettant elle aussi de ne pas rester seul et de faire de nouvelles rencontres.",
+		"icon": "mdi:account-group"
+	}
+]
