@@ -1,5 +1,10 @@
 [
 	{
+		"date": "27/03/2022",
+		"title": "Refonte du site web",
+		"description": "Changement total de la charte graphique du site et ouverture au public"
+	},
+	{
 		"date": "28/01/2022 & 29/01/2022",
 		"title": "Meet Up Paris 2023",
 		"description": "Comment mieux démarrer l'année que par se retrouver ! Une dizaine de membres été présent lors du week end du 28 au 29 Janvier, Karaoké, Restos, Laser Game, Bowling et pleins d'autres activités ont été organisées"
@@ -45,11 +50,6 @@
 		"description": "Annonce des soirées JDR, des jeux de rôles créé par la communauté pour la communauté !"
 	},
 	{
-		"date": "08/05/2021",
-		"title": "Ouverture d'un serveur Minecraft",
-		"description": "Ouverture du premier serveur 2GETHER."
-	},
-	{
 		"date": "17/01/2022",
 		"title": "Planning Hebdomadaire d'évènements en ligne",
 		"description": "Mise en place du planning hebdo permettant aux membres de se retrouver chaques semaines le mercredi, vendredi et samedi (voir dimanche)."
@@ -58,6 +58,11 @@
 		"date": "18/10/2021",
 		"title": "Première Rencontre 2GETHER",
 		"description": "Meet up sur Paris le temps d'un week end."
+	},
+	{
+		"date": "08/05/2021",
+		"title": "Ouverture d'un serveur Minecraft",
+		"description": "Ouverture du premier serveur 2GETHER."
 	},
 	{
 		"date": "26/02/2021",
