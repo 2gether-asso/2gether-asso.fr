@@ -16,9 +16,15 @@ import '~/styles/index.css'
 >
 	<Header fixedHeader={false} />
 	<Splash />
-	<div class="space-y-24 px-8 py-32">
+	<main>
 		<HomeIntro />
 		<Activities />
-	</div>
+	</main>
 	<Footer />
 </Layout>
+
+<style lang="scss">
+	main {
+		@apply space-y-24 px-8 py-32;
+	}
+</style>
