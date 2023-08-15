@@ -1,8 +1,8 @@
 ---
-import moon from '~/assets/moon.png'
-import mountain from '~/assets/mountain.png'
-import sea from '~/assets/sea.png'
-import plain from '~/assets/plain.png'
+import moon from '~/assets/moon.svg'
+import mountain from '~/assets/mountain.svg'
+import sea from '~/assets/sea.svg'
+import plain from '~/assets/plain.svg'
 ---
 
 <gg-splash-parallax>
@@ -15,9 +15,23 @@ import plain from '~/assets/plain.png'
 <style lang="scss">
 	img {
 		@apply pointer-events-none select-none;
-		@apply absolute top-0 left-0 w-full h-full object-cover;
+
+		&.moon {
+			@apply absolute top-0 block object-cover;
+			width: clamp(100px,15vh,200px);
+			margin-top: 5vh;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		&.sea {
+			@apply absolute bottom-0 w-full object-cover;
+		}
+		&.mountain {
+			@apply absolute bottom-0 w-full object-cover;
+		}
 
 		&.plain {
+			@apply absolute bottom-0 w-full object-cover;
 			object-position: 50% calc(2060 / 2260 * 100%);
 		}
 	}
@@ -54,7 +68,7 @@ import plain from '~/assets/plain.png'
 					window.addEventListener('scroll', () =>
 						{
 							let value = window.scrollY
-							config.element.style.top = value * config.depth + 'px'
+							config.element.style.bottom = - value * config.depth + 'px'
 						})
 				})
 		}
