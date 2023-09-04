@@ -1,38 +1,24 @@
 ---
-import moon from '~/assets/moon.svg'
-import mountain from '~/assets/mountain.svg'
-import sea from '~/assets/sea.svg'
-import plain from '~/assets/plain.svg'
+import Moon from '~/components/Moon.astro'
+import Mountain from '~/components/Mountain.astro'
+import Sea from '~/components/Sea.astro'
+import Plain from '~/components/Plain.astro'
+
 ---
 
 <gg-splash-parallax>
-	<img src={moon} class="moon" />
-	<img src={sea} class="sea"/>
-	<img src={mountain} class="mountain" />
-	<img src={plain} class="plain" />
+		<Moon class="moon" />
+		<Sea class="sea"/>
+		<Mountain class="mountain" />
+		<Plain class="plain" />
 </gg-splash-parallax>
 
 <style lang="scss">
-	img {
-		@apply pointer-events-none select-none;
-
-		&.moon {
-			@apply absolute top-0 block object-cover;
-			width: clamp(100px,15vh,200px);
-			margin-top: 5vh;
-			left: 50%;
-			transform: translateX(-50%);
-		}
-		&.sea {
-			@apply absolute bottom-0 w-full object-cover;
-		}
-		&.mountain {
-			@apply absolute bottom-0 w-full object-cover;
-		}
-
-		&.plain {
-			@apply absolute bottom-0 w-full object-cover;
-			object-position: 50% calc(2060 / 2260 * 100%);
+	:global([data-theme="dark"]) {
+		div {
+			:global(.day_theme) {
+				opacity: 0;
+			}
 		}
 	}
 </style>
@@ -44,9 +30,9 @@ import plain from '~/assets/plain.svg'
 		{
 			super()
 
-			const mountain = this.querySelector('img.mountain') as HTMLImageElement
-			const moon = this.querySelector('img.moon') as HTMLImageElement
-			const sea = this.querySelector('img.sea') as HTMLImageElement
+			const mountain = this.querySelector('svg.mountain') as HTMLImageElement
+			const moon = this.querySelector('svg.moon') as HTMLImageElement
+			const sea = this.querySelector('svg.sea') as HTMLImageElement
 
 			const parallaxConfig = [
 				{
