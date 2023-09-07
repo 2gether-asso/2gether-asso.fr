@@ -1,0 +1,14 @@
+version: "3.4"
+
+# Services definition override for development
+
+services:
+
+  app:
+    # Build override
+    build:
+      target: app_dev
+    # Deploy override
+    volumes:
+      - ../app:/app
+      - /app/node_modules # Remove from bind-mount for better performance
