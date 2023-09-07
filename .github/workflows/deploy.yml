@@ -44,10 +44,9 @@ jobs:
       run: npm run build
 
     - name: Upload artifact
-      working-directory: ./app
       uses: actions/upload-pages-artifact@v1
       with:
-        path: dist/
+        path: ./app/dist/
 
   # Deployment job
   deploy:
