@@ -1,0 +1,50 @@
+<svg width="100%" height="35%" class="plain" viewBox="0 0 1920 288" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<!-- Night Theme -->
+    <!--Ca c'est la pleine du fond (en violet)-->
+    <path class="plain_2" d="M-0.473335 87.5376L-3 87.9413V90.5V242V245H0H1920H1923V242V8V4.45222L1919.5 5.0417L1783.25 28H1691H1690.16L1689.44 28.4351L1614.58 73.8526L1489.76 132.534L987.726 158.484L745.825 109.107L527.041 28.1863L526.235 27.8882L525.393 28.062L419.141 50.0109L181.393 58.5019L181.209 58.5085L181.027 58.5376L-0.473335 87.5376Z" fill="#18103E" stroke="#A99DDF" stroke-width="6"/>
+
+    <!--Le masque pour délimiter la lumière-->
+    <mask id="mask0_1_18" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="8" width="1920" height="234">
+        <path d="M0 90.5L181.5 61.5L419.5 53L526 31L745 112L987.5 161.5L1490.5 135.5L1616 76.5L1691 31H1783.5L1920 8V242H0V90.5Z" fill="#18103E"/>
+    </mask>
+    <g mask="url(#mask0_1_18)">
+        <path class="plain_2_light" d="M454.5 42.5L528 27.5L1866 16.5L1825 66L1707.5 92.5L1614 126H784.5L645.5 82L533 74.5L454.5 42.5Z" fill="#3A2F6C"/>
+    </g>
+
+
+    <!--Ca c'est la pleine de devant (en bleu)-->
+    <path  class="plain_1" d="M0.316249 23.0167L-3 22.6652V26V288V291H0H1920H1923V288V145.5V142.716L1920.22 142.508L1518.22 112.508L1517.96 112.489L1517.7 112.515L1151.83 149.002L895.257 152.496L592.55 96.0508L592.482 96.0382L592.414 96.0286L283.413 53.0286L283.365 53.0219L283.316 53.0167L0.316249 23.0167Z" fill="#0D132E" stroke="#848FC6" stroke-width="6"/>
+
+    <!--Le masque pour délimiter la lumière-->
+    <mask id="mask1_1_18" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="26" width="1920" height="262">
+        <path d="M0 26L283 56L592 99L895 155.5L1152 152L1518 115.5L1920 145.5V288H0V26Z" fill="#0D132E"/>
+    </mask>
+    <g mask="url(#mask1_1_18)">
+        <path class="plain_1_light" d="M236.5 140L291.5 76.5L539 88L1524 196.5L1285 205L1270.5 238.5L1094.5 228L822 158.5L663.5 224L330 256.5L236.5 140Z" fill="#171F42"/>
+    </g>
+
+<!-- Day Theme -->
+    <!--Ca c'est la pleine du fond (en violet)-->
+    <path class="plain_2 day_theme" d="M-0.473335 87.5376L-3 87.9413V90.5V242V245H0H1920H1923V242V8V4.45222L1919.5 5.0417L1783.25 28H1691H1690.16L1689.44 28.4351L1614.58 73.8526L1489.76 132.534L987.726 158.484L745.825 109.107L527.041 28.1863L526.235 27.8882L525.393 28.062L419.141 50.0109L181.393 58.5019L181.209 58.5085L181.027 58.5376L-0.473335 87.5376Z" fill="#CBDA6F" stroke="#CBDA6F" stroke-width="6"/>
+
+    <!--Le masque pour délimiter la lumière-->
+    <mask id="mask0_1_18" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="8" width="1920" height="234">
+        <path d="M0 90.5L181.5 61.5L419.5 53L526 31L745 112L987.5 161.5L1490.5 135.5L1616 76.5L1691 31H1783.5L1920 8V242H0V90.5Z" fill="#18103E"/>
+    </mask>
+    <g mask="url(#mask0_1_18)">
+        <path class="plain_2_light day_theme" d="M454.5 42.5L528 27.5L1866 16.5L1825 66L1707.5 92.5L1614 126H784.5L645.5 82L533 74.5L454.5 42.5Z" fill="#87BA35"/>
+    </g>
+
+
+    <!--Ca c'est la pleine de devant (en bleu)-->
+    <path  class="plain_1 day_theme" d="M0.316249 23.0167L-3 22.6652V26V288V291H0H1920H1923V288V145.5V142.716L1920.22 142.508L1518.22 112.508L1517.96 112.489L1517.7 112.515L1151.83 149.002L895.257 152.496L592.55 96.0508L592.482 96.0382L592.414 96.0286L283.413 53.0286L283.365 53.0219L283.316 53.0167L0.316249 23.0167Z" fill="#FFEDAF" stroke="#FFEDAF" stroke-width="6"/>
+
+    <!--Le masque pour délimiter la lumière-->
+    <mask id="mask1_1_18" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="26" width="1920" height="262">
+        <path d="M0 26L283 56L592 99L895 155.5L1152 152L1518 115.5L1920 145.5V288H0V26Z" fill="#0D132E"/>
+    </mask>
+    <g mask="url(#mask1_1_18)">
+        <path class="plain_1_light day_theme" d="M236.5 140L291.5 76.5L539 88L1524 196.5L1285 205L1270.5 238.5L1094.5 228L822 158.5L663.5 224L330 256.5L236.5 140Z" fill="#CAB879"/>
+    </g>
+</svg>

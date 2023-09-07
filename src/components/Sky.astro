@@ -1,0 +1,44 @@
+---
+import sky from '~/assets/sky.svg?raw'
+
+interface Props
+{
+	class?: string
+}
+
+const
+{
+	class: skyClass = undefined,
+} = Astro.props
+---
+
+<div class={skyClass}>
+	<Fragment set:html={sky} />
+</div>
+
+<style lang="scss">
+	div {
+		:global(svg.sky) {
+			@apply w-full h-full;
+		}
+	}
+
+	:global([data-theme="dark"]) {
+		div {
+			:global(.day_sky) {
+				opacity: 0;
+			}
+			:global(.star) {
+				opacity: 10;
+			}
+		}
+	}
+
+	:global([data-theme="light"]) {
+		div {
+			:global(.star) {
+				opacity: 0;
+			}
+		}
+	}
+</style>

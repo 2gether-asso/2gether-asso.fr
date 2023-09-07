@@ -1,0 +1,33 @@
+---
+import mountain from '~/assets/mountain.svg?raw'
+
+interface Props
+{
+	class?: string
+}
+
+const
+{
+	class: mountainClass = undefined,
+} = Astro.props
+---
+
+<div class={mountainClass}>
+	<Fragment set:html={mountain} />
+</div>
+
+<style lang="scss">
+	div {
+		:global(svg.mountain) {
+			@apply absolute bottom-0 w-full object-cover;
+		}
+	}
+
+	:global([data-theme="dark"]) {
+		div {
+			:global(.day_theme) {
+				opacity: 0;
+			}
+		}
+	}
+</style>

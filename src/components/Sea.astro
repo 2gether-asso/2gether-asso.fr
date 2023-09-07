@@ -1,0 +1,34 @@
+---
+import sea from '~/assets/sea.svg?raw'
+
+interface Props
+{
+	class?: string
+}
+
+const
+{
+	class: seaClass = undefined,
+} = Astro.props
+---
+
+<div class={seaClass}>
+	<Fragment set:html={sea} />
+</div>
+
+<style lang="scss">
+	div {
+		:global(svg.sea) {
+			position: absolute;
+			bottom: 0;
+		}
+	}
+
+	:global([data-theme="dark"]) {
+		div {
+			:global(.day_theme) {
+				opacity: 0;
+			}
+		}
+	}
+</style>

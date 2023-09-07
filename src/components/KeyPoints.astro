@@ -47,7 +47,11 @@ const {
 		overflow: hidden;
 
 		> :global(li) {
-			@apply relative cursor-pointer;
+			@apply relative;
+
+			> :global(a[href]) {
+				@apply cursor-pointer;
+			}
 
 			@media (min-width: theme("screens.md")) {
 				&:nth-child(2n-1):nth-last-of-type(1) {

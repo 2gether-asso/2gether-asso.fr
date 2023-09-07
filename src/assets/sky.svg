@@ -1,0 +1,106 @@
+<svg width="100%" height="100%" class="sea" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- Sky -->
+    <rect class="sky" width="100%" height="100%" fill="url(#night_gradiant)"/>
+    <rect class="day_sky" width="100%" height="100%" fill="url(#day_gradiant)"/>
+
+    <defs>
+        <radialGradient id="night_gradiant" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(960 -629.5) rotate(90) scale(1822.5 3240)">
+            <stop stop-color="#542492"/>
+            <stop offset="0.454733" stop-color="#361974"/>
+            <stop offset="0.776042" stop-color="#2734A7"/>
+        </radialGradient>
+
+        <radialGradient id="day_gradiant" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(960 -629.5) rotate(90) scale(1822.5 3240)">
+            <stop stop-color="#306ECB"/>
+            <stop offset="0.454733" stop-color="#52B8D9"/>
+            <stop offset="0.776042" stop-color="#BEE3EF"/>
+        </radialGradient>
+    </defs>
+
+    <!-- Big Stars -->
+    <circle class="star" cx="343.5" cy="105.5" r="1.5" fill="#D9D9D9"/>
+    <path class="star" d="M343.5 96L343.738 105.089L351.727 100.75L343.975 105.5L351.727 110.25L343.738 105.911L343.5 115L343.262 105.911L335.273 110.25L343.025 105.5L335.273 100.75L343.262 105.089L343.5 96Z" fill="#D9D9D9"/>
+    <path class="star" d="M346.373 100.525L343.749 105.356L349.245 105.5L343.749 105.644L346.373 110.475L343.5 105.787L340.627 110.475L343.251 105.644L337.755 105.5L343.251 105.356L340.627 100.525L343.5 105.213L346.373 100.525Z" fill="#D9D9D9"/>
+
+    <circle class="star" cx="690.5" cy="287.5" r="1.5" fill="#D9D9D9"/>
+    <path class="star" d="M690.5 278L690.738 287.089L698.727 282.75L690.975 287.5L698.727 292.25L690.738 287.911L690.5 297L690.262 287.911L682.273 292.25L690.025 287.5L682.273 282.75L690.262 287.089L690.5 278Z" fill="#D9D9D9"/>
+    <path class="star" d="M693.082 283.027L690.591 287.615L695.81 287.751L690.591 287.888L693.082 292.475L690.355 288.024L687.627 292.475L690.119 287.888L684.9 287.751L690.119 287.615L687.627 283.027L690.355 287.479L693.082 283.027Z" fill="#D9D9D9"/>
+
+    <circle class="star" cx="491" cy="417" r="0.789474" fill="#D9D9D9"/>
+    <path class="star" d="M491 412L491.217 416.875L495.33 419.5L491 417.25L486.67 419.5L490.783 416.875L491 412Z" fill="#D9D9D9"/>
+    <path class="star" d="M492.512 414.381L491.151 417L492.512 419.619L490.924 417.131L487.976 417L490.924 416.869L492.512 414.381Z" fill="#D9D9D9"/>
+
+    <circle class="star" cx="1307.5" cy="374.5" r="2.13158" fill="#D9D9D9"/>
+    <path class="star" d="M1307.5 361L1307.79 373.892L1318.05 366.083L1308.16 374.35L1320.66 377.504L1308.03 374.921L1313.36 386.663L1307.5 375.175L1301.64 386.663L1306.97 374.921L1294.34 377.504L1306.84 374.35L1296.95 366.083L1307.21 373.892L1307.5 361Z" fill="#D9D9D9" fill-opacity="0.8"/>
+
+    <circle class="star" cx="1776" cy="282" r="0.631579" fill="#D9D9D9"/>
+    <path class="star" d="M1776 278L1776.09 281.82L1779.13 279.506L1776.19 281.955L1779.9 282.89L1776.16 282.125L1777.74 285.604L1776 282.2L1774.26 285.604L1775.84 282.125L1772.1 282.89L1775.81 281.955L1772.87 279.506L1775.91 281.82L1776 278Z" fill="#D9D9D9" fill-opacity="0.8"/>
+
+    <circle class="star" cx="1549" cy="111" r="0.947368" fill="#D9D9D9"/>
+    <path class="star" d="M1550.55 105.204L1549.26 110.85L1554.8 112.553L1549.15 111.26L1547.45 116.796L1548.74 111.15L1543.2 109.447L1548.85 110.74L1550.55 105.204Z" fill="#D9D9D9"/>
+    <path class="star" d="M1550.81 107.858L1549.17 110.926L1552.55 111.754L1549.12 111.135L1549.38 114.609L1548.91 111.157L1545.69 112.476L1548.82 110.962L1546.57 108.303L1548.98 110.82L1550.81 107.858Z" fill="#D9D9D9"/>
+
+    <circle class="star" cx="1125.7" cy="75" r="1.67597" fill="white"/>
+    <path class="star" d="M1128.44 64.7472L1126.16 74.7346L1135.95 77.7472L1125.96 75.4596L1122.95 85.2528L1125.24 75.2654L1115.44 72.2528L1125.43 74.5404L1128.44 64.7472Z" fill="white"/>
+    <path class="star" d="M1128.91 69.4408L1125.99 74.8694L1131.98 76.3346L1125.91 75.2385L1126.37 81.384L1125.54 75.2779L1119.83 77.6109L1125.38 74.9333L1121.4 70.2296L1125.66 74.6808L1128.91 69.4408Z" fill="white"/>
+
+
+    <!-- Small Stars -->
+    <circle class="star" opacity="0.4" cx="165.5" cy="69.5" r="0.5" fill="white"/>
+    <circle class="star" opacity="0.5" cx="96.5" cy="24.5" r="0.5" fill="white"/>
+    <circle class="star" cx="56.5" cy="10.5" r="0.5" fill="white"/>
+    <circle class="star" opacity="0.5" cx="33.5" cy="142.5" r="0.5" fill="white"/>
+    <circle class="star" opacity="0.5" cx="98.5" cy="127.5" r="0.5" fill="white" fill-opacity="0.6"/>
+    <circle class="star" opacity="0.5" cx="85.5" cy="33.5" r="0.5" fill="white"/>
+    <circle class="star" opacity="0.5" cx="149.5" cy="18.5" r="0.5" fill="white"/>
+    <circle class="star" opacity="0.7" cx="134.5" cy="61.5" r="0.5" fill="white"/>
+    <circle class="star" opacity="0.5" cx="66.5" cy="62.5" r="0.5" fill="white"/>
+    <circle class="star" opacity="0.4" cx="508.5" cy="219.5" r="0.5" transform="rotate(-90 508.5 219.5)" fill="white"/>
+    <circle class="star" opacity="0.5" cx="463.5" cy="288.5" r="0.5" transform="rotate(-90 463.5 288.5)" fill="white"/>
+    <ellipse class="star" cx="749" cy="74.5" rx="1" ry="1.5" fill="white"/>
+    <circle class="star" opacity="0.5" cx="701" cy="352" r="1" fill="white"/>
+    <circle class="star" opacity="0.5" cx="838" cy="320" r="1" fill="white" fill-opacity="0.6"/>
+    <circle class="star" opacity="0.5" cx="810" cy="123" r="1" fill="white"/>
+    <circle class="star" opacity="0.5" cx="945" cy="91" r="1" fill="white"/>
+    <circle class="star" opacity="0.7" cx="913" cy="182" r="1" fill="white"/>
+    <circle class="star" opacity="0.5" cx="770" cy="184" r="1" fill="white"/>
+    <ellipse class="star" opacity="0.4" cx="1699" cy="514" rx="1" ry="1" transform="rotate(-90 1699 514)" fill="white"/>
+    <ellipse class="star" opacity="0.5" cx="1604" cy="658.5" rx="1.5" ry="1" transform="rotate(-90 1604 658.5)" fill="white"/>
+    <circle class="star" cx="449.5" cy="328.5" r="0.5" transform="rotate(-90 449.5 328.5)" fill="white"/>
+    <circle class="star" opacity="0.5" cx="581.5" cy="351.5" r="0.5" transform="rotate(-90 581.5 351.5)" fill="white"/>
+    <ellipse class="star" opacity="0.5" cx="567" cy="286" rx="1" ry="1" transform="rotate(-90 567 286)" fill="white" fill-opacity="0.6"/>
+    <ellipse class="star" opacity="0.5" cx="473" cy="299" rx="1" ry="1" transform="rotate(-90 473 299)" fill="white"/>
+    <ellipse class="star" opacity="0.5" cx="458" cy="235" rx="1" ry="1" transform="rotate(-90 458 235)" fill="white"/>
+    <circle class="star" opacity="0.7" cx="500.5" cy="250.5" r="0.5" transform="rotate(-90 500.5 250.5)" fill="white"/>
+    <circle class="star" opacity="0.5" cx="501.5" cy="318.5" r="0.5" transform="rotate(-90 501.5 318.5)" fill="white"/>
+    <circle class="star" opacity="0.4" cx="1098.84" cy="357.562" r="0.5" transform="rotate(-150 1098.84 357.562)" fill="white"/>
+    <circle class="star" opacity="0.5" cx="1136.1" cy="431.033" r="0.5" transform="rotate(-150 1136.1 431.033)" fill="white"/>
+    <circle class="star" cx="1163.74" cy="463.158" r="0.5" transform="rotate(-150 1163.74 463.158)" fill="white"/>
+    <circle class="star" opacity="0.5" cx="1249.66" cy="360.342" r="0.5" transform="rotate(-150 1249.66 360.342)" fill="white"/>
+    <circle class="star" opacity="0.5" cx="1185.87" cy="340.833" r="0.5" transform="rotate(-150 1185.87 340.833)" fill="white" fill-opacity="0.6"/>
+    <circle class="star" opacity="0.5" cx="1150.12" cy="428.739" r="0.5" transform="rotate(-150 1150.12 428.739)" fill="white"/>
+    <circle class="star" opacity="0.5" cx="1087.2" cy="409.729" r="0.5" transform="rotate(-150 1087.2 409.729)" fill="white"/>
+    <circle class="star" opacity="0.7" cx="1121.69" cy="379.99" r="0.5" transform="rotate(-150 1121.69 379.99)" fill="white"/>
+    <circle class="star" opacity="0.5" cx="1181.08" cy="413.124" r="0.5" transform="rotate(-150 1181.08 413.124)" fill="white"/>
+    <circle class="star" opacity="0.4" cx="1755.37" cy="184.462" r="0.803291" transform="rotate(75 1755.37 184.462)" fill="white"/>
+    <circle class="star" opacity="0.5" cx="1781.18" cy="105.388" r="0.895522" transform="rotate(75 1781.18 105.388)" fill="white"/>
+    <circle class="star" cx="1784.07" cy="63.6124" r="0.5" transform="rotate(75 1784.07 63.6124)" fill="white"/>
+    <circle class="star" opacity="0.5" cx="1650.61" cy="75.5602" r="0.5" transform="rotate(75 1650.61 75.5602)" fill="white"/>
+    <circle class="star" opacity="0.5" cx="1681.92" cy="134.463" r="0.5" transform="rotate(75 1681.92 134.463)" fill="white" fill-opacity="0.6"/>
+    <circle class="star" opacity="0.5" cx="1769.08" cy="98.056" r="0.89104" transform="rotate(75 1769.08 98.056)" fill="white"/>
+    <circle class="star" opacity="0.5" cx="1800.41" cy="155.514" r="0.5" transform="rotate(75 1800.41 155.514)" fill="white"/>
+    <circle class="star" opacity="0.7" cx="1754.99" cy="152.154" r="0.5" transform="rotate(75 1754.99 152.154)" fill="white"/>
+    <circle class="star" opacity="0.5" cx="1736.43" cy="86.7302" r="0.5" transform="rotate(75 1736.43 86.7302)" fill="white"/>
+    <circle class="star" opacity="0.7" cx="148.038" cy="506.534" r="0.75954" transform="rotate(-150 148.038 506.534)" fill="white"/>
+    <circle class="star" opacity="0.5" cx="238.255" cy="556.867" r="0.75954" transform="rotate(-150 238.255 556.867)" fill="white"/>
+    <circle class="star" opacity="0.4" cx="1110.65" cy="209.51" r="1.22026" transform="rotate(75 1110.65 209.51)" fill="white"/>
+    <circle class="star" opacity="0.5" cx="1149.85" cy="89.3915" r="1.36037" transform="rotate(75 1149.85 89.3915)" fill="white"/>
+    <circle class="star" cx="1154.24" cy="25.9302" r="0.75954" transform="rotate(75 1154.24 25.9302)" fill="white"/>
+    <circle class="star" opacity="0.5" cx="951.515" cy="44.08" r="0.75954" transform="rotate(75 951.515 44.08)" fill="white"/>
+    <circle class="star" opacity="0.5" cx="999.08" cy="133.558" r="0.75954" transform="rotate(75 999.08 133.558)" fill="white" fill-opacity="0.6"/>
+    <circle class="star" opacity="0.5" cx="1105.66" cy="147.658" r="1.35356" transform="rotate(75 1105.66 147.658)" fill="white"/>
+    <circle class="star" opacity="0.5" cx="1179.07" cy="165.536" r="0.75954" transform="rotate(75 1179.07 165.536)" fill="white"/>
+    <circle class="star" opacity="0.7" cx="1110.08" cy="160.433" r="0.75954" transform="rotate(75 1110.08 160.433)" fill="white"/>
+    <circle class="star" opacity="0.5" cx="1081.87" cy="61.0481" r="0.75954" transform="rotate(75 1081.87 61.0481)" fill="white"/>
+</svg>
