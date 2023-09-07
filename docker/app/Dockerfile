@@ -1,7 +1,7 @@
 #syntax=docker/dockerfile:1.4
 
 # Versions
-FROM node:20-slim AS node_upstream
+FROM node:18-slim AS node_upstream
 FROM nginx:alpine AS nginx_upstream
 
 
