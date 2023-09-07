@@ -33,9 +33,11 @@ jobs:
       run: cd ./app
 
     - name: Clean install
+      working-directory: ./app
       run: npm clean-install
 
     - name: Check
+      working-directory: ./app
       run: npm run check
 
   # Build job
@@ -53,11 +55,10 @@ jobs:
       with:
         node-version: 18
 
-    - name: Move to app directory
-      run: cd ./app
-
     - name: Clean install
+      working-directory: ./app
       run: npm clean-install
 
     - name: Build
+      working-directory: ./app
       run: npm run build
