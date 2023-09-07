@@ -29,6 +29,9 @@ jobs:
       with:
         node-version: 18
 
+    - name: Move to app directory
+      run: cd ./app
+
     - name: Clean install
       run: npm clean-install
 
@@ -49,6 +52,9 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 18
+
+    - name: Move to app directory
+      run: cd ./app
 
     - name: Clean install
       run: npm clean-install
