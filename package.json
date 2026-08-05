@@ -6,7 +6,8 @@
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
-		"check": "astro check && tsc --noEmit",
+		"check": "astro check && tsc --noEmit && npm run validate:timeline",
+		"validate:timeline": "node scripts/validate-timeline.mjs",
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro"

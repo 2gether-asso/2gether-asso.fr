@@ -12,8 +12,8 @@ const logoSrc = '/assets/logo.png'
 <section class="relative h-full bg-black shrink-0 overflow-hidden">
 	<Sky class="sky" />
 	<Starfield />
-	<div class="relative grid h-full place-items-center z-10">
-		<div class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto">
+	<div class="hero-content relative grid h-full place-items-center z-10">
+		<div class="flex flex-col gap-3 self-end sm:gap-4 sm:self-auto">
 			<!-- <h2 class="gradient-text text-center font-extrabold tracking-tighter text-4xl absolute">
 				Partageons un moment
 				<span class="sr-only">2GETHER</span>
@@ -24,8 +24,8 @@ const logoSrc = '/assets/logo.png'
 				Partageons un moment
 				<span class="sr-only">2GETHER</span>
 			</h2>
-			<img src={logoSrc} class="logotitre h-full max-h-16 text-white md:max-h-24" />
-			<div class="btn relative grid h-full place-items-center mt-4">
+			<img src={logoSrc} class="logotitre h-full w-auto max-h-20 text-white md:max-h-32" />
+			<div class="btn relative grid h-full place-items-center">
 				<Button href={social.discord.url}>
 					<Icon class="h-5 mr-2" name={social.discord.icon} />
 					Rejoins-nous sur Discord&nbsp;!
@@ -66,20 +66,12 @@ const logoSrc = '/assets/logo.png'
 			z-index: 49;
 		}
 
-		a.btn {
-			@apply pointer-events-none opacity-50;
-			background: gray;
-		}
-
 		.btn > :global(*) > :global(*) {
 			box-shadow: 2px 2px 5px 0 #0008;
 		}
 
-		.bg {
-			background: linear-gradient(#2b1055, #7597de);
-		}
-
-		.grid {
+		.hero-content,
+		.btn {
 			@apply p-8;
 		}
 	}

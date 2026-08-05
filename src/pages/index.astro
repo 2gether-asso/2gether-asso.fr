@@ -10,9 +10,11 @@ import '~/styles/index.css'
 
 <Layout
 	title="Bienvenue sur 2GETHER"
-	lang="en"
+	lang="fr"
+	description="2GETHER est une association loi 1901 qui rassemble et aide les jeunes à sortir de l'isolement social, à travers des activités en physique et à distance."
 	htmlAttributes={{ "data-theme": "dark" }}
 	socialUrl={Astro.site}
+	socialImage={new URL('/assets/logo.png', Astro.site)}
 >
 	<Header fixedHeader={false} />
 	<Splash />

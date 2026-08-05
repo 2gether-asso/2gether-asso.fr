@@ -3,12 +3,50 @@
 		"name": "Helldwin",
 		"role": "Fondateur et Président",
 		"website": "https://quentin-helayel.me",
-		"picture": "./images/Helldwin.png"
+		"picture": "./images/Helldwin.png",
+		"group": "staff"
 	},
 	{
 		"name": "Matiboux",
 		"role": "Fondateur et Co-Président",
 		"website": "https://matiboux.me",
-		"picture": "./images/Matiboux.png"
+		"picture": "./images/Matiboux.png",
+		"group": "staff"
+	},
+	{
+		"name": "Clemastro",
+		"role": "Graphiste Bénévole",
+		"website": "https://clementbourhis.fr",
+		"group": "volunteer"
+	},
+	{
+		"name": "Mcsim",
+		"role": "Monteur Bénévole",
+		"group": "volunteer"
+	},
+	{
+		"name": "Elanesse",
+		"role": "Graphiste Bénévole",
+		"group": "volunteer"
+	},
+	{
+		"name": "Flo",
+		"role": "Compositeur Bénévole",
+		"group": "volunteer"
+	},
+	{
+		"name": "Sky",
+		"role": "Rédacteur Bénévole",
+		"group": "volunteer"
+	},
+	{
+		"name": "Rayna",
+		"role": "Rédactrice et Organisatrice Bénévole",
+		"group": "volunteer"
+	},
+	{
+		"name": "Zolipoulette",
+		"role": "Rédactrice Bénévole",
+		"group": "volunteer"
 	}
 ]

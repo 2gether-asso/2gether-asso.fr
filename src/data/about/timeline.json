@@ -1,13 +1,73 @@
 [
 	{
+		"date": "11/01/2026",
+		"title": "Nouvelle Année, Nouvelle Gazette",
+		"description": "La Gazette Hebdo revient pour sa 2nde année consécutive"
+	},
+	{
+		"date": "23/12/2025",
+		"title": "Les 5 ans de 2GETHER",
+		"description": "Plus de 600 évents créés depuis la création de 2GETHER"
+	},
+	{
+		"date": "03/12/2025",
+		"title": "Calendrier de l'Avent 2GETHER",
+		"description": "Comme chaque année Clemastro réalise des petits fanart durant Noël pour les personnes de la communauté"
+	},
+	{
+		"date": "30/04/2025",
+		"title": "Collaboration avec le Fluff Event",
+		"description": "Matiboux étant autant Fondateur de 2GETHER que Trésorier et Lead Développeur au Fluff Event, nous nous permettons de faire de la cross-communication sur cet évènement carritatif permettant d'aider les personnes dans le besoin"
+	},
+	{
+		"date": "02/04/2025",
+		"title": "JDR - Ô Phare, Ô désespoir",
+		"description": "Inscription au JDR I.R.I.S ouverte"
+	},
+	{
+		"date": "01/04/2025",
+		"title": "L'année du Posson",
+		"description": "Des poissons à l'éfigie de la communauté ont été réalisée à l'occasion du Poisson d'Avril par Clemastro"
+	},
+	{
+		"date": "28/03/2025",
+		"title": "Teasing JDR",
+		"description": "Annonce du début des soirées JDR"
+	},
+	{
+		"date": "28/03/2025",
+		"title": "Évènements produits",
+		"description": "Première émission produite avec régis sur 2GETHER, le temps d'un Qui Veux Gagner des Millions !"
+	},
+	{
+		"date": "18/03/2025",
+		"title": "Collaboration avec le Fluff Event",
+		"description": "Nouvelle collab, nous nous permettons une fois de plus de faire de la cross-communication sur cet évènement carritatif permettant d'aider les personnes dans le besoin"
+	},
+	{
+		"date": "01/02/2025",
+		"title": "Élection Miss & Mister 2GETHER 2025",
+		"description": "Il est temps d’élire Miss & Mister 2GETHER, ainsi que leurs fidèles compagnons à quatre pattes !"
+	},
+	{
+		"date": "01/01/2025",
+		"title": "Arrivée de la Gazette",
+		"description": "La Gazette Hebdo fait son arrivée, permettant de partager un petit moment avec la communauté et raconter notre semaine tout les dimanches à 17h"
+	},
+	{
+		"date": "05/07/2024",
+		"title": "Meet Up Montpellier 2024",
+		"description": "Retrouvaille de l'asso à Montpellier"
+	},
+	{
 		"date": "31/05/2024",
 		"title": "Refonte Totale de 2GETHER !",
-		"description": "Toute la DA change pour adopté un ton plus homogène et une identité plus forte !"
+		"description": "Toute la DA change pour adopter un ton plus homogène et une identité plus forte !"
 	},
 	{
 		"date": "02/01/2024",
 		"title": "Arrivée officielle des mascottes !",
-		"description": "Après leurs apparitions dans le 2MORROW SHOW 2023, Lilo & Noz sont officiellement apparu sur le discord de l'asso"
+		"description": "Après leurs apparitions dans le 2MORROW SHOW 2023, Lilo & Noz sont officiellement apparus sur le discord de l'asso"
 	},
 	{
 		"date": "23/12/2023",
@@ -17,7 +77,7 @@
 	{
 		"date": "07/07/2023",
 		"title": "Un mystérieux Stream ?",
-		"description": "Un membre de la commu, Mcsim, découvra quelque chose d'étrange sur 2GETHER, cela lança un stream et démarra officiellement l'ARG Annuel"
+		"description": "Un membre de la commu, Mcsim, découvrit quelque chose d'étrange sur 2GETHER, cela lança un stream et démarra officiellement l'ARG Annuel"
 	},
 	{
 		"date": "07/07/2023",
@@ -40,14 +100,14 @@
 		"description": "C'est le début des bests of des moments sur 2GETHER avec la commu"
 	},
 	{
-		"date": "28/01/2023 & 29/01/2023",
+		"date": "28-29/01/2023",
 		"title": "Meet Up Paris 2023",
-		"description": "Comment mieux démarrer l'année que par se retrouver ! Une dizaine de membres été présent lors du week end du 28 au 29 Janvier, Karaoké, Restos, Laser Game, Bowling et pleins d'autres activités ont été organisées"
+		"description": "Comment mieux démarrer l'année que par se retrouver ! Une dizaine de membres étaient présents lors du week end du 28 au 29 Janvier, Karaoké, Restos, Laser Game, Bowling et pleins d'autres activités ont été organisées"
 	},
 	{
 		"date": "23/12/2022",
 		"title": "2 ans de 2GETHER",
-		"description": "Une nouvelle année riche en rebondissement, et qui annonce beaucoup de belles choses pour l'année à venir !"
+		"description": "Une nouvelle année riche en rebondissements, et qui annonce beaucoup de belles choses pour l'année à venir !"
 	},
 	{
 		"date": "20/11/2022",
@@ -87,7 +147,7 @@
 	{
 		"date": "17/01/2022",
 		"title": "Planning Hebdomadaire d'évènements en ligne",
-		"description": "Mise en place du planning hebdo permettant aux membres de se retrouver chaques semaines le mercredi, vendredi et samedi (voir dimanche)."
+		"description": "Mise en place du planning hebdo permettant aux membres de se retrouver chaque semaine le mercredi, vendredi et samedi (voir dimanche)."
 	},
 	{
 		"date": "18/10/2021",
@@ -117,6 +177,6 @@
 	{
 		"date": "18/11/2020",
 		"title": "Les Prémices",
-		"description": "En ce soir si spécial Helldwin et Matiboux eurent une idée ensemble, pourquoi ne pas créer un lieu où des personnes des quatres coins de la France pourraient se retrouver et partager des moments convivaux, leurs passions et faire de belles rencontres ! Les jeunes de plus en plus touchés par l'isolement social auraient un petit coup de pouce avec 2GETHER."
+		"description": "En ce soir si spécial Helldwin et Matiboux eurent une idée ensemble, pourquoi ne pas créer un lieu où des personnes des quatre coins de la France pourraient se retrouver et partager des moments conviviaux, leurs passions et faire de belles rencontres ! Les jeunes de plus en plus touchés par l'isolement social auraient un petit coup de pouce avec 2GETHER."
 	}
 ]
