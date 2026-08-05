@@ -67,7 +67,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: dist
-        path: dist/
+        path: app/dist/
         retention-days: 1
 
   # Lighthouse (perf, accessibility, best practices, SEO) job
