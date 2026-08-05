@@ -36,15 +36,17 @@ jobs:
         node-version: 18
 
     - name: Clean install
+      working-directory: ./app
       run: npm clean-install
 
     - name: Build
+      working-directory: ./app
       run: npm run build
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1
       with:
-        path: dist/
+        path: ./app/dist/
 
   # Deployment job
   deploy:

@@ -1,0 +1,28 @@
+
+# Packages
+**/node_modules
+
+# Application
+**/dist
+
+# Docker files
+**/Dockerfile
+**/docker-compose.yml
+**/docker-compose.*.yml
+
+# Temp files
+**/._*
+**/*~
+**/*.cache
+**/*.log*
+**/*.swp
+
+# Dotfiles & System files
+**/.editorconfig
+**/.env.local
+**/.env.*.local
+**/.gitattributes
+**/.gitignore
+**/.gitmodules
+**/.DS_Store
+**/Thumbs.db
