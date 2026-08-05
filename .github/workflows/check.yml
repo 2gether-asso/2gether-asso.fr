@@ -90,7 +90,7 @@ jobs:
     - name: Run Lighthouse CI
       uses: treosh/lighthouse-ci-action@v11
       with:
-        staticDistDir: ./dist
+        configPath: ./lighthouserc.json
         urls: |
           /index.html
           /about/index.html
@@ -98,6 +98,6 @@ jobs:
         uploadArtifacts: true
         temporaryPublicStorage: true
         # Informational only for now: reports scores on the PR without failing the
-        # build. Add a lighthouserc.json with `assert` rules once thresholds have
+        # build. Add an `assert` section to lighthouserc.json once thresholds have
         # been tuned to the site's actual baseline, then this step will start
         # blocking regressions.
