@@ -11,8 +11,10 @@ import ligneDeVie from '~/assets/ligneDeVie.png'
 <Layout
 	title="Mentions légales"
 	lang="fr"
+	description="Mentions légales du site internet 2gether-asso.fr."
 	htmlAttributes={{ "data-theme": "dark" }}
 	socialUrl={Astro.site}
+	socialImage={new URL('/assets/logo.png', Astro.site)}
 >
 	<Header />
 	<main class="grow py-16">
@@ -38,8 +40,8 @@ import ligneDeVie from '~/assets/ligneDeVie.png'
 				<p>
 					Des informations pour contacter cette personne sont
 					disponibles sur son site internet&nbsp;:
-					<a href="https://quentin-helayel.eu" class="text-primary">
-						quentin-helayel.eu
+					<a href="https://quentin-helayel.me" class="text-primary">
+						quentin-helayel.me
 					</a>
 				</p>
 				<img src={ligneDeVie} class="center" />
@@ -90,7 +92,7 @@ import ligneDeVie from '~/assets/ligneDeVie.png'
 				</p>
 				<p>
 					<Icon pack="mdi" name="copyright" class="icon" title="Copyright" />
-					2020-2023 – 2GETHER
+					2020-2024 – 2GETHER
 				</p>
 				<p>
 					<a href="https://github.com/2gether-asso/2gether-asso.fr" class="text-primary">Voir le code source sur Github</a>

@@ -1,0 +1,66 @@
+---
+import Button from '~/components/Button.astro'
+
+interface Props
+{
+	name: string
+	role: string
+	website?: string
+	picture?: string
+}
+
+const { name, role, website, picture } = Astro.props
+---
+
+<div class="column card w-full max-w-sm bg-theme-50 rounded-lg border border-theme-200 shadow-md flex flex-col">
+	{picture ? (
+		website ? (
+			<a href={website}>
+				<img
+					class="rounded-t-lg aspect-square object-cover"
+					src={picture}
+					alt=""
+				/>
+			</a>
+		) : (
+			<img
+				class="rounded-t-lg aspect-square object-cover"
+				src={picture}
+				alt=""
+			/>
+		)
+	) : (
+		<div class="placeholder-avatar rounded-t-lg aspect-square">
+			<span>{name.charAt(0)}</span>
+		</div>
+	)}
+	<div class="p-5 flex flex-col grow">
+		<h5 class="mb-2 text-2xl font-bold tracking-tight text-theme-900">
+			{name}
+		</h5>
+		<p class="mb-3 font-normal text-theme-600 grow">
+			{role}
+		</p>
+		{website ? (
+			<Button href={website} arrow={true}>Voir le site</Button>
+		) : (
+			<p class="text-sm italic text-theme-400">Site à venir</p>
+		)}
+	</div>
+</div>
+
+<style lang="scss">
+	.card {
+		text-align: center;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	}
+
+	.placeholder-avatar {
+		@apply flex items-center justify-center w-full;
+		background: linear-gradient(135deg, theme("colors.indigo.500"), theme("colors.fuchsia.500"), theme("colors.pink.500"));
+
+		> span {
+			@apply text-6xl font-extrabold text-white/90;
+		}
+	}
+</style>

@@ -3,65 +3,65 @@ import Layout from '~/layouts/Layout.astro'
 import Header from '~/components/Header.astro'
 import ContentSection from '~/components/ContentSection.astro'
 import Button from "~/components/Button.astro"
+import StaffCard from '~/components/StaffCard.astro'
 import AboutTimeline from '~/components/AboutTimeline.astro'
 import Footer from '~/components/Footer.astro'
 import getStaff from '~/data/about/staff'
+import donate from '~/data/donate.json'
 import '~/styles/index.css'
 import ligneDeVie from '~/assets/ligneDeVie.png'
 
 const staff = await getStaff()
+const founders = staff.filter(({ group }) => group !== 'volunteer')
+const volunteers = staff.filter(({ group }) => group === 'volunteer')
 ---
 
 <Layout
 	title="Les Fondateurs"
 	lang="fr"
+	description="Découvrez l'équipe et les bénévoles derrière 2GETHER, ainsi que l'histoire de l'association depuis sa création."
 	htmlAttributes={{ "data-theme": "dark" }}
 	socialUrl={Astro.site}
+	socialImage={new URL('/assets/logo.png', Astro.site)}
 >
 	<Header />
 	<div class="grid place-items-center py-16">
 		<ContentSection title="Qui sommes nous ?" id="nous" class="row">
-			<div class="flex flex-col sm:flex-row items-center justify-center mx-5 gap-5">
+			<div class="flex flex-row flex-wrap items-stretch justify-center mx-5 gap-5">
 				{
-					staff.map(({ name, role, website, picture }) => (
-						/* <div class="column mb-5 card max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"> */
-						<div class="column card max-w-sm bg-theme-50 rounded-lg border border-theme-200 shadow-md">
-							<a href={website}>
-								<img
-									class="rounded-t-lg"
-									src={picture}
-									alt=""
-								/>
-							</a>
-							<div class="p-5">
-								<a>
-									<!-- <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"> -->
-									<h5 class="mb-2 text-2xl font-bold tracking-tight text-theme-900">
-										{name}
-									</h5>
-								</a>
-								<!-- <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> -->
-								<p class="mb-3 font-normal text-theme-600">
-									{role}
-								</p>
-								<Button href={website} arrow={true}>Voir le site</Button>
-							</div>
-						</div>
+					founders.map(staffMember => (
+						<StaffCard {...staffMember} />
 					))
 				}
 			</div>
+
+			{volunteers.length > 0 && (
+				<>
+					<h3 class="text-xl font-extrabold text-theme-900">Nos Bénévoles</h3>
+					<div class="flex flex-row flex-wrap items-stretch justify-center mx-5 gap-5">
+						{
+							volunteers.map(staffMember => (
+								<StaffCard {...staffMember} />
+							))
+						}
+					</div>
+				</>
+			)}
 			<div class="grid-cols-3 text-center">
 				<Button href="https://files.2gether-asso.fr/asso/statuts.pdf">Les Statuts</Button>
 				<Button href="https://files.2gether-asso.fr/asso/règlement_intérieur.pdf">Règlement Intérieur</Button>
 				<Button href="/legal">Mentions légales</Button>
 				<Button href="https://files.2gether-asso.fr/asso/bureau.pdf">Le Bureau</Button>
+				{donate.url && (
+					<Button href={donate.url}>Faire un don ♥</Button>
+				)}
 			</div>
 		</ContentSection>
 		<img src={ligneDeVie} class="center" />
 		<AboutTimeline />
 	</div>
 	<Footer />
-	<style>
+	<style lang="scss">
 		/* Remove extra left and right margins, due to padding in columns */
 		.row {
 			align-items: center;
@@ -74,12 +74,6 @@ const staff = await getStaff()
 			content: "";
 			display: table;
 			clear: both;
-		}
-
-		/* Style the counter cards */
-		.card {
-			text-align: center;
-			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
 		}
 
 		.center {

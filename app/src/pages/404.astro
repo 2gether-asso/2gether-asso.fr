@@ -9,7 +9,10 @@ import ligneDeVie from '~/assets/ligneDeVie.png'
 <Layout
 	title="404 Page introuvable"
 	lang="fr"
+	description="La page demandée n'existe pas ou a été déplacée."
 	htmlAttributes={{ "data-theme": "dark" }}
+	socialUrl={Astro.site}
+	socialImage={new URL('/assets/logo.png', Astro.site)}
 >
 	<Header />
 	<main>

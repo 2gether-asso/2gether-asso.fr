@@ -62,3 +62,42 @@ jobs:
     - name: Build
       working-directory: ./app
       run: npm run build
+
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: dist
+        path: app/dist/
+        retention-days: 1
+
+  # Lighthouse (perf, accessibility, best practices, SEO) job
+  lighthouse:
+    name: Lighthouse audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [ build ]
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Download build artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: dist
+        path: dist/
+
+    - name: Run Lighthouse CI
+      uses: treosh/lighthouse-ci-action@v11
+      with:
+        configPath: ./lighthouserc.json
+        urls: |
+          /index.html
+          /about/index.html
+          /servers/index.html
+        uploadArtifacts: true
+        temporaryPublicStorage: true
+        # Informational only for now: reports scores on the PR without failing the
+        # build. Add an `assert` section to lighthouserc.json once thresholds have
+        # been tuned to the site's actual baseline, then this step will start
+        # blocking regressions.
