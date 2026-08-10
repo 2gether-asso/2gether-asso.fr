@@ -12,6 +12,7 @@
     "vscode": {
       "extensions": [
         "astro-build.astro-vscode",
+        "bradlc.vscode-tailwindcss",
         "mhutchie.git-graph"
       ]
     }
