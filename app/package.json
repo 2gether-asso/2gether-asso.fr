@@ -1,27 +1,33 @@
 {
-	"name": "2gether-asso.fr",
-	"version": "0.0.0",
-	"description": "Serving the 2GETHER website.",
-	"type": "module",
-	"scripts": {
-		"dev": "astro dev",
-		"start": "astro dev",
-		"check": "astro check && tsc --noEmit && npm run validate:timeline",
-		"validate:timeline": "node scripts/validate-timeline.mjs",
-		"build": "astro build",
-		"preview": "astro preview",
-		"astro": "astro"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/2gether-asso/2gether-asso.fr.git"
-	},
-	"author": "Matiboux",
-	"license": "UNLICENSED",
-	"bugs": {
-		"url": "https://github.com/2gether-asso/2gether-asso.fr/issues"
-	},
-	"homepage": "https://github.com/2gether-asso/2gether-asso.fr#readme",
+  "name": "2gether-website",
+  "description": "Serving the 2GETHER website.",
+  "author": "Matiboux",
+  "license": "UNLICENSED",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "check": "astro check --tsconfig tsconfig.prod.json",
+    "validate:timeline": "node scripts/validate-timeline.mjs",
+    "build-only": "astro build",
+    "build": "pnpm run check && pnpm run build-only",
+    "astro": "astro",
+    "astro:sync": "astro sync",
+    "astro:preview": "astro preview",
+    "test:vitest": "vitest run",
+    "test:playwright": "playwright test",
+    "npm:lockfile": "npm install --package-lock-only --ignore-scripts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2gether-asso/2gether-asso.fr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/2gether-asso/2gether-asso.fr/issues"
+  },
+  "homepage": "https://github.com/2gether-asso/2gether-asso.fr#readme",
 	"devDependencies": {
 		"@astrojs/tailwind": "^3.1.0",
 		"@fontsource/inter": "^4.5.15",
