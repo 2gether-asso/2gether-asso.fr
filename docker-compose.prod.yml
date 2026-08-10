@@ -1,9 +1,15 @@
-version: "3.4"
-
 # Services definition override for production
 
 services:
 
   app:
+    # Extend
+    extends:
+      file: ./docker-compose.yml
+      service: app
+    # Build override
+    build:
+      args:
+        BUILD_CHECK: ${BUILD_CHECK:-false}
     # Deploy override
     restart: unless-stopped

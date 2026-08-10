@@ -1,22 +1,16 @@
-version: "3.4"
+# Services definition for building & deploying
 
-# Services definition for local building & deployment
+name: 2gether-website
 
 services:
 
   app:
-    # Build
-    image: ${IMAGES_PREFIX:-app}-app
-    build:
-      context: ..
-      dockerfile: docker/app/Dockerfile
-      target: app_prod
-      args:
-        PUBLIC_API_URL: ${PUBLIC_API_URL:-http://localhost}
-        PUBLIC_WS_URL: ${PUBLIC_WS_URL:-ws://localhost}
-    # Deploy
-    ports:
-      # HTTP
-      - target: 80
-        published: ${HTTP_PORT:-80}
-        protocol: tcp
+    # Extend
+    extends:
+      file: ./app/docker-compose.yml
+      service: app
+    # Build override
+    image: ${IMAGES_PREFIX:-app}:${IMAGES_TAG:-latest}
+    # Deploy override
+    ports: !override
+      - ${APP_PORT:-8080}:${APP_DOCKER_PORT:-8080}  # HTTP
