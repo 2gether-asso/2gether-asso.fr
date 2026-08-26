@@ -24,7 +24,7 @@ export interface Site
 
 export const site: Site = {
 	lang: 'en',
-	title: '2GETHER Asso',
+	title: '2GETHER',
 	// description: {
 	// 	'en': 'Template project for an Astro web application',
 	// 	'fr': 'Modèle de projet pour une application web Astro',
