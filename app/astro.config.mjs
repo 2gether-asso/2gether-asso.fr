@@ -11,11 +11,12 @@ export default defineConfig({
 	build: {
 		assetsPrefix: process.env.ASTRO_ASSETS_PREFIX || undefined,
 	},
-	integrations: [],
+	integrations: [
+		vue(),
+	],
 	vite: {
 		plugins: [
 			tailwindcss(),
-			vue(),
 		],
 	},
 	i18n: i18n,
