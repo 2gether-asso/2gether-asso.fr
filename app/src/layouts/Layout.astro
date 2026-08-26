@@ -1,4 +1,6 @@
 ---
+import { Head } from '~/components/Head.astro'
+
 import '@fontsource/inter/variable.css'
 
 export interface Props {
@@ -75,6 +77,8 @@ const {
 						}
 					});
 		</script>
+
+		<Head />
 
 		<slot name="head" />
 	</head>
