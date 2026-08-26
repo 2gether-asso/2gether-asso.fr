@@ -1,9 +1,0 @@
-version: "3.4"
-
-# Services definition override for production
-
-services:
-
-  app:
-    # Deploy override
-    restart: unless-stopped

@@ -1,0 +1,16 @@
+# Services definition for building & deploying
+
+name: 2gether-website
+
+services:
+
+  app:
+    # Extend
+    extends:
+      file: ./app/docker-compose.yml
+      service: app
+    # Build override
+    image: ${IMAGES_PREFIX:-app}:${IMAGES_TAG:-latest}
+    # Deploy override
+    ports: !override
+      - ${APP_PORT:-8080}:${APP_DOCKER_PORT:-8080}  # HTTP

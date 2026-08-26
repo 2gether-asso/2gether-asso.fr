@@ -1,101 +1,23 @@
 ---
-import { Head } from '~/components/Head.astro'
+import { site } from '~/site'
+import Base from '~/layouts/Base.astro'
+import type { Props as BaseProps } from '~/layouts/Base.astro'
 
-import '@fontsource/inter/variable.css'
+export interface Props extends BaseProps {}
 
-export interface Props {
-	// HTML attributes
-	title: string
-	htmlClass?: string | undefined
-	htmlAttributes?: { [key: string]: string }
-	// Meta tags
-	description?: string | undefined
-	lang?: string
-	socialImage?: URL | undefined
-	socialUrl?: URL | undefined
-	// Body attributes
-	bodyClass?: string | undefined
-	bodyAttributes?: { [key: string]: string }
+const baseProps: BaseProps = {
+	...site,
+	...Astro.props,
+	title: Astro.props.title
+		? (site.title ? `${Astro.props.title} – ${site.title}` : Astro.props.title)
+		: (site.title || undefined),
 }
-
-const {
-	// HTML attributes
-	lang = "en",
-	htmlClass = undefined,
-	htmlAttributes = {},
-	// Meta tags
-	title,
-	description = undefined,
-	socialImage = undefined,
-	socialUrl = undefined,
-	// Body attributes
-	bodyClass = undefined,
-	bodyAttributes = {},
-} = Astro.props
 ---
 
-<!DOCTYPE html>
-<html lang={lang} class={htmlClass} {...htmlAttributes}>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+<Base {...baseProps}>
 
-		<link rel="icon" href="/favicon.png" type="image/png+xml" />
+	<slot slot="head" name="head" />
 
-		<title>{title}</title>
-		{description && <meta name="description" content={description} />}
-		<meta name="generator" content={Astro.generator} />
+	<slot />
 
-		<!-- social media -->
-		<meta property="og:title" content={title} />
-		{description && (<meta property="og:description" content={description} />)}
-		{socialImage && (<meta property="og:image" content={socialImage} />)}
-		{socialUrl && (<meta property="og:url" content={socialUrl} />)}
-		<meta property="og:type" content="website" />
-		<meta name="twitter:card" content="summary_large_image" />
-
-		<!-- initialize theme -->
-		<script is:inline>
-			const themeSaved = localStorage.getItem('theme')
-
-			if (themeSaved) {
-				document.documentElement.dataset.theme = themeSaved
-			} else {
-				const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-				document.documentElement.dataset.theme = prefersDark ? 'dark' : 'light'
-			}
-
-			window
-				.matchMedia('(prefers-color-scheme: dark)')
-				.addEventListener('change', (event) =>
-					{
-						if (!localStorage.getItem('theme'))
-						{
-							document.documentElement.dataset.theme = event.matches
-								? 'dark'
-								: 'light'
-						}
-					});
-		</script>
-
-		<Head />
-
-		<slot name="head" />
-	</head>
-
-	<body class={bodyClass} {...bodyAttributes}>
-		<slot />
-	</body>
-</html>
-
-<style>
-	html {
-		@apply h-full motion-safe:scroll-smooth;
-	}
-
-	body {
-		@apply h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white;
-		@apply flex flex-col;
-		transition: background-color .3s ease, color .3s ease;
-	}
-</style>
+</Base>
