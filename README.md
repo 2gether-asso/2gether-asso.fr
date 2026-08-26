@@ -40,10 +40,6 @@ The site will be available at [http://localhost:8080](http://localhost:8080).
 
 ## License
 
-Licensed under the [MIT License](LICENSE).  
-Copyright 2022 [Matiboux](https://matiboux.me).
+Copyright (c) 2022-2026 [Matiboux](https://github.com/matiboux) ([matiboux.me](https://matiboux.me))
 
-
-## Credits
-
-Layout is based on [mhyfritz/astro-landing-page](https://github.com/mhyfritz/astro-landing-page) (MIT License, Copyright 2022 Markus Hsi-Yang Fritz).
+Licensed under the [MIT License](https://opensource.org/license/MIT). You can see a copy in the [LICENSE](LICENSE) file.
