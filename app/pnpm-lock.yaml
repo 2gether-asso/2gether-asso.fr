@@ -18,6 +18,9 @@ importers:
       '@fontsource/inter':
         specifier: ^4.5.15
         version: 4.5.15
+      '@iconify-json/clarity':
+        specifier: ^1.2.4
+        version: 1.2.4
       '@iconify-json/fa-brands':
         specifier: ^1.2.2
         version: 1.2.2
@@ -564,6 +567,9 @@ packages:
 
   '@fontsource/inter@4.5.15':
     resolution: {integrity: sha512-FzleM9AxZQK2nqsTDtBiY0PMEVWvnKnuu2i09+p6DHvrHsuucoV2j0tmw+kAT3L4hvsLdAIDv6MdGehsPIdT+Q==}
+
+  '@iconify-json/clarity@1.2.4':
+    resolution: {integrity: sha512-9hQ405dgvK2b2BWQdAIb/+ayH02k5VE4lKw2456wpjtq+57shHXE4Kk8bFa7RwchQHFuTtJBItVhlU4kjejxDw==}
 
   '@iconify-json/fa-brands@1.2.2':
     resolution: {integrity: sha512-Aze0j7l95gmOLdeC4L+8MvvpN3+QmAVk9IuTJN170zYH5I7jS0jGSIMFsf0KE8vGbG8jPpXkmmDq7qQU8Rymnw==}
@@ -3047,6 +3053,10 @@ snapshots:
     optional: true
 
   '@fontsource/inter@4.5.15': {}
+
+  '@iconify-json/clarity@1.2.4':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify-json/fa-brands@1.2.2':
     dependencies:
