@@ -9,7 +9,7 @@ interface StaffMember
 	group?: string
 }
 
-const images = import.meta.glob('./images/*.{png,jpg,jpeg}', { as: 'url' })
+const images = import.meta.glob('./images/*.{png,jpg,jpeg}', { query: '?url', import: 'default' })
 
 let _loadStaff: Promise<StaffMember[]>
 
