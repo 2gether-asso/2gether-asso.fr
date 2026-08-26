@@ -8,6 +8,7 @@
 
 /* Iconify Plugin for Tailwind CSS */
 @plugin "@iconify/tailwind4";
+@plugin "tailwindcss-fluid-type";
 
 /* Custom theme configuration */
 @theme {
