@@ -1,6 +1,7 @@
 import { defineConfig, envField } from 'astro/config'
 import tailwindcss from '@tailwindcss/vite'
 import vue from '@astrojs/vue'
+import icon from 'astro-icon'
 
 import { i18n } from '/src/config'
 
@@ -13,6 +14,7 @@ export default defineConfig({
 	},
 	integrations: [
 		vue(),
+		icon(),
 	],
 	vite: {
 		plugins: [
