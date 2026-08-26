@@ -93,6 +93,8 @@ export default {
 </template>
 
 <style lang="scss">
+@reference "#tailwind.css";
+
 	.motd {
 		@apply bg-gray-800 px-1 font-mono;
 	}

@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon'
 import Layout from '~/layouts/Layout.astro'
 import Header from '~/components/Header.astro'
 import ContentSection from '~/components/ContentSection.astro'
@@ -16,7 +16,7 @@ import ligneDeVie from '~/assets/ligneDeVie.png'
 	description="Rejoignez les serveurs de jeux dédiés de la communauté 2GETHER."
 	htmlClass="h-full motion-safe:scroll-smooth"
 	htmlAttributes={{ "data-theme": "dark" }}
-	bodyClass="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+	bodyClass="h-full overflow-x-hidden bg-background text-text text-base selection:bg-secondary selection:text-white"
 	socialUrl={Astro.site}
 	socialImage={new URL('/assets/logo.png', Astro.site)}
 >
@@ -60,6 +60,8 @@ import ligneDeVie from '~/assets/ligneDeVie.png'
 </Layout>
 
 <style lang="scss">
+@reference "#tailwind.css";
+
 	main {
 		@apply flex flex-col align-middle max-w-4xl mx-auto grow px-5 py-16 space-y-3;
 
@@ -76,7 +78,7 @@ import ligneDeVie from '~/assets/ligneDeVie.png'
 		@apply grid grid-cols-1 sm:grid-cols-2 gap-5;
 
 		> li {
-			@apply flex flex-col gap-4 p-6 border border-default bg-offset rounded-lg;
+			@apply flex flex-col gap-4 p-6 border border-border bg-background-offset rounded-lg;
 		}
 	}
 </style>

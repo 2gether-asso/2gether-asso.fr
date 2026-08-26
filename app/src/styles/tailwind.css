@@ -14,6 +14,35 @@
 	/* Custom theme variables */
 	/* Set your custom theme variables below.
 	   See the documentation for more information: https://tailwindcss.com/docs/theme */
+	--font-sans: InterVariable, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@theme inline {
+	--color-primary: var(--color-primary);
+	--color-secondary: var(--color-secondary);
+
+	--color-theme-0: var(--color-theme-0);
+	--color-theme-50: var(--color-theme-50);
+	--color-theme-100: var(--color-theme-100);
+	--color-theme-200: var(--color-theme-200);
+	--color-theme-300: var(--color-theme-300);
+	--color-theme-400: var(--color-theme-400);
+	--color-theme-500: var(--color-theme-500);
+	--color-theme-600: var(--color-theme-600);
+	--color-theme-700: var(--color-theme-700);
+	--color-theme-800: var(--color-theme-800);
+	--color-theme-900: var(--color-theme-900);
+	--color-theme-1000: var(--color-theme-1000);
+
+	--color-text: var(--color-text);
+	--color-text-offset: var(--color-text-offset);
+
+	--color-background: var(--color-background);
+	--color-background-offset: var(--color-background-offset);
+	--color-background-gradiant-top: var(--color-background-gradient-top);
+	--color-background-gradiant-bottom: var(--color-background-gradient-bottom);
+
+	--color-border: var(--color-border);
 }
 
 /* Tailwind CSS safe list */

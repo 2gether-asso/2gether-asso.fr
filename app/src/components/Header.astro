@@ -55,7 +55,7 @@ const navItems: Array<NavItem> = [
 		</div>
 
 		<div class="hidden menu-modal modal" aria-hidden="true">
-			<div class="fixed inset-0 bg-default text-default">
+			<div class="fixed inset-0 bg-background text-text">
 				<div class="flex flex-col h-full" role="dialog" aria-modal="true">
 					<header class="flex justify-between h-16 px-8 pt-4 pb-2">
 						<img src={logo2gt} class="logo2gt h-full" />
@@ -69,7 +69,7 @@ const navItems: Array<NavItem> = [
 								{
 									navItems.map(({ title, url }) => (
 										<li>
-											<a class="block py-4 text-xl text-center rounded-lg transition-colors hover:bg-offset hover:text-secondary" href={url}>
+											<a class="block py-4 text-xl text-center rounded-lg transition-colors hover:bg-background-offset hover:text-secondary" href={url}>
 												{title}
 											</a>
 										</li>
@@ -150,6 +150,8 @@ const navItems: Array<NavItem> = [
 </noscript>
 
 <style lang="scss">
+@reference "#tailwind.css";
+
 	.header {
 		@apply absolute bottom-0 z-50;
 		@apply flex items-center justify-between;
@@ -157,7 +159,7 @@ const navItems: Array<NavItem> = [
 		@apply border-b border-transparent;
 
 		.header-brand {
-			@apply flex items-center gap-3 hover:text-default;
+			@apply flex items-center gap-3 hover:text-text;
 			filter: grayscale(1);
 			opacity: 0.45;
 			transition-property: filter, opacity;
@@ -171,7 +173,7 @@ const navItems: Array<NavItem> = [
 
 		&.fixed-header {
 			@apply fixed top-0 bottom-auto;
-			@apply border-default bg-default text-default;
+			@apply border-border bg-background text-text;
 
 			.header-brand {
 				filter: none;

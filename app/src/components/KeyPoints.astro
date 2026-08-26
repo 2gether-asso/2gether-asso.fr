@@ -26,6 +26,8 @@ const {
 </ContentSection>
 
 <style lang="scss">
+@reference "#tailwind.css";
+
 	@keyframes hc-bg-pan-GY7YG {
 		from {
 			background-position: 0% 0%;
@@ -38,7 +40,7 @@ const {
 	ul {
 		animation: hc-bg-pan-GY7YG 3s linear infinite;
 		@apply relative max-w-6xl;
-		background: radial-gradient(theme("backgroundColor.gradiant-top"), theme("backgroundColor.gradiant-bottom"));
+		background: radial-gradient(var(--color-background-gradiant-top), var(--color-background-gradiant-bottom));
 		background-size: 200vw 200vh;
 		@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
 		gap: 1px;
@@ -91,7 +93,7 @@ const {
 			}
 
 			&:before {
-				@apply absolute w-full h-full bg-default;
+				@apply absolute w-full h-full bg-background;
 				transition: background-color .5s ease-out;
 				content: "";
 			}
@@ -115,13 +117,13 @@ const {
 				}
 
 				> :global(.description) {
-					@apply text-sm text-center text-offset;
+					@apply text-sm text-center text-text-offset;
 				}
 			}
 
 			&:hover > :global(div > p),
 			&:focus-within > :global(div > p) {
-				@apply text-default;
+				@apply text-text;
 			}
 
 			&:hover > :global(div > .icon),
