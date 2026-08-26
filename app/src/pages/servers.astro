@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon/components'
 import Layout from '~/layouts/Layout.astro'
 import Header from '~/components/Header.astro'
 import ContentSection from '~/components/ContentSection.astro'
@@ -37,6 +37,8 @@ import ligneDeVie from '~/assets/ligneDeVie.png'
 						</Button>
 					</div>
 					<style lang="scss">
+					@reference "#tailwind.css";
+
 						.status-ok {
 							.btn {
 								@apply mx-auto;

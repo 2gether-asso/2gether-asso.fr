@@ -5,7 +5,7 @@
 	--color-text-offset: theme("colors.gray.600");
 	--color-background: #FFEDAF;
 	--color-background-offset: theme("colors.gray.100");
-	--color-border: theme("colors.gray.900" / 10%);
+	--color-border: --alpha(theme("colors.gray.900") / 10%);
 
 	--color-background-gradient-top: #cf8ffc;
 	--color-background-gradient-bottom: #fe94c9;
@@ -31,7 +31,7 @@
 	--color-text-offset: theme("colors.gray.400");
 	--color-background: #0D132E;
 	--color-background-offset: theme("colors.gray.800");
-	--color-border: theme("colors.gray.50" / 10%);
+	--color-border: --alpha(theme("colors.gray.50") / 10%);
 
 	--color-background-gradient-top: #4b0088;
 	--color-background-gradient-bottom: #762449;
