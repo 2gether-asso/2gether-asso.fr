@@ -7,7 +7,7 @@ import { i18n } from '/src/config'
 
 // https://astro.build/config
 export default defineConfig({
-	site: process.env.ASTRO_SITE_URL || undefined,
+	site: process.env.ASTRO_SITE_URL || 'https://www.2gether-asso.fr',
 	base: process.env.ASTRO_BASE_PATH || undefined,
 	build: {
 		assetsPrefix: process.env.ASTRO_ASSETS_PREFIX || undefined,
