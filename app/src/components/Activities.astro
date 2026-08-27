@@ -1,5 +1,4 @@
 ---
-import { Icon } from 'astro-icon/components'
 import KeyPoints from '~/components/KeyPoints.astro'
 import physical from '~/data/activities_physical.json'
 import remote from '~/data/activities_remote.json'
@@ -25,7 +24,7 @@ const {
 			<li>
 				<div>
 					<div class="icon">
-						<Icon name={icon} />
+						<span class="icon icon-align icon-fw" class:list={[`icon-[${icon.replaceAll(':', '--')}]`]}></span>
 					</div>
 					<p class="title">
 						{title}
@@ -50,7 +49,7 @@ const {
 			<li>
 				<div>
 					<div class="icon">
-						<Icon name={icon} />
+						<span class="icon icon-align icon-fw" class:list={[`icon-[${icon.replaceAll(':', '--')}]`]}></span>
 					</div>
 					<p class="title">
 						{title}

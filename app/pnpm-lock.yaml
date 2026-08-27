@@ -15,6 +15,9 @@ importers:
       '@astrojs/check':
         specifier: ^0.9.10
         version: 0.9.10(prettier@3.9.6)(typescript@5.9.3)
+      '@astrojs/vue':
+        specifier: ^2.2.1
+        version: 2.2.1(@babel/core@7.29.7(supports-color@7.2.0))(astro@7.2.7(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(jiti@2.7.0)(sass@1.103.1)(yaml@2.9.0))(supports-color@7.2.0)(vite@8.2.2(@types/node@24.13.3)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.103.1)(yaml@2.9.0))(vue@3.5.41(typescript@5.9.3))
       '@fontsource/inter':
         specifier: ^4.5.15
         version: 4.5.15
@@ -36,49 +39,40 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.3.3
         version: 4.3.3(vite@8.2.2(@types/node@24.13.3)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.103.1)(yaml@2.9.0))
-      '@types/micromodal':
-        specifier: ^0.3.5
-        version: 0.3.5
       astro:
         specifier: ^7.2.7
         version: 7.2.7(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(jiti@2.7.0)(sass@1.103.1)(yaml@2.9.0)
-      astro-icon:
-        specifier: ^1.2.0
-        version: 1.2.0
+      micromodal:
+        specifier: ^0.4.10
+        version: 0.4.10
       sass:
         specifier: ^1.103.1
         version: 1.103.1
       tailwindcss:
         specifier: ^4.3.3
         version: 4.3.3
-      tailwindcss-fluid-type:
-        specifier: ^2.0.7
-        version: 2.0.7(tailwindcss@4.3.3)
-    devDependencies:
-      '@astrojs/vue':
-        specifier: ^2.2.1
-        version: 2.2.1(@babel/core@7.29.7(supports-color@7.2.0))(astro@7.2.7(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(jiti@2.7.0)(sass@1.103.1)(yaml@2.9.0))(supports-color@7.2.0)(vite@8.2.2(@types/node@24.13.3)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.103.1)(yaml@2.9.0))(vue@3.5.41(typescript@5.9.3))
-      '@playwright/test':
-        specifier: ^1.62.1
-        version: 1.62.1
-      '@types/node':
-        specifier: ^24.13.3
-        version: 24.13.3
-      micromodal:
-        specifier: ^0.4.10
-        version: 0.4.10
       tiny-invariant:
         specifier: ^1.3.3
         version: 1.3.3
+      vue:
+        specifier: ^3.5.41
+        version: 3.5.41(typescript@5.9.3)
+    devDependencies:
+      '@playwright/test':
+        specifier: ^1.62.1
+        version: 1.62.1
+      '@types/micromodal':
+        specifier: ^0.3.5
+        version: 0.3.5
+      '@types/node':
+        specifier: ^24.13.3
+        version: 24.13.3
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
       vitest:
         specifier: ^4.1.11
         version: 4.1.11(@types/node@24.13.3)(vite@8.2.2(@types/node@24.13.3)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.103.1)(yaml@2.9.0))
-      vue:
-        specifier: ^3.5.41
-        version: 3.5.41(typescript@5.9.3)
 
 packages:
 
@@ -1309,10 +1303,6 @@ packages:
     resolution: {integrity: sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==}
     engines: {node: '>=12'}
 
-  astro-icon@1.2.0:
-    resolution: {integrity: sha512-0848V2WZuTPhqGSqLeZimLJZ5wmamMtWYzvA2kvg8s2DrUPZ3/nrTcHJWN0eJHt62jy7uvNxgTNiUJGIr7JNxg==}
-    engines: {node: '>=22.12.0'}
-
   astro@7.2.7:
     resolution: {integrity: sha512-+XW7Z1x03hq/zV8tiEnvS8E7JYKo5iyYVPJFt5RhEj3dOE+zSwhVaUabcqNsEDVJcneQX2mqxo4fPgoSO+Jc2w==}
     engines: {node: '>=22.12.0', npm: '>=9.6.5', pnpm: '>=7.1.0'}
@@ -2139,11 +2129,6 @@ packages:
     resolution: {integrity: sha512-bkxnTg1kSU0guhIBmibA6UUhrQmPVA1XsQLN+ylCd+UWzbnLkySOcXpyk1mrl05f+pcaCx2eHb+sp6BgMZWX+Q==}
     engines: {node: '>=16'}
     hasBin: true
-
-  tailwindcss-fluid-type@2.0.7:
-    resolution: {integrity: sha512-VJEZ6O8QyeEwW3nbm6TV+okoW/CiORX1TG/ygf4yQGqfBiYWPFPUJ3bvMsV96+p3bYr7Y+NOf5nR4oDEsiMfpA==}
-    peerDependencies:
-      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
 
   tailwindcss@4.3.3:
     resolution: {integrity: sha512-gOhV3P7ufE62QDGg1zVaTgCR+EtPv92k2nIhVcVKcLmxT1sUBsQGhnZj175j+MqRt4zLF7ic+sCYjfhxMxj7YQ==}
@@ -3730,12 +3715,6 @@ snapshots:
 
   assertion-error@2.0.1: {}
 
-  astro-icon@1.2.0:
-    dependencies:
-      '@iconify/tools': 5.0.14
-      '@iconify/types': 2.0.0
-      '@iconify/utils': 3.1.4
-
   astro@7.2.7(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(jiti@2.7.0)(sass@1.103.1)(yaml@2.9.0):
     dependencies:
       '@astrojs/compiler-rs': 0.4.0(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)
@@ -4588,10 +4567,6 @@ snapshots:
       csso: 5.0.5
       picocolors: 1.1.1
       sax: 1.6.1
-
-  tailwindcss-fluid-type@2.0.7(tailwindcss@4.3.3):
-    dependencies:
-      tailwindcss: 4.3.3
 
   tailwindcss@4.3.3: {}
 
