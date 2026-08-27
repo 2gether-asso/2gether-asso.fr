@@ -1,5 +1,4 @@
 ---
-import { Icon } from 'astro-icon/components'
 import Sky from '~/components/Sky.astro'
 import Parallax from '~/components/Parallax.astro'
 import Starfield from '~/components/Starfield.astro'
@@ -27,7 +26,7 @@ const logoSrc = '/assets/logo.png'
 			<img src={logoSrc} class="logotitre h-full w-auto max-h-20 text-white md:max-h-32" />
 			<div class="btn relative grid h-full place-items-center">
 				<Button href={social.discord.url}>
-					<Icon class="h-5 mr-2" name={social.discord.icon} />
+					<span class="icon icon-align icon-fw h-5 mr-2" class:list={[`icon-[${social.discord.icon.replaceAll(':', '--')}]`]}></span>
 					Rejoins-nous sur Discord&nbsp;!
 				</Button>
 			</div>

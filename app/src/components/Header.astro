@@ -1,5 +1,4 @@
 ---
-import { Icon } from 'astro-icon/components'
 import ThemeSwitcher from '~/components/ThemeSwitcher.astro'
 import type { NavItem } from '~/types'
 import logo2gt from '~/icons/logo2gt.png'
@@ -48,7 +47,7 @@ const navItems: Array<NavItem> = [
 			</nav>
 
 			<button type="button" class="btn sm:hidden" aria-label="Navigation" data-open-nav>
-				<Icon name="mdi:menu" class="h-8" />
+				<span class="icon icon-[mdi--menu] icon-align icon-fw h-8"></span>
 			</button>
 
 			<ThemeSwitcher />
@@ -60,7 +59,7 @@ const navItems: Array<NavItem> = [
 					<header class="flex justify-between h-16 px-8 pt-4 pb-2">
 						<img src={logo2gt.src} class="logo2gt h-full" />
 						<button type="button" class="btn" aria-label="Close navigation" data-close-nav>
-							<Icon name="mdi:close" class="h-full" />
+							<span class="icon icon-[mdi--close] icon-align icon-fw h-full"></span>
 						</button>
 					</header>
 					<div class="overflow-y-auto px-8 pt-2 pb-4">
