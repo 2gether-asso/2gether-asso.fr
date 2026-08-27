@@ -4,8 +4,7 @@ import Parallax from '~/components/Parallax.astro'
 import Starfield from '~/components/Starfield.astro'
 import Button from './Button.astro'
 import social from '~/data/social.json'
-
-const logoSrc = '/assets/logo.png'
+import logoUrl from '~/assets/logo.png?url'
 ---
 
 <section class="relative h-full bg-black shrink-0 overflow-hidden">
@@ -23,7 +22,7 @@ const logoSrc = '/assets/logo.png'
 				Partageons un moment
 				<span class="sr-only">2GETHER</span>
 			</h2>
-			<img src={logoSrc} class="logotitre h-full w-auto max-h-20 text-white md:max-h-32" />
+			<img src={logoUrl} class="logotitre h-full w-auto max-h-20 text-white md:max-h-32" />
 			<div class="btn relative grid h-full place-items-center">
 				<Button href={social.discord.url}>
 					<span class="icon icon-align icon-fw h-5 mr-2" class:list={[`icon-[${social.discord.icon.replaceAll(':', '--')}]`]}></span>
@@ -41,7 +40,7 @@ const logoSrc = '/assets/logo.png'
 section {
 	@apply relative w-full h-screen pb-16;
 
-	.sky {
+	:global(.sky) {
 		@apply pointer-events-none select-none;
 		@apply absolute top-0 left-0 w-full h-full object-cover;
 	}
@@ -67,12 +66,12 @@ section {
 		z-index: 49;
 	}
 
-	.btn > :global(*) > :global(*) {
+	:global(.btn) > :global(*) > :global(*) {
 		box-shadow: 2px 2px 5px 0 #0008;
 	}
 
 	.hero-content,
-	.btn {
+	:global(.btn) {
 		@apply p-8;
 	}
 }
