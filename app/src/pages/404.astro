@@ -3,6 +3,7 @@ import Layout from '~/layouts/Layout.astro'
 import Header from '~/components/Header.astro'
 import Footer from '~/components/Footer.astro'
 import ligneDeVie from '~/assets/ligneDeVie.png'
+import logoUrl from '~/assets/logo.png?url'
 ---
 
 <Layout
@@ -13,7 +14,7 @@ import ligneDeVie from '~/assets/ligneDeVie.png'
 	htmlAttributes={{ "data-theme": "dark" }}
 	bodyClass="h-full overflow-x-hidden bg-background text-text text-base selection:bg-secondary selection:text-white"
 	socialUrl={Astro.site}
-	socialImage={new URL('/assets/logo.png', Astro.site)}
+	socialImage={logoUrl}
 >
 	<Header />
 	<main>

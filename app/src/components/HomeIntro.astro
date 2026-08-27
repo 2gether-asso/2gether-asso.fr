@@ -1,6 +1,8 @@
 ---
 import ContentSection from '~/components/ContentSection.astro'
 
+import logoUrl from '~/assets/logo.png?url'
+
 interface Props
 {
 	class?: string
@@ -9,13 +11,11 @@ interface Props
 const {
 	class: className = '',
 } = Astro.props
-
-const logoSrc = '/assets/logo.png'
 ---
 
 <ContentSection id="intro" class={className} title="Une association à but non lucratif">
 	<Fragment slot="eyebrow">
-		<img src={logoSrc} class="logo" />
+		<img src={logoUrl} class="logo" />
 		<span class="sr-only">2GETHER</span>
 
 		<style lang="scss">
