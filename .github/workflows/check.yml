@@ -116,6 +116,13 @@ jobs:
             && echo 'Application files found' \
             || ( echo 'No application files found' && exit 1 )
 
+      - name: Upload application files
+        uses: actions/upload-artifact@v7
+        with:
+          name: dist
+          path: ./app/dist
+          retention-days: 1
+
   # Test Unit job
   test-unit:
     name: Test Unit
@@ -368,34 +375,42 @@ jobs:
           fi
           echo '::endgroup::'
 
-  # Lighthouse (perf, accessibility, best practices, SEO) job
+  # Lighthouse Audit job
   lighthouse:
-    name: Lighthouse audit
+    name: Lighthouse Audit
+
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-    needs: [ build ]
+    timeout-minutes: 20
+
+    needs:
+      - build
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
 
-    - name: Download build artifact
-      uses: actions/download-artifact@v4
-      with:
-        name: dist
-        path: dist/
+      # Initialization steps
 
-    - name: Run Lighthouse CI
-      uses: treosh/lighthouse-ci-action@v11
-      with:
-        configPath: ./lighthouserc.json
-        urls: |
-          /index.html
-          /about/index.html
-          /servers/index.html
-        uploadArtifacts: true
-        temporaryPublicStorage: true
-        # Informational only for now: reports scores on the PR without failing the
-        # build. Add an `assert` section to lighthouserc.json once thresholds have
-        # been tuned to the site's actual baseline, then this step will start
-        # blocking regressions.
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      # Execution steps
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: dist
+          path: dist/
+
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          configPath: ./lighthouserc.json
+          urls: |
+            /index.html
+            /about/index.html
+            /servers/index.html
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          # Informational only for now: reports scores on the PR without failing the
+          # build. Add an `assert` section to lighthouserc.json once thresholds have
+          # been tuned to the site's actual baseline, then this step will start
+          # blocking regressions.
