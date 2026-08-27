@@ -19,28 +19,28 @@ const
 <style lang="scss">
 @reference "#tailwind.css";
 
+div {
+	:global(svg.sky) {
+		@apply w-full h-full;
+	}
+}
+
+:global([data-theme="dark"]) {
 	div {
-		:global(svg.sky) {
-			@apply w-full h-full;
+		:global(.day_sky) {
+			opacity: 0;
+		}
+		:global(.star) {
+			opacity: 10;
 		}
 	}
+}
 
-	:global([data-theme="dark"]) {
-		div {
-			:global(.day_sky) {
-				opacity: 0;
-			}
-			:global(.star) {
-				opacity: 10;
-			}
+:global([data-theme="light"]) {
+	div {
+		:global(.star) {
+			opacity: 0;
 		}
 	}
-
-	:global([data-theme="light"]) {
-		div {
-			:global(.star) {
-				opacity: 0;
-			}
-		}
-	}
+}
 </style>
