@@ -48,3 +48,19 @@
 /* Tailwind CSS safe list */
 /* You may optionally declare a safelist of classes to always include in the final CSS output. */
 /* Syntax example: `@source inline("{sm:,md,lg:,xl:,}bg-red-{100..900..50}");` */
+@source inline("icon-[fa-brands--discord]");
+@source inline("icon-[fa-brands--twitch]");
+@source inline("icon-[fa-brands--twitter]");
+@source inline("icon-[fa-brands--youtube]");
+@source inline("icon-[mdi--account-group]");
+@source inline("icon-[mdi--dice-d20]");
+@source inline("icon-[mdi--gamepad-variant]");
+@source inline("icon-[mdi--gift]");
+@source inline("icon-[mdi--pencil]");
+@source inline("icon-[mdi--plus-thick]");
+@source inline("icon-[mdi--puzzle]");
+@source inline("icon-[mdi--server]");
+@source inline("icon-[mdi--storefront]");
+@source inline("icon-[mdi--theater]");
+@source inline("icon-[mdi--trophy]");
+@source inline("icon-[mdi--twitch]");
