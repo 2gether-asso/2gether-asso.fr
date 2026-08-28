@@ -25,7 +25,7 @@ const navItems: Array<NavItem> = [
 ]
 ---
 
-<header id={id} class:list={['header', {'fixed-header': fixedHeader}]} data-fixed-header={fixedHeader}>
+<header id={id} class:list={['header', {'fixed-header': fixedHeader}]} data-fixed-header={fixedHeader || undefined}>
 	<a class="header-brand" href="/">
 		<h1 class="sr-only">2GETHER</h1>
 		<img src={logo2gt.src} class="logo2gt h-10" />
