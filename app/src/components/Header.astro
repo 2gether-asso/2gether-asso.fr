@@ -86,58 +86,62 @@ const navItems: Array<NavItem> = [
 <div class:list={['header-shadow', {'hidden': !fixedHeader}]}></div>
 
 <script>
-	const root = document.documentElement
-	const body = document.body
-	const headers: NodeListOf<HTMLElement> = document.querySelectorAll('.header')
+const root = document.documentElement
+const body = document.body
+const headers: NodeListOf<HTMLElement> = document.querySelectorAll('.header')
 
-	headers.forEach(header =>
+// Fix header on scroll
+document.addEventListener('scroll', () =>
+{
+	for (const header of headers)
+	{
+		if (header.hasAttribute('data-fixed-header'))
 		{
-			// Fix header on scroll
-			document.addEventListener('scroll', () =>
-				{
-					if (header.hasAttribute('data-fixed-header'))
-					{
-						return
-					}
+			continue
+		}
 
-					const d = root.clientHeight - root.scrollTop - header.offsetHeight
-					header.classList.toggle('fixed-header', d < 0)
-				})
+		const d = root.clientHeight - root.scrollTop - header.offsetHeight
+		header.classList.toggle('fixed-header', d < 0)
+	}
+})
 
-			const menuModal = header.querySelector('.menu-modal')
-			if (!menuModal)
+for (const header of headers)
+{
+	const menuModal = header.querySelector('.menu-modal')
+	if (!menuModal)
+	{
+		continue
+	}
+
+	const menuModalNav = menuModal.querySelectorAll('nav')
+	const openNavButtons = header.querySelectorAll('[data-open-nav]')
+	const closeNavButtons = header.querySelectorAll('[data-close-nav]')
+
+	const openMenu = () =>
+	{
+		menuModal.classList.remove('hidden')
+		body.classList.add('overflow-y-hidden')
+	}
+
+	const closeMenu = () =>
+	{
+		menuModal.classList.add('hidden')
+		body.classList.remove('overflow-y-hidden')
+	}
+
+	openNavButtons.forEach(btn => btn.addEventListener('click', openMenu))
+	closeNavButtons.forEach(btn => btn.addEventListener('click', closeMenu))
+
+	menuModalNav.forEach(nav => (
+		nav.addEventListener('click', event =>
+		{
+			if ((event.target as HTMLElement).tagName === 'A')
 			{
-				return
+				closeMenu()
 			}
-
-			const menuModalNav = menuModal.querySelectorAll('nav')
-			const openNavButtons = header.querySelectorAll('[data-open-nav]')
-			const closeNavButtons = header.querySelectorAll('[data-close-nav]')
-
-			const openMenu = () =>
-				{
-					menuModal.classList.remove('hidden')
-					body.classList.add('overflow-y-hidden')
-				}
-
-			const closeMenu = () =>
-				{
-					menuModal.classList.add('hidden')
-					body.classList.remove('overflow-y-hidden')
-				}
-
-			openNavButtons.forEach(btn => btn.addEventListener('click', openMenu))
-			closeNavButtons.forEach(btn => btn.addEventListener('click', closeMenu))
-
-			menuModalNav.forEach(nav =>
-				nav.addEventListener('click', event =>
-				{
-					if ((event.target as HTMLElement).tagName === 'A')
-					{
-						closeMenu()
-					}
-				}))
 		})
+	))
+}
 </script>
 
 <noscript>
