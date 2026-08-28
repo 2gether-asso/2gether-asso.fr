@@ -25,7 +25,7 @@ const navItems: Array<NavItem> = [
 ]
 ---
 
-<header id={id} class:list={['header', {'fixed-header': fixedHeader}]} data-fixed-header={fixedHeader}>
+<header id={id} class:list={['header', {'fixed-header': fixedHeader}]} data-fixed-header={fixedHeader || undefined}>
 	<a class="header-brand" href="/">
 		<h1 class="sr-only">2GETHER</h1>
 		<img src={logo2gt.src} class="logo2gt h-10" />
@@ -86,58 +86,62 @@ const navItems: Array<NavItem> = [
 <div class:list={['header-shadow', {'hidden': !fixedHeader}]}></div>
 
 <script>
-	const root = document.documentElement
-	const body = document.body
-	const headers: NodeListOf<HTMLElement> = document.querySelectorAll('.header')
+const root = document.documentElement
+const body = document.body
+const headers: NodeListOf<HTMLElement> = document.querySelectorAll('.header')
 
-	headers.forEach(header =>
+// Fix header on scroll
+document.addEventListener('scroll', () =>
+{
+	for (const header of headers)
+	{
+		if (header.hasAttribute('data-fixed-header'))
 		{
-			// Fix header on scroll
-			document.addEventListener('scroll', () =>
-				{
-					if (header.hasAttribute('data-fixed-header'))
-					{
-						return
-					}
+			continue
+		}
 
-					const d = root.clientHeight - root.scrollTop - header.offsetHeight
-					header.classList.toggle('fixed-header', d < 0)
-				})
+		const d = root.clientHeight - root.scrollTop - header.offsetHeight
+		header.classList.toggle('fixed-header', d < 0)
+	}
+})
 
-			const menuModal = header.querySelector('.menu-modal')
-			if (!menuModal)
+for (const header of headers)
+{
+	const menuModal = header.querySelector('.menu-modal')
+	if (!menuModal)
+	{
+		continue
+	}
+
+	const menuModalNav = menuModal.querySelectorAll('nav')
+	const openNavButtons = header.querySelectorAll('[data-open-nav]')
+	const closeNavButtons = header.querySelectorAll('[data-close-nav]')
+
+	const openMenu = () =>
+	{
+		menuModal.classList.remove('hidden')
+		body.classList.add('overflow-y-hidden')
+	}
+
+	const closeMenu = () =>
+	{
+		menuModal.classList.add('hidden')
+		body.classList.remove('overflow-y-hidden')
+	}
+
+	openNavButtons.forEach(btn => btn.addEventListener('click', openMenu))
+	closeNavButtons.forEach(btn => btn.addEventListener('click', closeMenu))
+
+	menuModalNav.forEach(nav => (
+		nav.addEventListener('click', event =>
+		{
+			if ((event.target as HTMLElement).tagName === 'A')
 			{
-				return
+				closeMenu()
 			}
-
-			const menuModalNav = menuModal.querySelectorAll('nav')
-			const openNavButtons = header.querySelectorAll('[data-open-nav]')
-			const closeNavButtons = header.querySelectorAll('[data-close-nav]')
-
-			const openMenu = () =>
-				{
-					menuModal.classList.remove('hidden')
-					body.classList.add('overflow-y-hidden')
-				}
-
-			const closeMenu = () =>
-				{
-					menuModal.classList.add('hidden')
-					body.classList.remove('overflow-y-hidden')
-				}
-
-			openNavButtons.forEach(btn => btn.addEventListener('click', openMenu))
-			closeNavButtons.forEach(btn => btn.addEventListener('click', closeMenu))
-
-			menuModalNav.forEach(nav =>
-				nav.addEventListener('click', event =>
-				{
-					if ((event.target as HTMLElement).tagName === 'A')
-					{
-						closeMenu()
-					}
-				}))
 		})
+	))
+}
 </script>
 
 <noscript>
@@ -151,44 +155,44 @@ const navItems: Array<NavItem> = [
 <style lang="scss">
 @reference "#tailwind.css";
 
-	.header {
-		@apply absolute bottom-0 z-50;
-		@apply flex items-center justify-between;
-		@apply w-full h-16 px-8;
-		@apply border-b border-transparent;
+.header {
+	@apply absolute bottom-0 z-50;
+	@apply flex items-center justify-between;
+	@apply w-full h-16 px-8;
+	@apply border-b border-transparent;
+
+	.header-brand {
+		@apply flex items-center gap-3 hover:text-text;
+		filter: grayscale(1);
+		opacity: 0.45;
+		transition-property: filter, opacity;
+		@apply ease-in duration-150;
+
+		&:hover {
+			filter: none;
+			opacity: 1;
+		}
+	}
+
+	&.fixed-header {
+		@apply fixed top-0 bottom-auto;
+		@apply border-border bg-background text-text;
 
 		.header-brand {
-			@apply flex items-center gap-3 hover:text-text;
-			filter: grayscale(1);
-			opacity: 0.45;
-			transition-property: filter, opacity;
-			@apply ease-in duration-150;
-
-			&:hover {
-				filter: none;
-				opacity: 1;
-			}
-		}
-
-		&.fixed-header {
-			@apply fixed top-0 bottom-auto;
-			@apply border-border bg-background text-text;
-
-			.header-brand {
-				filter: none;
-				opacity: 1;
-			}
+			filter: none;
+			opacity: 1;
 		}
 	}
+}
 
-	.logo2gt {
-		@apply pointer-events-none select-none;
-	}
+.logo2gt {
+	@apply pointer-events-none select-none;
+}
 
-	.header-shadow {
-		@apply bg-transparent;
-		@apply w-full h-16;
-		@apply pointer-events-none;
-		@apply grow-0 shrink-0;
-	}
+.header-shadow {
+	@apply bg-transparent;
+	@apply w-full h-16;
+	@apply pointer-events-none;
+	@apply grow-0 shrink-0;
+}
 </style>

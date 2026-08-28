@@ -11,11 +11,11 @@
 	class="-ml-14 origin-[right_center] scale-0 transition-all duration-500"
 >
 	<div id="icon-theme-light">
-		<span class="icon icon-[theme--light] icon-align icon-fw h-8"></span>
+		<span class="icon icon-[clarity--sun-line] icon-align icon-fw"></span>
 		<span class="sr-only">Use light theme</span>
 	</div>
 	<div id="icon-theme-dark" class="hidden">
-		<span class="icon icon-[theme--dark] icon-align icon-fw h-8"></span>
+		<span class="icon icon-[clarity--moon-line] icon-align icon-fw"></span>
 		<span class="sr-only">Use dark theme</span>
 	</div>
 </button>
@@ -59,8 +59,15 @@
 <style lang="scss">
 @reference "#tailwind.css";
 
-	/* :global(.fixed-header) #theme-switcher { */
-	#theme-switcher {
-		@apply ml-0 scale-100;
+#theme-switcher {
+	@apply ml-0 scale-100 cursor-pointer;
+
+	> * {
+		@apply h-8;
+
+		> .icon {
+			@apply h-full;
+		}
 	}
+}
 </style>
