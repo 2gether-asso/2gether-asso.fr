@@ -38,7 +38,7 @@
     "@iconify-json/twemoji": "^1.2.5",
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.2.7",
+    "astro": "^7.2.8",
     "micromodal": "^0.4.10",
     "sass": "^1.103.1",
     "tailwindcss": "^4.3.3",
